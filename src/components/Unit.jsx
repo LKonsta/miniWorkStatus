@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react'
 import unitService from '../services/unit'
+import categoryService from '../services/category'
+
+import NewUnit from './NewUnit'
+import NewCategory from './NewCategory'
+
 
 const UnitName = (props) => {
     if (props.name.trim() != "" || props.name.trim().length != 0) {
@@ -31,20 +36,38 @@ const UnitMiniAmount = (props) => {
     )
 }
 
-
-export const setAllUnitsOutside = (returnedUnit) => {
-    allUnits.concat(returnedUnit)
+const UnitminiCategory = (props) => {
+    if (props.miniCategory) {
+        return(
+            <div className={props.className}>
+                {props.miniCategory} 
+            </div>
+        )
+    }
+    return(
+        <div className={props.className}>
+            -none- 
+        </div>
+    )
 }
 
 const Unit = (props) => {
     const [allUnits, setAllUnits] = useState([])
-
+    const [allCategories, setAllCategories] = useState([])
+    
     const allUnitHook = () => {
         unitService.getAll().then(initialUnits => {
           setAllUnits(initialUnits)
         })
       }
     useEffect(allUnitHook, [])
+
+    const allCategoryHook = () => {
+        categoryService.getAll().then(initialCategories => {
+            setAllCategories(initialCategories)
+        })
+    }
+    useEffect(allCategoryHook, [])
 
     return(
         <div>
@@ -59,9 +82,16 @@ const Unit = (props) => {
                         miniAmount={unit.miniAmount} 
                         className='div-table-col'
                     />
+                    <UnitminiCategory
+                        miniCategory={unit.miniCategory}
+                        className='div-table-col'
+                    />
                 </div>
                 )}
             </div>
+
+            <NewUnit allUnits={allUnits} setAllUnits={setAllUnits} allCategories={allCategories}/>
+            <NewCategory allCategories={allCategories} setAllCategories={setAllCategories}/>
         </div>
     )
 }

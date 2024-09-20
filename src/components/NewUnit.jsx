@@ -1,32 +1,34 @@
 import { useState, useEffect } from "react"
 
 import unitService from '../services/unit'
-import { setAllUnitsOutside }  from './Unit'
 
-
-const NewUnit = () => {
+const NewUnit = (props) => {
 
     const [newUnit, setNewUnit] = useState('')
-    const [newUnitMiniAmount, setNewUnitMiniAmount] = useState("1")
+    const [newUnitMiniAmount, setNewUnitMiniAmount] = useState(1)
+    const [newUnitCategory, setNewUnitCategory] = useState('Hero/Lord')
   
     const handleUnitChange = (event) => {
-      console.log(event.target.value)
       setNewUnit(event.target.value)
     }
     const handleUnitMiniAmountChange = (event) => {
       setNewUnitMiniAmount(event.target.value)
+    }
+    const handleUnitCategoryChange = (event) => {
+      setNewUnitCategory(event.target.value)
     }
   
     const addNewUnit = (event) => {
       event.preventDefault()
       const unitObject = {
         name: newUnit,
-        miniAmount: newUnitMiniAmount
+        miniAmount: newUnitMiniAmount,
+        miniCategory: newUnitCategory
       }
       unitService
         .create(unitObject)
           .then(returnedUnit => {
-            setAllUnitsOutside(returnedUnit)
+            props.setAllUnits(props.allUnits.concat(returnedUnit))
             setNewUnit('')
             setNewUnitMiniAmount(1)  
       })
@@ -36,13 +38,26 @@ const NewUnit = () => {
         <div>
         <form onSubmit={addNewUnit}>
           <input
-            name={newUnit}
+            key="1"
+            value={newUnit}
             onChange={handleUnitChange}
           />
           <input
-            name={newUnitMiniAmount}
+            key="2"
+            value={newUnitMiniAmount}
             onChange={handleUnitMiniAmountChange}
           />
+          <select
+            key="3" 
+            name="category" 
+            id="category" 
+            onChange={handleUnitCategoryChange}>
+            {props.allCategories.map(category => 
+              <option key={category.id} value={category.name}>
+                {category.name}
+              </option>
+            )}
+          </select>
           <button type="submit">add</button>
         </form>
       </div>
