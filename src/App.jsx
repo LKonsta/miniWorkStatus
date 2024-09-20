@@ -1,10 +1,15 @@
-import { useState } from 'react'
+import Unit from './components/Unit'
+import NewUnit from './components/NewUnit'
+
+import './App.css'
 
 
-function App() {
+const App = (props) => { 
+  
   return (
     <div>
-      <li>hello world</li>
+      <Unit />
+      <NewUnit />
     </div>
   )
 }
