@@ -3,53 +3,45 @@ import unitService from '../services/unit'
 import categoryService from '../services/category'
 
 import NewUnit from './NewUnit'
-import NewCategory from './NewCategory'
+import Categories from './Categories'
 
 
 const UnitName = (props) => {
-    if (props.name.trim() != "" || props.name.trim().length != 0) {
-        return(
-            <div className={props.className}>
-                {props.name} 
-            </div>
-        )
-    }
     return(
         <div className={props.className}>
-            -undefined- 
+            {
+                (props.name.trim().length != 0) 
+                ? (props.name) 
+                : ("--undefined--")
+            }
         </div>
     ) 
 }
 
 const UnitMiniAmount = (props) => {
-    if (props.miniAmount) {
-        return(
-            <div className={props.className}>
-                {props.miniAmount} 
-            </div>
-        )
-    }
     return(
         <div className={props.className}>
-            -none- 
+            {
+                (props.miniAmount)
+                ? (props.miniAmount)
+                : ("--none--")
+            }
         </div>
     )
 }
 
 const UnitminiCategory = (props) => {
-    if (props.miniCategory) {
-        return(
-            <div className={props.className}>
-                {props.miniCategory} 
-            </div>
-        )
-    }
     return(
         <div className={props.className}>
-            -none- 
+            {
+                (props.miniCategory)
+                ? (props.miniCategoryName)
+                : ("--none--")
+            }
         </div>
     )
 }
+
 
 const Unit = (props) => {
     const [allUnits, setAllUnits] = useState([])
@@ -62,36 +54,47 @@ const Unit = (props) => {
       }
     useEffect(allUnitHook, [])
 
-    const allCategoryHook = () => {
+    const allCategoriesHook = () => {
         categoryService.getAll().then(initialCategories => {
             setAllCategories(initialCategories)
         })
     }
-    useEffect(allCategoryHook, [])
+    useEffect(allCategoriesHook, [])
+
+    const sortedCategories = (allCategories.sort((a, b) => a.index - b.index))
 
     return(
-        <div>
-            <div className='div-table'>
-                {allUnits.map(unit =>
-                <div key={unit.id} className='div-table-row'>
-                    <UnitName 
-                        name={unit.name} 
-                        className='div-table-col'
-                    />
-                    <UnitMiniAmount 
-                        miniAmount={unit.miniAmount} 
-                        className='div-table-col'
-                    />
-                    <UnitminiCategory
-                        miniCategory={unit.miniCategory}
-                        className='div-table-col'
-                    />
+        <div> 
+            {sortedCategories.map(category =>
+                <div key={category.id}>
+                    <h3>{category.name}</h3> 
+                    <div className='div-table'> 
+                        {allUnits.map(unit =>
+                            <>
+                                {(unit.miniCategory===category.id) && 
+                                    <div key={unit.id} className='div-table-row'>
+                                        <UnitName 
+                                            name={unit.name} 
+                                            className='div-table-col'
+                                        />
+                                        <UnitMiniAmount 
+                                            miniAmount={unit.miniAmount} 
+                                            className='div-table-col'
+                                        />
+                                        <UnitminiCategory
+                                            miniCategory={unit.miniCategory}
+                                            miniCategoryName={category.name}
+                                            className='div-table-col'
+                                        />
+                                    </div>
+                                }
+                            </>
+                        )}
+                    </div>
                 </div>
-                )}
-            </div>
-
+            )}
             <NewUnit allUnits={allUnits} setAllUnits={setAllUnits} allCategories={allCategories}/>
-            <NewCategory allCategories={allCategories} setAllCategories={setAllCategories}/>
+            <Categories allCategories={allCategories} setAllCategories={setAllCategories}/>
         </div>
     )
 }

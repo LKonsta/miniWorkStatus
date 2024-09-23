@@ -1,108 +1,46 @@
 {
   "categories": [
     {
-      "id": "1",
-      "name": "Hero/Lord"
+      "name": "Core",
+      "index": 3,
+      "id": "2"
     },
     {
-      "id": "2",
-      "name": "Core"
+      "name": "Special",
+      "index": 4,
+      "id": "3"
     },
     {
-      "id": "3",
-      "name": "Special"
+      "name": "Rare",
+      "index": 5,
+      "id": "4"
     },
     {
-      "id": "4",
-      "name": "Rare"
+      "name": "Warmachine",
+      "index": 6,
+      "id": "5"
     },
     {
-      "id": "5",
-      "name": "Random"
+      "name": "Random",
+      "index": 7,
+      "id": "6"
     },
     {
-      "id": "2d89",
-      "name": "Warmachine"
+      "name": "Hero/Lord",
+      "index": 2,
+      "id": "6d10"
     }
   ],
   "units": [
     {
-      "name": "esaes",
-      "id": "7b1c"
-    },
-    {
-      "id": "2845",
-      "name": "ewqewqewq",
-      "miniAmount": "12"
-    },
-    {
-      "id": "7b03",
-      "name": "",
-      "miniAmount": 1
-    },
-    {
-      "id": "0bba",
-      "name": "",
-      "miniAmount": 1
-    },
-    {
-      "id": "c840",
-      "name": "ewrewre",
-      "miniAmount": 1
-    },
-    {
-      "id": "c952",
-      "name": "dwarf lord",
-      "miniAmount": "1"
-    },
-    {
-      "id": "3b84",
-      "name": "ewqewq",
-      "miniAmount": "321"
-    },
-    {
-      "id": "3a91",
-      "name": "ewqewq",
-      "miniAmount": "10"
-    },
-    {
-      "id": "0f24",
-      "name": "Dwarf Lord",
-      "miniAmount": 1,
-      "miniCategory": "Hero/Lord"
-    },
-    {
-      "id": "ac4b",
-      "name": "Dwarf Quarrelers",
-      "miniAmount": "40",
-      "miniCategory": "Core"
-    },
-    {
-      "id": "dec0",
-      "name": "ewqewqewq",
-      "miniAmount": 1,
-      "miniCategory": "Hero/Lord"
-    },
-    {
-      "id": "471e",
-      "name": "ewqewqewq",
-      "miniAmount": 1,
-      "miniCategory": "eqewqewq"
-    },
-    {
-      "id": "4677",
-      "name": "ewqewq",
-      "miniAmount": 1
-    },
-    {
-      "id": "ca43",
-      "name": "32ewqewqeq",
-      "miniAmount": 1,
-      "miniCategory": "Special"
-    },
-    {
       "id": "b22e",
       "name": "ewqewqewq",
+      "miniAmount": 1,
+      "miniCategory": "Random"
+    },
+    {
+      "id": "4213",
+      "name": "",
       "miniAmount": 1,
       "miniCategory": "Random"
     },
@@ -117,6 +55,137 @@
       "name": "Grudge Thrower",
       "miniAmount": 1,
       "miniCategory": "Warmachine"
+    },
+    {
+      "id": "656e",
+      "name": "Dwarf Lord",
+      "miniAmount": 1,
+      "miniCategory": "Hero/Lord"
+    },
+    {
+      "id": "030f",
+      "name": "Dwarf warriors (shields)",
+      "miniAmount": "20",
+      "miniCategory": "Core"
+    },
+    {
+      "id": "2c85",
+      "name": "Dwarf warriors (great weapons)",
+      "miniAmount": "20",
+      "miniCategory": "Core"
+    },
+    {
+      "id": "8e24",
+      "name": "Hammerers",
+      "miniAmount": "30",
+      "miniCategory": "Special"
+    },
+    {
+      "id": "d33b",
+      "name": "Organ Gun",
+      "miniAmount": 1,
+      "miniCategory": "Warmachine"
+    },
+    {
+      "id": "cbb3",
+      "name": "Thunderers",
+      "miniAmount": "40",
+      "miniCategory": "Core"
+    },
+    {
+      "id": "9a84",
+      "name": "Gyrocopter",
+      "miniAmount": 1,
+      "miniCategory": "Rare"
+    },
+    {
+      "id": "f0e4",
+      "name": "Anvil of Doom",
+      "miniAmount": 1,
+      "miniCategory": "Hero/Lord"
+    },
+    {
+      "id": "3ba1",
+      "name": "Thorgrim Grudgebearer",
+      "miniAmount": 1,
+      "miniCategory": "Hero/Lord"
+    },
+    {
+      "id": "14d2",
+      "name": "hienoukkeli_kokoelma",
+      "miniAmount": "20",
+      "miniCategory": "ukkelit",
+      "strength": ""
+    },
+    {
+      "id": "ee28",
+      "name": "konsta on paras",
+      "miniAmount": 1,
+      "miniCategory": "Hero/Lord",
+      "strength": ""
+    },
+    {
+      "id": "a48a",
+      "name": "Dwarf Lord",
+      "miniAmount": 1,
+      "miniCategory": 1,
+      "strength": ""
+    },
+    {
+      "id": "6ad3",
+      "name": "Dwarf Warriors",
+      "miniAmount": "20",
+      "miniCategory": "2",
+      "strength": ""
+    },
+    {
+      "id": "70ab",
+      "name": "Dwarf Lord",
+      "miniAmount": 1,
+      "miniCategory": "1",
+      "strength": ""
+    },
+    {
+      "id": "6077",
+      "name": "Runesmith",
+      "miniAmount": 1,
+      "miniCategory": "1",
+      "strength": ""
+    },
+    {
+      "id": "ebaf",
+      "name": "Dwarf Lord",
+      "miniAmount": 1,
+      "miniCategory": "1",
+      "strength": ""
+    },
+    {
+      "id": "2c78",
+      "name": "Dwarf Lord",
+      "miniAmount": 1,
+      "miniCategory": "2",
+      "strength": ""
+    },
+    {
+      "id": "2d1b",
+      "name": "Cannon",
+      "miniAmount": 1,
+      "miniCategory": "5",
+      "strength": ""
+    },
+    {
+      "id": "282c",
+      "name": "Bugmans Cart",
+      "miniAmount": 1,
+      "miniCategory": "3",
+      "strength": ""
+    },
+    {
+      "id": "8f20",
+      "name": "Dwarf Lord",
+      "miniAmount": 1,
+      "miniCategory": "6d10",
+      "strength": ""
     }
   ]
 }

@@ -6,9 +6,10 @@ const NewUnit = (props) => {
 
     const [newUnit, setNewUnit] = useState('')
     const [newUnitMiniAmount, setNewUnitMiniAmount] = useState(1)
-    const [newUnitCategory, setNewUnitCategory] = useState('Hero/Lord')
-  
+    const [newUnitCategory, setNewUnitCategory] = useState('1')
+
     const handleUnitChange = (event) => {
+      console.log(event.target.value)
       setNewUnit(event.target.value)
     }
     const handleUnitMiniAmountChange = (event) => {
@@ -30,30 +31,33 @@ const NewUnit = (props) => {
           .then(returnedUnit => {
             props.setAllUnits(props.allUnits.concat(returnedUnit))
             setNewUnit('')
-            setNewUnitMiniAmount(1)  
+            setNewUnitMiniAmount(1)
+            setNewUnitStrength('')  
       })
     }
 
     return(
         <div>
         <form onSubmit={addNewUnit}>
-          <input
+          <input 
+            className="input-string"
             key="1"
             value={newUnit}
             onChange={handleUnitChange}
           />
           <input
+            className="input-integer"
             key="2"
             value={newUnitMiniAmount}
             onChange={handleUnitMiniAmountChange}
           />
           <select
-            key="3" 
+            key="4" 
             name="category" 
             id="category" 
             onChange={handleUnitCategoryChange}>
             {props.allCategories.map(category => 
-              <option key={category.id} value={category.name}>
+              <option key={category.id} value={category.id}>
                 {category.name}
               </option>
             )}
