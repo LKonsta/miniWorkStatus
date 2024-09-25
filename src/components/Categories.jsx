@@ -39,8 +39,7 @@ const CategoryUp = (props) => {
                 .update(categoryToUp.id, categoryToUpObject)
 
               categoryService
-                .update(c.id, categoryToDownObject)
-                
+                .update(c.id, categoryToDownObject)            
             }    
         })
     }
@@ -76,6 +75,7 @@ const RemoveCategory = (props) => {
 }
 
 const NewCategory = (props) => {
+    const army_id = props.army_id
     const [newCategory, setNewCategory] = useState('')
 
     const handleCategoryChange = (event) => {
@@ -86,7 +86,8 @@ const NewCategory = (props) => {
       event.preventDefault()
       const categoryObject = {
         name: newCategory,
-        index: (props.allCategories.length + 1)
+        index: (props.allCategories.length + 1),
+        armyId: army_id
       }
       categoryService
         .create(categoryObject)
@@ -111,8 +112,6 @@ const NewCategory = (props) => {
 
 const Categories = (props) => {
     const sortedCategories = (props.allCategories.sort((a, b) => a.index - b.index))
-    console.log(props.allCategories)
-
 
     return(
         <div>
@@ -125,7 +124,7 @@ const Categories = (props) => {
                     /> 
                 </div>
             )}
-            <NewCategory allCategories={props.allCategories} setAllCategories={props.setAllCategories}/>
+            <NewCategory army_id={props.army_id} allCategories={props.allCategories} setAllCategories={props.setAllCategories}/>
         </div>
     )
 }

@@ -1,12 +1,11 @@
-import Unit from './components/Unit'
-
 import './App.css'
+import Listing from './components/Listing'
 
 const App = (props) => { 
   
   return (
     <div>
-      <Unit />
+      <Listing />
     </div>
   )
 }

@@ -1,191 +1,296 @@
 {
+  "armies": [
+    {
+      "id": "ecb1",
+      "name": "Dwarfs"
+    },
+    {
+      "id": "6ba6",
+      "name": "Wood Elves",
+      "categories": [],
+      "units": []
+    },
+    {
+      "id": "90dd",
+      "name": "Space wolfs",
+      "categories": [],
+      "units": []
+    }
+  ],
   "categories": [
     {
-      "name": "Core",
-      "index": 3,
-      "id": "2"
-    },
-    {
-      "name": "Special",
-      "index": 4,
-      "id": "3"
-    },
-    {
-      "name": "Rare",
-      "index": 5,
-      "id": "4"
-    },
-    {
-      "name": "Warmachine",
-      "index": 6,
-      "id": "5"
-    },
-    {
-      "name": "Random",
-      "index": 7,
-      "id": "6"
-    },
-    {
+      "id": "1",
       "name": "Hero/Lord",
+      "index": 1,
+      "armyId": "ecb1"
+    },
+    {
+      "id": "3895",
+      "name": "Core",
       "index": 2,
-      "id": "6d10"
+      "armyId": "ecb1"
+    },
+    {
+      "id": "0387",
+      "name": "Special",
+      "index": 3,
+      "armyId": "ecb1"
+    },
+    {
+      "id": "210b",
+      "name": "Rare",
+      "index": 4,
+      "armyId": "ecb1"
+    },
+    {
+      "id": "122e",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": "6ba6"
+    },
+    {
+      "id": "87c2",
+      "name": "Core",
+      "index": 2,
+      "armyId": "6ba6"
+    },
+    {
+      "id": "1cec",
+      "name": "Special",
+      "index": 3,
+      "armyId": "6ba6"
+    },
+    {
+      "id": "310a",
+      "name": "Rare",
+      "index": 4,
+      "armyId": "6ba6"
+    },
+    {
+      "id": "ab16",
+      "name": "Champions",
+      "index": 1,
+      "armyId": "90dd"
+    },
+    {
+      "id": "82ff",
+      "name": "Core",
+      "index": 2,
+      "armyId": "90dd"
+    },
+    {
+      "id": "f9ba",
+      "name": "Special",
+      "index": 3,
+      "armyId": "90dd"
     }
   ],
   "units": [
     {
-      "id": "b22e",
-      "name": "ewqewqewq",
-      "miniAmount": 1,
-      "miniCategory": "Random"
+      "id": "1",
+      "name": "Warriors",
+      "miniAmount": 20,
+      "miniCategory": "3895",
+      "armyId": "ecb1"
     },
     {
-      "id": "4213",
-      "name": "",
-      "miniAmount": 1,
-      "miniCategory": "Random"
+      "id": "2",
+      "name": "Skeletons",
+      "armyId": "ecb2"
     },
     {
-      "id": "e9f9",
-      "name": "ewqewqewq",
-      "miniAmount": 1,
-      "miniCategory": "Hero/Lord"
-    },
-    {
-      "id": "e1f7",
-      "name": "Grudge Thrower",
-      "miniAmount": 1,
-      "miniCategory": "Warmachine"
-    },
-    {
-      "id": "656e",
-      "name": "Dwarf Lord",
-      "miniAmount": 1,
-      "miniCategory": "Hero/Lord"
-    },
-    {
-      "id": "030f",
-      "name": "Dwarf warriors (shields)",
-      "miniAmount": "20",
-      "miniCategory": "Core"
-    },
-    {
-      "id": "2c85",
-      "name": "Dwarf warriors (great weapons)",
-      "miniAmount": "20",
-      "miniCategory": "Core"
-    },
-    {
-      "id": "8e24",
-      "name": "Hammerers",
-      "miniAmount": "30",
-      "miniCategory": "Special"
-    },
-    {
-      "id": "d33b",
-      "name": "Organ Gun",
-      "miniAmount": 1,
-      "miniCategory": "Warmachine"
-    },
-    {
-      "id": "cbb3",
-      "name": "Thunderers",
-      "miniAmount": "40",
-      "miniCategory": "Core"
-    },
-    {
-      "id": "9a84",
-      "name": "Gyrocopter",
-      "miniAmount": 1,
-      "miniCategory": "Rare"
-    },
-    {
-      "id": "f0e4",
-      "name": "Anvil of Doom",
-      "miniAmount": 1,
-      "miniCategory": "Hero/Lord"
-    },
-    {
-      "id": "3ba1",
-      "name": "Thorgrim Grudgebearer",
-      "miniAmount": 1,
-      "miniCategory": "Hero/Lord"
-    },
-    {
-      "id": "14d2",
-      "name": "hienoukkeli_kokoelma",
-      "miniAmount": "20",
-      "miniCategory": "ukkelit",
-      "strength": ""
-    },
-    {
-      "id": "ee28",
-      "name": "konsta on paras",
-      "miniAmount": 1,
-      "miniCategory": "Hero/Lord",
-      "strength": ""
-    },
-    {
-      "id": "a48a",
-      "name": "Dwarf Lord",
-      "miniAmount": 1,
-      "miniCategory": 1,
-      "strength": ""
-    },
-    {
-      "id": "6ad3",
-      "name": "Dwarf Warriors",
-      "miniAmount": "20",
-      "miniCategory": "2",
-      "strength": ""
-    },
-    {
-      "id": "70ab",
+      "id": "835a",
       "name": "Dwarf Lord",
       "miniAmount": 1,
       "miniCategory": "1",
-      "strength": ""
+      "ArmyId": "ecb1"
     },
     {
-      "id": "6077",
+      "id": "9120",
+      "name": "Dwarf Lord",
+      "miniAmount": 1,
+      "miniCategory": "1",
+      "ArmyId": "ecb1"
+    },
+    {
+      "id": "04c8",
+      "name": "Warriors",
+      "miniAmount": 1,
+      "miniCategory": "8099",
+      "ArmyId": "ecb1"
+    },
+    {
+      "id": "47c2",
+      "name": "Dwarf Lord",
+      "miniAmount": 1,
+      "miniCategory": "1",
+      "ArmyId": "ecb1"
+    },
+    {
+      "id": "72b2",
       "name": "Runesmith",
       "miniAmount": 1,
       "miniCategory": "1",
-      "strength": ""
+      "ArmyId": "ecb1"
     },
     {
-      "id": "ebaf",
+      "id": "91ee",
+      "name": "Warriors",
+      "miniAmount": "20",
+      "miniCategory": "3895",
+      "ArmyId": "ecb1"
+    },
+    {
+      "id": "5b20",
+      "name": "quarrelers",
+      "miniAmount": 1,
+      "miniCategory": "3895",
+      "ArmyId": "ecb1"
+    },
+    {
+      "id": "54d7",
+      "name": "Cannon",
+      "miniAmount": 1,
+      "miniCategory": "0387",
+      "ArmyId": "ecb1"
+    },
+    {
+      "id": "803e",
+      "name": "Organ gun",
+      "miniAmount": 1,
+      "miniCategory": "210b",
+      "ArmyId": "ecb1"
+    },
+    {
+      "id": "ad68",
       "name": "Dwarf Lord",
       "miniAmount": 1,
       "miniCategory": "1",
-      "strength": ""
+      "armyId": "ecb1"
     },
     {
-      "id": "2c78",
-      "name": "Dwarf Lord",
+      "id": "a244",
+      "name": "Wood Elf Lord",
       "miniAmount": 1,
-      "miniCategory": "2",
-      "strength": ""
+      "miniCategory": "1",
+      "armyId": "6ba6"
     },
     {
-      "id": "2d1b",
-      "name": "Cannon",
-      "miniAmount": 1,
-      "miniCategory": "5",
-      "strength": ""
+      "id": "35ff",
+      "name": "warriors",
+      "miniAmount": "20",
+      "miniCategory": "87c2",
+      "armyId": "6ba6"
     },
     {
-      "id": "282c",
-      "name": "Bugmans Cart",
+      "id": "64d4",
+      "name": "Celebrimbor",
       "miniAmount": 1,
-      "miniCategory": "3",
-      "strength": ""
+      "miniCategory": "",
+      "armyId": "6ba6"
     },
     {
-      "id": "8f20",
-      "name": "Dwarf Lord",
+      "id": "9bb8",
+      "name": "Celembrimbor",
       "miniAmount": 1,
-      "miniCategory": "6d10",
-      "strength": ""
+      "miniCategory": "",
+      "armyId": "6ba6"
+    },
+    {
+      "id": "0010",
+      "name": "Celebrimbor",
+      "miniAmount": 1,
+      "miniCategory": "1cec",
+      "armyId": "6ba6"
+    },
+    {
+      "id": "e946",
+      "name": "Celebrimbor",
+      "miniAmount": 1,
+      "miniCategory": "122e",
+      "armyId": "6ba6"
+    },
+    {
+      "id": "5eb7",
+      "name": "Celebrimbor",
+      "miniAmount": 1,
+      "armyId": "6ba6"
+    },
+    {
+      "id": "fd26",
+      "name": "iojsaoidjsao",
+      "miniAmount": 1,
+      "armyId": "6ba6"
+    },
+    {
+      "id": "2fb3",
+      "name": "Celevadsa",
+      "miniAmount": 1,
+      "miniCategory": "1",
+      "armyId": "6ba6"
+    },
+    {
+      "id": "6dc0",
+      "name": "kdsmaodsadsa",
+      "miniAmount": 1,
+      "miniCategory": "null",
+      "armyId": "6ba6"
+    },
+    {
+      "id": "79d4",
+      "name": "ewqewqewqewq",
+      "miniAmount": 1,
+      "miniCategory": "null",
+      "armyId": "6ba6"
+    },
+    {
+      "id": "bc20",
+      "name": "dsadsadsa",
+      "miniAmount": 1,
+      "miniCategory": "null",
+      "armyId": "6ba6"
+    },
+    {
+      "id": "24a2",
+      "name": "ewqewqewqewq",
+      "miniAmount": 1,
+      "miniCategory": "122e",
+      "armyId": "6ba6"
+    },
+    {
+      "id": "aeb3",
+      "name": "Tree lord",
+      "miniAmount": 1,
+      "miniCategory": "310a",
+      "armyId": "6ba6"
+    },
+    {
+      "id": "c65d",
+      "name": "",
+      "miniAmount": 1,
+      "miniCategory": "310a",
+      "armyId": "6ba6"
+    },
+    {
+      "id": "dd8d",
+      "name": "Wulfgard",
+      "miniAmount": 1,
+      "miniCategory": "ab16",
+      "armyId": "90dd"
+    },
+    {
+      "id": "530b",
+      "name": "Space marines",
+      "miniAmount": 1,
+      "miniCategory": "82ff",
+      "armyId": "90dd"
+    },
+    {
+      "id": "2703",
+      "name": "Runesmith",
+      "miniAmount": 1,
+      "miniCategory": "1",
+      "armyId": "ecb1"
     }
   ]
 }

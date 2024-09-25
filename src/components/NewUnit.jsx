@@ -3,13 +3,13 @@ import { useState, useEffect } from "react"
 import unitService from '../services/unit'
 
 const NewUnit = (props) => {
-
+    const army_id = props.army_id
+    
     const [newUnit, setNewUnit] = useState('')
     const [newUnitMiniAmount, setNewUnitMiniAmount] = useState(1)
-    const [newUnitCategory, setNewUnitCategory] = useState('1')
+    const [newUnitCategory, setNewUnitCategory] = useState('null')
 
     const handleUnitChange = (event) => {
-      console.log(event.target.value)
       setNewUnit(event.target.value)
     }
     const handleUnitMiniAmountChange = (event) => {
@@ -24,15 +24,15 @@ const NewUnit = (props) => {
       const unitObject = {
         name: newUnit,
         miniAmount: newUnitMiniAmount,
-        miniCategory: newUnitCategory
+        miniCategory: (newUnitCategory == 'null') ? props.allCategories[0].id : newUnitCategory,
+        armyId: army_id
       }
       unitService
         .create(unitObject)
           .then(returnedUnit => {
             props.setAllUnits(props.allUnits.concat(returnedUnit))
             setNewUnit('')
-            setNewUnitMiniAmount(1)
-            setNewUnitStrength('')  
+            setNewUnitMiniAmount(1) 
       })
     }
 
