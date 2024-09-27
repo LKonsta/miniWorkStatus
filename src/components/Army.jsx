@@ -6,13 +6,17 @@ import NewUnit from "./NewUnit";
 
 import unitService from "../services/unit";
 import categoryService from "../services/category";
+import baseService from "../services/bases";
 import armyService from "../services/army";
+
 
 const Army  = (props) => {
     const army_id = props.army.id
 
     const [allUnits, setAllUnits] = useState([])
     const [allCategories, setAllCategories] = useState([])
+    const [allBases, setAllBases] = useState([])
+
 
     const allUnitHook = () => {
         unitService.getAll(army_id).then(initialUnits => {
@@ -27,6 +31,15 @@ const Army  = (props) => {
         })
     }
     useEffect(allCategoriesHook, [])
+
+    const allBasesHook = () => {
+        baseService.getAll().then(initialBases => {
+            setAllBases(initialBases)
+        })
+    }
+    useEffect(allBasesHook, [])
+
+
 
     const sortedCategories = (allCategories.sort((a, b) => a.index - b.index))
     return(
@@ -53,6 +66,7 @@ const Army  = (props) => {
                 allUnits={allUnits} 
                 setAllUnits={setAllUnits} 
                 allCategories={allCategories}
+                allBases={allBases}
             />
 
             <Categories 

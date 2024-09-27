@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 
 import categoryService from '../services/category';
 
+import Modal from "./Modal";
+
 const Category = ( props ) => {
     const category = props.category
+
     return(
         <div>
             {category.name}
@@ -112,19 +115,27 @@ const NewCategory = (props) => {
 
 const Categories = (props) => {
     const sortedCategories = (props.allCategories.sort((a, b) => a.index - b.index))
-
+    
     return(
         <div>
-            {sortedCategories.map(category =>
-                <div key={category.id}>
-                    <Category 
-                        category={category} 
-                        allCategories={props.allCategories} 
-                        setAllCategories={props.setAllCategories} 
-                    /> 
-                </div>
-            )}
-            <NewCategory army_id={props.army_id} allCategories={props.allCategories} setAllCategories={props.setAllCategories}/>
+          <Modal 
+            ModalButton={"Modify categories"}
+            ModalHeader={"Modify categories"}
+            ModalContent={
+              <div>
+              {sortedCategories.map(category =>
+                  <div key={category.id}>
+                      <Category 
+                          category={category} 
+                          allCategories={props.allCategories} 
+                          setAllCategories={props.setAllCategories} 
+                      /> 
+                  </div>
+              )}
+              <NewCategory army_id={props.army_id} allCategories={props.allCategories} setAllCategories={props.setAllCategories}/>
+            </div>
+            }
+          />
         </div>
     )
 }

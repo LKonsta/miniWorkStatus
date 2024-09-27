@@ -16,9 +16,65 @@
   width: 200px;         
   background-color: #ccc;  
 }
+.div-table-number {
+  float: left; /* fix for  buggy browsers */
+  display: table-column;         
+  width: 30px;         
+  background-color: #ccc;  
+}
+
 .input-string {
   width: 20%
 }
 .input-integer {
   width: 5%
+}
+
+
+
+/* The Modal (background) */
+.modal-backdrop {
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal {
+  padding-top: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+/* Modal Content */
+.modal-content {
+  z-index: 4;
+  margin: auto;
+  background-color: #fff;
+  position: relative;
+  padding: 0;
+  outline: 0;
+  width: 600px;
+}
+.modal-header {
+  font-size: 30px;
+  padding: 20px;
+}
+.modal-exit {
+  position: absolute;
+  padding: 10px;
+  right: 0;
+  top: 0;
+  box-sizing: inherit;
+}
+.modal-form {
+  padding: 10px;
 }

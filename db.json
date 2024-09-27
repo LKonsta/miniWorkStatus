@@ -1,296 +1,141 @@
 {
   "armies": [
     {
-      "id": "ecb1",
-      "name": "Dwarfs"
-    },
-    {
-      "id": "6ba6",
-      "name": "Wood Elves",
+      "id": "2343",
+      "name": "Dwarfs",
       "categories": [],
       "units": []
     },
     {
-      "id": "90dd",
-      "name": "Space wolfs",
+      "id": "186e",
+      "name": "Wood elves",
       "categories": [],
       "units": []
     }
   ],
   "categories": [
     {
-      "id": "1",
+      "id": "3424",
       "name": "Hero/Lord",
       "index": 1,
-      "armyId": "ecb1"
+      "armyId": "2343"
     },
     {
-      "id": "3895",
+      "id": "2289",
       "name": "Core",
       "index": 2,
-      "armyId": "ecb1"
+      "armyId": "2343"
     },
     {
-      "id": "0387",
+      "id": "e3d5",
       "name": "Special",
       "index": 3,
-      "armyId": "ecb1"
+      "armyId": "2343"
     },
     {
-      "id": "210b",
+      "id": "5a16",
       "name": "Rare",
       "index": 4,
-      "armyId": "ecb1"
+      "armyId": "2343"
     },
     {
-      "id": "122e",
-      "name": "Hero/Lord",
+      "id": "9879",
+      "name": "Random",
+      "index": 5,
+      "armyId": "2343"
+    },
+    {
+      "id": "d11b",
+      "name": "dsadsa",
       "index": 1,
-      "armyId": "6ba6"
-    },
-    {
-      "id": "87c2",
-      "name": "Core",
-      "index": 2,
-      "armyId": "6ba6"
-    },
-    {
-      "id": "1cec",
-      "name": "Special",
-      "index": 3,
-      "armyId": "6ba6"
-    },
-    {
-      "id": "310a",
-      "name": "Rare",
-      "index": 4,
-      "armyId": "6ba6"
-    },
-    {
-      "id": "ab16",
-      "name": "Champions",
-      "index": 1,
-      "armyId": "90dd"
-    },
-    {
-      "id": "82ff",
-      "name": "Core",
-      "index": 2,
-      "armyId": "90dd"
-    },
-    {
-      "id": "f9ba",
-      "name": "Special",
-      "index": 3,
-      "armyId": "90dd"
+      "armyId": "186e"
     }
   ],
   "units": [
     {
-      "id": "1",
+      "id": "2d09",
+      "name": "Dwarf Lord",
+      "miniAmount": 1,
+      "miniCategory": "3424",
+      "armyId": "2343"
+    },
+    {
+      "id": "d500",
+      "name": "Runesmith",
+      "miniAmount": 1,
+      "miniCategory": "3424",
+      "armyId": "2343"
+    },
+    {
+      "id": "6838",
       "name": "Warriors",
-      "miniAmount": 20,
-      "miniCategory": "3895",
-      "armyId": "ecb1"
+      "miniAmount": "20",
+      "miniCategory": "2289",
+      "armyId": "2343"
+    },
+    {
+      "id": "cbda",
+      "name": "Quarrelers",
+      "miniAmount": "20",
+      "miniCategory": "2289",
+      "armyId": "2343"
+    },
+    {
+      "id": "56e3",
+      "name": "Cannon",
+      "miniAmount": 1,
+      "miniCategory": "e3d5",
+      "armyId": "2343"
+    },
+    {
+      "id": "0794",
+      "name": "Organ Gun",
+      "miniAmount": 1,
+      "miniCategory": "5a16",
+      "armyId": "2343"
+    }
+  ],
+  "bases": [
+    {
+      "id": "1",
+      "name": "20x20",
+      "shape": "square",
+      "width": 20,
+      "height": 20
     },
     {
       "id": "2",
-      "name": "Skeletons",
-      "armyId": "ecb2"
+      "name": "25x25",
+      "shape": "square",
+      "width": 25,
+      "height": 25
     },
     {
-      "id": "835a",
-      "name": "Dwarf Lord",
-      "miniAmount": 1,
-      "miniCategory": "1",
-      "ArmyId": "ecb1"
+      "id": "3",
+      "name": "40x20",
+      "shape": "square",
+      "width": 40,
+      "height": 20
     },
     {
-      "id": "9120",
-      "name": "Dwarf Lord",
-      "miniAmount": 1,
-      "miniCategory": "1",
-      "ArmyId": "ecb1"
+      "id": "4",
+      "name": "60mm",
+      "shape": "circle",
+      "radius": 60
     },
     {
-      "id": "04c8",
-      "name": "Warriors",
-      "miniAmount": 1,
-      "miniCategory": "8099",
-      "ArmyId": "ecb1"
+      "id": "5",
+      "name": "40x60",
+      "shape": "square",
+      "width": 40,
+      "height": 60
     },
     {
-      "id": "47c2",
-      "name": "Dwarf Lord",
-      "miniAmount": 1,
-      "miniCategory": "1",
-      "ArmyId": "ecb1"
-    },
-    {
-      "id": "72b2",
-      "name": "Runesmith",
-      "miniAmount": 1,
-      "miniCategory": "1",
-      "ArmyId": "ecb1"
-    },
-    {
-      "id": "91ee",
-      "name": "Warriors",
-      "miniAmount": "20",
-      "miniCategory": "3895",
-      "ArmyId": "ecb1"
-    },
-    {
-      "id": "5b20",
-      "name": "quarrelers",
-      "miniAmount": 1,
-      "miniCategory": "3895",
-      "ArmyId": "ecb1"
-    },
-    {
-      "id": "54d7",
-      "name": "Cannon",
-      "miniAmount": 1,
-      "miniCategory": "0387",
-      "ArmyId": "ecb1"
-    },
-    {
-      "id": "803e",
-      "name": "Organ gun",
-      "miniAmount": 1,
-      "miniCategory": "210b",
-      "ArmyId": "ecb1"
-    },
-    {
-      "id": "ad68",
-      "name": "Dwarf Lord",
-      "miniAmount": 1,
-      "miniCategory": "1",
-      "armyId": "ecb1"
-    },
-    {
-      "id": "a244",
-      "name": "Wood Elf Lord",
-      "miniAmount": 1,
-      "miniCategory": "1",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "35ff",
-      "name": "warriors",
-      "miniAmount": "20",
-      "miniCategory": "87c2",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "64d4",
-      "name": "Celebrimbor",
-      "miniAmount": 1,
-      "miniCategory": "",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "9bb8",
-      "name": "Celembrimbor",
-      "miniAmount": 1,
-      "miniCategory": "",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "0010",
-      "name": "Celebrimbor",
-      "miniAmount": 1,
-      "miniCategory": "1cec",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "e946",
-      "name": "Celebrimbor",
-      "miniAmount": 1,
-      "miniCategory": "122e",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "5eb7",
-      "name": "Celebrimbor",
-      "miniAmount": 1,
-      "armyId": "6ba6"
-    },
-    {
-      "id": "fd26",
-      "name": "iojsaoidjsao",
-      "miniAmount": 1,
-      "armyId": "6ba6"
-    },
-    {
-      "id": "2fb3",
-      "name": "Celevadsa",
-      "miniAmount": 1,
-      "miniCategory": "1",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "6dc0",
-      "name": "kdsmaodsadsa",
-      "miniAmount": 1,
-      "miniCategory": "null",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "79d4",
-      "name": "ewqewqewqewq",
-      "miniAmount": 1,
-      "miniCategory": "null",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "bc20",
-      "name": "dsadsadsa",
-      "miniAmount": 1,
-      "miniCategory": "null",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "24a2",
-      "name": "ewqewqewqewq",
-      "miniAmount": 1,
-      "miniCategory": "122e",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "aeb3",
-      "name": "Tree lord",
-      "miniAmount": 1,
-      "miniCategory": "310a",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "c65d",
-      "name": "",
-      "miniAmount": 1,
-      "miniCategory": "310a",
-      "armyId": "6ba6"
-    },
-    {
-      "id": "dd8d",
-      "name": "Wulfgard",
-      "miniAmount": 1,
-      "miniCategory": "ab16",
-      "armyId": "90dd"
-    },
-    {
-      "id": "530b",
-      "name": "Space marines",
-      "miniAmount": 1,
-      "miniCategory": "82ff",
-      "armyId": "90dd"
-    },
-    {
-      "id": "2703",
-      "name": "Runesmith",
-      "miniAmount": 1,
-      "miniCategory": "1",
-      "armyId": "ecb1"
+      "id": "6",
+      "name": "25x50",
+      "shape": "square",
+      "width": 25,
+      "height": 50
     }
   ]
 }

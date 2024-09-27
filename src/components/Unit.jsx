@@ -48,12 +48,12 @@ const Unit = (props) => {
     const category = props.category
     return(
         <div>
-            <UnitName 
-                name={unit.name} 
-                className='div-table-col'
-            />
             <UnitMiniAmount 
                 miniAmount={unit.miniAmount} 
+                className='div-table-number'
+            />
+            <UnitName 
+                name={unit.name} 
                 className='div-table-col'
             />
             <UnitminiCategory
