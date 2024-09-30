@@ -4,7 +4,7 @@ import categoryService from '../services/category'
 
 import NewUnit from './NewUnit'
 import Categories from './Categories'
-
+import {Base as Base} from './Base' 
 
 const UnitName = (props) => {
     return(
@@ -30,7 +30,7 @@ const UnitMiniAmount = (props) => {
     )
 }
 
-const UnitminiCategory = (props) => {
+const UnitMiniCategory = (props) => {
     return(
         <div className={props.className}>
             {
@@ -42,8 +42,62 @@ const UnitminiCategory = (props) => {
     )
 }
 
+const UnitMiniStatus = (props) => {
+    const [open, setOpen] = useState(false);
+
+    return(
+        <div>
+            <button 
+              onClick={() => setOpen(!open)}
+              type="button"
+            >
+              {
+                (open) ? ('close') : ('open')
+              }
+            </button>
+            {open && (
+            <div>
+                {
+                    (props.miniStatus)
+                    ? (
+                    <div>
+                        {props.miniStatus.map(mini => 
+                            <Base 
+                                mini={mini} 
+                                allBases={props.allBases}
+                                allStatuses={props.allStatuses}    
+                            />
+                        )}
+                    </div>
+                    )
+                    : ("--none--")
+                }
+              
+            </div>       
+            )}
+        </div>
+    )
+}
+
+const UnitRemove = (props) => {
+    const removeUnit = (unit) => {
+        unitService.remove(unit.id).then(() => {
+            props.setAllUnits(props.allUnits.filter(u => u.id !== unit.id))
+        })
+    }
+    return(
+        <div>
+            <button 
+                onClick={() => removeUnit(props.unit)
+            }> X </button>
+        </div>
+    )
+}
+
+
 
 const Unit = (props) => {
+    
     const unit = props.unit
     const category = props.category
     return(
@@ -56,10 +110,21 @@ const Unit = (props) => {
                 name={unit.name} 
                 className='div-table-col'
             />
-            <UnitminiCategory
+            <UnitMiniCategory
                 miniCategory={unit.miniCategory}
                 miniCategoryName={category.name}
                 className='div-table-col'
+            />
+            <UnitMiniStatus
+                miniStatus={unit.miniStatus}
+                allBases={props.allBases}
+                allStatuses={props.allStatuses}
+                className='div-table-dropdown'
+            />
+            <UnitRemove
+                unit={unit}
+                allUnits={props.allUnits}
+                setAllUnits={props.setAllUnits}
             />
         </div>
     )

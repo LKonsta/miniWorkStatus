@@ -7,6 +7,7 @@ import NewUnit from "./NewUnit";
 import unitService from "../services/unit";
 import categoryService from "../services/category";
 import baseService from "../services/bases";
+import statusService from "../services/status";
 import armyService from "../services/army";
 
 
@@ -16,6 +17,7 @@ const Army  = (props) => {
     const [allUnits, setAllUnits] = useState([])
     const [allCategories, setAllCategories] = useState([])
     const [allBases, setAllBases] = useState([])
+    const [allStatuses, setAllStatuses] = useState([])
 
 
     const allUnitHook = () => {
@@ -39,6 +41,12 @@ const Army  = (props) => {
     }
     useEffect(allBasesHook, [])
 
+    const allStatusesHook = () => {
+        statusService.getAll().then(initialStatuses => {
+            setAllStatuses(initialStatuses)
+        })
+    }
+    useEffect(allStatusesHook, [])
 
 
     const sortedCategories = (allCategories.sort((a, b) => a.index - b.index))
@@ -51,9 +59,16 @@ const Army  = (props) => {
                     <div className='div-table'> 
                         {allUnits.map(unit =>
                             <>
-                                {(unit.miniCategory===category.id) && 
+                                {(unit.categoryId===category.id) && 
                                     <div key={unit.id} className='div-table-row'>
-                                        <Unit unit = {unit} category={category}/>
+                                        <Unit 
+                                            unit={unit} 
+                                            allUnits={allUnits}
+                                            setAllUnits={setAllUnits}
+                                            category={category} 
+                                            allBases={allBases} 
+                                            allStatuses={allStatuses}
+                                        />
                                     </div>
                                 }
                             </>
@@ -67,6 +82,7 @@ const Army  = (props) => {
                 setAllUnits={setAllUnits} 
                 allCategories={allCategories}
                 allBases={allBases}
+                allStatuses={allStatuses}
             />
 
             <Categories 

@@ -5,7 +5,7 @@ const Modal = ({ ModalButton, ModalHeader, ModalContent }) => {
     const [open, setOpen] = useState(false);
 
     return(
-        <diV>
+        <div>
             <button 
               onClick={() => setOpen(!open)}
               type="button"
@@ -39,7 +39,7 @@ const Modal = ({ ModalButton, ModalHeader, ModalContent }) => {
               </div>
             </div>       
             )}
-        </diV>
+        </div>
     )
 }
 

@@ -78,3 +78,15 @@
 .modal-form {
   padding: 10px;
 }
+
+.bases-divider {
+  padding: 2px;
+}
+
+.bases-base {
+  width: 40px;
+  height: 40px;
+  background-color: blue;
+  
+}
+

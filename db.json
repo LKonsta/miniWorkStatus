@@ -27,24 +27,6 @@
       "armyId": "2343"
     },
     {
-      "id": "e3d5",
-      "name": "Special",
-      "index": 3,
-      "armyId": "2343"
-    },
-    {
-      "id": "5a16",
-      "name": "Rare",
-      "index": 4,
-      "armyId": "2343"
-    },
-    {
-      "id": "9879",
-      "name": "Random",
-      "index": 5,
-      "armyId": "2343"
-    },
-    {
       "id": "d11b",
       "name": "dsadsa",
       "index": 1,
@@ -53,45 +35,17 @@
   ],
   "units": [
     {
-      "id": "2d09",
+      "id": "491d",
       "name": "Dwarf Lord",
       "miniAmount": 1,
-      "miniCategory": "3424",
-      "armyId": "2343"
-    },
-    {
-      "id": "d500",
-      "name": "Runesmith",
-      "miniAmount": 1,
-      "miniCategory": "3424",
-      "armyId": "2343"
-    },
-    {
-      "id": "6838",
-      "name": "Warriors",
-      "miniAmount": "20",
-      "miniCategory": "2289",
-      "armyId": "2343"
-    },
-    {
-      "id": "cbda",
-      "name": "Quarrelers",
-      "miniAmount": "20",
-      "miniCategory": "2289",
-      "armyId": "2343"
-    },
-    {
-      "id": "56e3",
-      "name": "Cannon",
-      "miniAmount": 1,
-      "miniCategory": "e3d5",
-      "armyId": "2343"
-    },
-    {
-      "id": "0794",
-      "name": "Organ Gun",
-      "miniAmount": 1,
-      "miniCategory": "5a16",
+      "categoryId": "3424",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "1",
+          "statusId": "1"
+        }
+      ],
       "armyId": "2343"
     }
   ],
@@ -136,6 +90,33 @@
       "shape": "square",
       "width": 25,
       "height": 50
+    }
+  ],
+  "status": [
+    {
+      "id": "1",
+      "name": "assembly",
+      "precentage": 0
+    },
+    {
+      "id": "2",
+      "name": "painting",
+      "precentage": 0.25
+    },
+    {
+      "id": "3",
+      "name": "basing",
+      "precentage": 0.8
+    },
+    {
+      "id": "4",
+      "name": "varnish",
+      "precentage": 0.9
+    },
+    {
+      "id": "5",
+      "name": "complete",
+      "precentage": 1
     }
   ]
 }

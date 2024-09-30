@@ -1,15 +1,13 @@
 import axios from 'axios'
-const baseUrlGet = 'http://localhost:3001/armies/'
-const embedCategories = '?_embed=categories'
-const baseUrl = 'http://localhost:3001/categories'
+const baseUrl = 'http://localhost:3001/status'
 
-const getAll = (army_id) => {
-  const request = axios.get(`${baseUrlGet}${army_id}${embedCategories}`)
-  return request.then(response => response.data.categories)
+const getAll = () => {
+  const request = axios.get(baseUrl)
+  return request.then(response => response.data)
 }
 
-const create = (newObject) => {
-  const request = axios.post(`${baseUrl}`, newObject)
+const create = newObject => {
+  const request = axios.post(baseUrl, newObject)
   return request.then(response => response.data)
 }
 
