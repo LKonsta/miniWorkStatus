@@ -9,7 +9,7 @@ import categoryService from "../services/category";
 import armyService from "../services/army";
 
 
-const Army  = (props) => {
+const Army = (props) => {
     const armyId = props.army.id
     const [allUnits, setAllUnits] = useState([])
     const [allCategories, setAllCategories] = useState([])

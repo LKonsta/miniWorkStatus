@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 import unitService from '../services/unit'
-import { BasesEdit as BasesEdit } from "./Base";
+import Bases from "./Base";
 
 import Modal from "./Modal"
 
@@ -11,15 +11,7 @@ const NewUnit = (props) => {
     const [newUnitCategory, setNewUnitCategory] = useState('null')
     const [newUnitBases, setNewUnitBases] = useState("1")
     const [newInitialStatus, setNewInitialStatus] = useState("1")
-    const [newMiniStatus, setNewMiniStatus] = useState(
-      [
-        {
-          "id": 1,
-          "baseId": "1",
-          "statusId": "1"
-        }
-      ]
-    )
+    const [newMiniStatus, setNewMiniStatus] = useState([{"id": 1,"baseId": "1","statusId": "1"}])
 
     const handleUnitChange = (event) => {
       setNewUnit(event.target.value)
@@ -38,7 +30,6 @@ const NewUnit = (props) => {
       const bases = event.target.value
       initBases({bases})
     }
-
     const handleInitialStatusChange= (event) => {
       setNewInitialStatus(event.target.value)
       const status = event.target.value
@@ -48,16 +39,18 @@ const NewUnit = (props) => {
     const initBases = (props) => {
       let mAmount = newUnitMiniAmount
       let mBases = newUnitBases
-      let mStatus = newInitialStatus
-      if (props.amount) {
-        mAmount = props.amount
-      } 
-      else if (props.bases) {
-        mBases = props.bases
-      }
-      else if (props.status) {
-        mStatus = props.status
-      }
+        let mStatus = newInitialStatus
+        if (props) { 
+            if (props.amount) {
+                mAmount = props.amount
+            } 
+            else if (props.bases) {
+                mBases = props.bases
+            }
+            else if (props.status) {
+                mStatus = props.status
+            }
+        }
       let miniStatusList = []
       for (let i = 0;i < mAmount;i++) {
         const miniStatusObject = {
@@ -68,6 +61,22 @@ const NewUnit = (props) => {
         miniStatusList.push(miniStatusObject)
       }
       setNewMiniStatus(miniStatusList)
+    }
+
+    function configureBase(mini, newBase) {
+        const newMiniStatusList = newMiniStatus.map((miniStatus) => {
+            if (miniStatus.id === mini.id) {
+                const updatedMiniStatusObject = {
+                    ...mini,
+                    baseId: newBase,
+                }
+                return updatedMiniStatusObject
+            }
+            return miniStatus
+        })
+        setNewMiniStatus(newMiniStatusList)
+        
+        
     }
 
     const addNewUnit = (event) => {
@@ -84,7 +93,7 @@ const NewUnit = (props) => {
           .then(returnedUnit => {
             props.setAllUnits(props.allUnits.concat(returnedUnit))
             setNewUnit('')
-            setNewUnitMiniAmount(1) 
+            setNewUnitMiniAmount(1)
       })
     }
 
@@ -143,10 +152,12 @@ const NewUnit = (props) => {
                   )}
                 </select>
                 
-                <BasesEdit
-                  newMiniStatus={newMiniStatus}
-                  allBases={props.allBases} 
-                  allStatuses={props.allStatuses}
+                <Bases
+                    miniStatus={newMiniStatus}
+                    allBases={props.allBases}
+                        allStatuses={props.allStatuses}
+                        configureOptions={props.allBases}
+                    configureMini={configureBase}
                 />
                 <div>
                   <button type="submit">add</button>

@@ -1,12 +1,11 @@
 const PrecentageColor = (props) => {
-    const value = props * 2 
-    
-    const r = Math.floor(255 * Math.min(1, 2 - value))
-    const g = Math.floor(255 * Math.min(1, value))
-    const b = 0
+    const clampedValue = Math.min(1, Math.max(0, props));
 
+    // Calculate the RGB values based on the percentage
+    const r = Math.round(255 * (1 - clampedValue));   // Red decreases from 255 to 0
+    const g = Math.round(255 * clampedValue);
+    const b = 0
 
     return `rgb(${r}, ${g}, ${b})`;
 }
-
-export default PrecentageColor
+export default PrecentageColor;

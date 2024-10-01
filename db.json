@@ -31,121 +31,15 @@
       "name": "dsadsa",
       "index": 1,
       "armyId": "186e"
+    },
+    {
+      "id": "c9ee",
+      "name": "Warmachine",
+      "index": 3,
+      "armyId": "2343"
     }
   ],
   "units": [
-    {
-      "id": "491d",
-      "name": "Dwarf Lord",
-      "miniAmount": 1,
-      "categoryId": "3424",
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "1",
-          "statusId": "1"
-        }
-      ],
-      "armyId": "2343"
-    },
-    {
-      "id": "ce7d",
-      "name": "Warriors",
-      "miniAmount": "15",
-      "categoryId": "2289",
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 2,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 3,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 4,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 5,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 6,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 7,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 8,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 9,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 10,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 11,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 12,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 13,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 14,
-          "baseId": "2",
-          "statusId": "1"
-        },
-        {
-          "id": 15,
-          "baseId": "2",
-          "statusId": "1"
-        }
-      ],
-      "armyId": "2343"
-    },
-    {
-      "id": "ed8e",
-      "name": "Runesmith",
-      "miniAmount": 1,
-      "categoryId": "3424",
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "1",
-          "statusId": "1"
-        }
-      ],
-      "armyId": "2343"
-    },
     {
       "id": "5c2c",
       "name": "Thunderers",
@@ -155,17 +49,17 @@
         {
           "id": 1,
           "baseId": "1",
-          "statusId": "5"
+          "statusId": "1"
         },
         {
           "id": 2,
           "baseId": "1",
-          "statusId": "5"
+          "statusId": "4"
         },
         {
           "id": 3,
           "baseId": "1",
-          "statusId": "5"
+          "statusId": "3"
         },
         {
           "id": 4,
@@ -180,7 +74,7 @@
         {
           "id": 6,
           "baseId": "1",
-          "statusId": "5"
+          "statusId": "2"
         },
         {
           "id": 7,
@@ -253,6 +147,158 @@
           "statusId": "5"
         }
       ],
+      "armyId": "2343"
+    },
+    {
+      "id": "f8f7",
+      "name": "Warriors ",
+      "miniAmount": "20",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 2,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 3,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 4,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 5,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 6,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 7,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 8,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 9,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 10,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 11,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 12,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 13,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 14,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 15,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 16,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 17,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 18,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 19,
+          "baseId": "2",
+          "statusId": "3"
+        },
+        {
+          "id": 20,
+          "baseId": "2",
+          "statusId": "3"
+        }
+      ],
+      "categoryId": "2289",
+      "armyId": "2343"
+    },
+    {
+      "id": "7249",
+      "name": "Cannon",
+      "miniAmount": "4",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "5",
+          "statusId": "4"
+        },
+        {
+          "id": 2,
+          "baseId": "1",
+          "statusId": "2"
+        },
+        {
+          "id": 3,
+          "baseId": "1",
+          "statusId": "2"
+        },
+        {
+          "id": 4,
+          "baseId": "1",
+          "statusId": "2"
+        }
+      ],
+      "categoryId": "c9ee",
+      "armyId": "2343"
+    },
+    {
+      "id": "fa56",
+      "name": "Dwarf Lord",
+      "miniAmount": "1",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "1",
+          "statusId": "5"
+        }
+      ],
+      "categoryId": "3424",
       "armyId": "2343"
     }
   ],

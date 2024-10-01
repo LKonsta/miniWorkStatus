@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
+
 import unitService from '../services/unit'
 import categoryService from '../services/category'
 
 import EditUnit from './EditUnit'
 import NewUnit from './NewUnit'
 import Categories from './Categories'
-import {Bases as Bases} from './Base' 
+import Bases from './Base' 
 
 
 const UnitMiniAmount = (props) => {
@@ -31,26 +32,53 @@ const UnitName = (props) => {
 }
 
 const UnitMiniStatus = (props) => {
+    const unit = props.unit
+
     const [open, setOpen] = useState(false);
+
+    function configureStatus(mini, newStatus) {
+
+        const newMiniStatusList = unit.miniStatus.map((miniStatus) => {
+            if (miniStatus.id === mini.id) {
+                const updatedMiniStatusObject = {
+                    ...mini,
+                    statusId: newStatus,
+                }
+                return updatedMiniStatusObject
+            }
+            return miniStatus
+        })
+        const unitObject = {
+            ...unit,
+            miniStatus: newMiniStatusList
+        }
+        
+        unitService.update(unit.id, unitObject).then(() => {
+            props.setUnit(unitObject)
+        })
+    }
 
     return(
         <div>
             <button 
-              onClick={() => setOpen(!open)}
-              type="button"
+                onClick={() => setOpen(!open)}
+                type="button"
             >
               {(open) ? ('⤊') : ('⤋')}
             </button>
             {open && (
             <div>
                 {
-                    (props.miniStatus)
+                    (unit.miniStatus)
                     ? (
                     <div>
                         <Bases 
-                            miniStatus={props.miniStatus} 
+                            miniStatus={unit.miniStatus} 
                             allBases={props.allBases}
-                            allStatuses={props.allStatuses}    
+                            allStatuses={props.allStatuses}
+                            configureOptions={props.allStatuses}
+                            configureMini={configureStatus}
+                            
                         />
                     </div>
                     )
@@ -83,7 +111,7 @@ const UnitRemove = (props) => {
 
 const Unit = (props) => {
     
-    const unit = props.unit
+    const [unit, setUnit] = useState(props.unit)
     const category = props.category
     return(
         <div>
@@ -97,7 +125,10 @@ const Unit = (props) => {
                 className='unit-table-name'
             />
             <UnitMiniStatus
-                miniStatus={unit.miniStatus}
+                unit={unit}
+                setUnit={setUnit}
+                allUnits={props.allUnits}
+                setAllUnits={props.setAllUnits}
                 allBases={props.allBases}
                 allStatuses={props.allStatuses}
                 className='unit-table-dropdown'
