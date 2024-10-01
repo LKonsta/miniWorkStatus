@@ -78,7 +78,6 @@ const RemoveCategory = (props) => {
 }
 
 const NewCategory = (props) => {
-    const army_id = props.army_id
     const [newCategory, setNewCategory] = useState('')
 
     const handleCategoryChange = (event) => {
@@ -90,7 +89,7 @@ const NewCategory = (props) => {
       const categoryObject = {
         name: newCategory,
         index: (props.allCategories.length + 1),
-        armyId: army_id
+        armyId: props.armyId
       }
       categoryService
         .create(categoryObject)
@@ -132,7 +131,7 @@ const Categories = (props) => {
                       /> 
                   </div>
               )}
-              <NewCategory army_id={props.army_id} allCategories={props.allCategories} setAllCategories={props.setAllCategories}/>
+              <NewCategory armyId={props.armyId} allCategories={props.allCategories} setAllCategories={props.setAllCategories}/>
             </div>
             }
           />

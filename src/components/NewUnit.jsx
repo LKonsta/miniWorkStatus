@@ -1,20 +1,25 @@
 import { useState, useEffect } from "react"
 
 import unitService from '../services/unit'
-import { BaseEdit as BaseEdit } from "./Base";
+import { BasesEdit as BasesEdit } from "./Base";
 
 import Modal from "./Modal"
 
 const NewUnit = (props) => {
-    const army_id = props.army_id
-    
     const [newUnit, setNewUnit] = useState('')
     const [newUnitMiniAmount, setNewUnitMiniAmount] = useState(1)
     const [newUnitCategory, setNewUnitCategory] = useState('null')
     const [newUnitBases, setNewUnitBases] = useState("1")
     const [newInitialStatus, setNewInitialStatus] = useState("1")
-    const [newMiniStatus, setNewMiniStatus] = useState([])
-    
+    const [newMiniStatus, setNewMiniStatus] = useState(
+      [
+        {
+          "id": 1,
+          "baseId": "1",
+          "statusId": "1"
+        }
+      ]
+    )
 
     const handleUnitChange = (event) => {
       setNewUnit(event.target.value)
@@ -22,46 +27,57 @@ const NewUnit = (props) => {
     }
     const handleUnitMiniAmountChange = (event) => {
       setNewUnitMiniAmount(event.target.value)
-      initBases()
+      const amount = event.target.value
+      initBases({amount})
     }
     const handleUnitCategoryChange = (event) => {
       setNewUnitCategory(event.target.value)
     }
     const handleUnitBaseChange = (event) =>  {
       setNewUnitBases(event.target.value)
-      initBases()
+      const bases = event.target.value
+      initBases({bases})
     }
 
     const handleInitialStatusChange= (event) => {
       setNewInitialStatus(event.target.value)
-      initBases()
+      const status = event.target.value
+      initBases({status})
     }
   
-    const initBases = () => {
-      console.log(newMiniStatus)
+    const initBases = (props) => {
+      let mAmount = newUnitMiniAmount
+      let mBases = newUnitBases
+      let mStatus = newInitialStatus
+      if (props.amount) {
+        mAmount = props.amount
+      } 
+      else if (props.bases) {
+        mBases = props.bases
+      }
+      else if (props.status) {
+        mStatus = props.status
+      }
       let miniStatusList = []
-      for (let i = 0;i < newUnitMiniAmount;i++) {
+      for (let i = 0;i < mAmount;i++) {
         const miniStatusObject = {
           id: i+1,
-          baseId: newUnitBases,
-          statusId: newInitialStatus
+          baseId: mBases,
+          statusId: mStatus
         }
         miniStatusList.push(miniStatusObject)
       }
-      console.log(miniStatusList)
       setNewMiniStatus(miniStatusList)
     }
-    
 
     const addNewUnit = (event) => {
       event.preventDefault()
       const unitObject = {
         name: newUnit,
         miniAmount: newUnitMiniAmount,
-        categoryId: (newUnitCategory == 'null') ? props.allCategories[0].id : newUnitCategory,
         miniStatus: newMiniStatus,
-  
-        armyId: army_id
+        categoryId: (newUnitCategory == 'null') ? props.allCategories[0].id : newUnitCategory,
+        armyId: props.armyId
       }
       unitService
         .create(unitObject)
@@ -126,20 +142,12 @@ const NewUnit = (props) => {
                     </option>
                   )}
                 </select>
-                <div>
-                  dsadsda
-                  {newMiniStatus.map(mini => {
-                    <div>  
-                      <div>
-                        dsadsadsa
-                      </div>
-                      <BaseEdit 
-                        mini={mini} 
-                        allBases={props.allBases} 
-                      />
-                    </div>
-                  })}
-                </div>
+                
+                <BasesEdit
+                  newMiniStatus={newMiniStatus}
+                  allBases={props.allBases} 
+                  allStatuses={props.allStatuses}
+                />
                 <div>
                   <button type="submit">add</button>
                 </div>

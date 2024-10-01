@@ -2,44 +2,32 @@ import { useState, useEffect } from 'react'
 import unitService from '../services/unit'
 import categoryService from '../services/category'
 
+import EditUnit from './EditUnit'
 import NewUnit from './NewUnit'
 import Categories from './Categories'
-import {Base as Base} from './Base' 
+import {Bases as Bases} from './Base' 
 
-const UnitName = (props) => {
-    return(
-        <div className={props.className}>
-            {
-                (props.name.trim().length != 0) 
-                ? (props.name) 
-                : ("--undefined--")
-            }
-        </div>
-    ) 
-}
 
 const UnitMiniAmount = (props) => {
+    const amount = (props.miniAmount) ? (props.miniAmount) : ("0")
     return(
         <div className={props.className}>
-            {
-                (props.miniAmount)
-                ? (props.miniAmount)
-                : ("--none--")
-            }
+            {amount}
         </div>
     )
 }
 
-const UnitMiniCategory = (props) => {
+const UnitName = (props) => {
+    const name = (props.name) ? (props.name) : ("-undefined-")
+    const info = (props.info) ? (props.info) : (null)
     return(
         <div className={props.className}>
-            {
-                (props.miniCategory)
-                ? (props.miniCategoryName)
-                : ("--none--")
-            }
+            <div>
+                {name}
+            </div>
+            {info}
         </div>
-    )
+    ) 
 }
 
 const UnitMiniStatus = (props) => {
@@ -51,9 +39,7 @@ const UnitMiniStatus = (props) => {
               onClick={() => setOpen(!open)}
               type="button"
             >
-              {
-                (open) ? ('close') : ('open')
-              }
+              {(open) ? ('⤊') : ('⤋')}
             </button>
             {open && (
             <div>
@@ -61,13 +47,11 @@ const UnitMiniStatus = (props) => {
                     (props.miniStatus)
                     ? (
                     <div>
-                        {props.miniStatus.map(mini => 
-                            <Base 
-                                mini={mini} 
-                                allBases={props.allBases}
-                                allStatuses={props.allStatuses}    
-                            />
-                        )}
+                        <Bases 
+                            miniStatus={props.miniStatus} 
+                            allBases={props.allBases}
+                            allStatuses={props.allStatuses}    
+                        />
                     </div>
                     )
                     : ("--none--")
@@ -87,9 +71,10 @@ const UnitRemove = (props) => {
     }
     return(
         <div>
-            <button 
-                onClick={() => removeUnit(props.unit)
-            }> X </button>
+            <button
+                className={props.className} 
+                onClick={() => removeUnit(props.unit)}
+            > X </button>
         </div>
     )
 }
@@ -104,27 +89,30 @@ const Unit = (props) => {
         <div>
             <UnitMiniAmount 
                 miniAmount={unit.miniAmount} 
-                className='div-table-number'
+                className='unit-table-amount'
             />
             <UnitName 
                 name={unit.name} 
-                className='div-table-col'
-            />
-            <UnitMiniCategory
-                miniCategory={unit.miniCategory}
-                miniCategoryName={category.name}
-                className='div-table-col'
+                info={unit.info}
+                className='unit-table-name'
             />
             <UnitMiniStatus
                 miniStatus={unit.miniStatus}
                 allBases={props.allBases}
                 allStatuses={props.allStatuses}
-                className='div-table-dropdown'
+                className='unit-table-dropdown'
+            />
+            <EditUnit
+                unit={unit}
+                allBases={props.allBases}
+                allCategories={props.allCategories}
+                className='unit-table-right-button'
             />
             <UnitRemove
                 unit={unit}
                 allUnits={props.allUnits}
                 setAllUnits={props.setAllUnits}
+                className='unit-table-right-button'
             />
         </div>
     )

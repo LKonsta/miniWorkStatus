@@ -1,57 +1,57 @@
 import basesService from "../services/bases";
+import PrecentageColor from "./PrecentageColor";
 
-const BaseEdit = (props) => {
-    console.log("raadsads")
-    const mini = props.mini
-    const base = props.allBases.find(x => x.id === mini.baseId) 
-    const status = props.allStatuses.find(x => x.id === mini.statusId)
-    const width = base.width * 2
-    const height = base.height * 2
-
+const BasesEdit = (props) => {
     return(
-        <div className="bases-divider">
-            <DrawBase
-
-            />
+        <div className="bases">
+            {props.newMiniStatus.map(mini => 
+            <div key={mini.id} className="bases-divider">  
+                <DrawBase 
+                    mini={mini} 
+                    allBases={props.allBases} 
+                    allStatuses={props.allStatuses}
+                />
+            </div>
+            )}            
         </div>
     )
 }
 
-const Base = (props) => {
-    const mini = props.mini
-    const base = props.allBases.find(x => x.id === mini.baseId) 
-    const status = props.allStatuses.find(x => x.id === mini.statusId)
-    const width = base.width * 2
-    const height = base.height * 2
-    
-    const style = 'width: ' + width + 'px;'
-             + 'height: ' + height + 'px;'
-             + 'background-color: black'
-             
+const Bases = (props) => {
     return(
-        <div className="bases-divider">
-            <DrawBase 
-                style = {style}
-                width = {width}
-                height = {height}
-                status = {status}
-                id = {mini.id}
-            />
+        <div className="bases">
+            {props.miniStatus.map(mini => 
+            <div key={mini.id} className="bases-divider">  
+                <DrawBase 
+                    mini={mini} 
+                    allBases={props.allBases} 
+                    allStatuses={props.allStatuses}
+                />
+            </div>
+            )}
         </div>
     )
 }
 
-const DrawBase = (style, width, height, status, id) => {
+const DrawBase = (props) => {
+    const base = props.allBases.find(x => x.id === props.mini.baseId) 
+    const status = props.allStatuses.find(x => x.id === props.mini.statusId)
+    const width = base.width * 2
+    const height = base.height * 2
+    const color = PrecentageColor(status.precentage)  
     return(
-        <div className="bases-base" style={style} >
-            {status}
+        <div 
+            className="bases-base" 
+            style={{width: width, height: height, backgroundColor: color}}
+        >
+            
         </div>
     )
 }
 
 
 export { 
-    Base, 
-    BaseEdit 
+    Bases, 
+    BasesEdit 
 }
 
