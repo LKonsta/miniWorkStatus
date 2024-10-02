@@ -46,7 +46,8 @@ const Army = (props) => {
                                             unit={unit} 
                                             allUnits={allUnits}
                                             setAllUnits={setAllUnits}
-                                            category={category} 
+                                            category={category}
+                                            allCategories={allCategories}
                                             allBases={props.allBases} 
                                             allStatuses={props.allStatuses}
                                         />

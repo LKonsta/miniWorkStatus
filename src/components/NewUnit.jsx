@@ -7,6 +7,7 @@ import Modal from "./Modal"
 
 const NewUnit = (props) => {
     const [newUnit, setNewUnit] = useState('')
+    const [newUnitInfo, setNewUnitInfo] = useState('')
     const [newUnitMiniAmount, setNewUnitMiniAmount] = useState(1)
     const [newUnitCategory, setNewUnitCategory] = useState('null')
     const [newUnitBases, setNewUnitBases] = useState("1")
@@ -16,6 +17,9 @@ const NewUnit = (props) => {
     const handleUnitChange = (event) => {
       setNewUnit(event.target.value)
       initBases()
+    }
+    const handleUnitInfoChange = (event) => {
+        setNewUnitInfo(event.target.value)
     }
     const handleUnitMiniAmountChange = (event) => {
       setNewUnitMiniAmount(event.target.value)
@@ -37,30 +41,19 @@ const NewUnit = (props) => {
     }
   
     const initBases = (props) => {
-      let mAmount = newUnitMiniAmount
-      let mBases = newUnitBases
-        let mStatus = newInitialStatus
-        if (props) { 
-            if (props.amount) {
-                mAmount = props.amount
-            } 
-            else if (props.bases) {
-                mBases = props.bases
+        const mAmount = (props && props.amount) ? (props.amount) : (newUnitMiniAmount)
+        const mBases = (props && props.bases) ? (props.bases) : (newUnitBases)
+        const mStatus = (props && props.status) ? (props.status) : (newInitialStatus)
+        let miniStatusList = []
+        for (let i = 0;i < mAmount;i++) {
+            const miniStatusObject = {
+                id: i+1,
+                baseId: mBases,
+                statusId: mStatus
             }
-            else if (props.status) {
-                mStatus = props.status
-            }
+            miniStatusList.push(miniStatusObject)
         }
-      let miniStatusList = []
-      for (let i = 0;i < mAmount;i++) {
-        const miniStatusObject = {
-          id: i+1,
-          baseId: mBases,
-          statusId: mStatus
-        }
-        miniStatusList.push(miniStatusObject)
-      }
-      setNewMiniStatus(miniStatusList)
+        setNewMiniStatus(miniStatusList)
     }
 
     function configureBase(mini, newBase) {
@@ -75,14 +68,13 @@ const NewUnit = (props) => {
             return miniStatus
         })
         setNewMiniStatus(newMiniStatusList)
-        
-        
     }
 
     const addNewUnit = (event) => {
       event.preventDefault()
       const unitObject = {
-        name: newUnit,
+          name: newUnit,
+        info: newUnitInfo,
         miniAmount: newUnitMiniAmount,
         miniStatus: newMiniStatus,
         categoryId: (newUnitCategory == 'null') ? props.allCategories[0].id : newUnitCategory,
@@ -105,18 +97,23 @@ const NewUnit = (props) => {
             ModalContent = {
               <form onSubmit={addNewUnit} >
                 <input 
-                  key="1"
-                  value={newUnit}
-                  onChange={handleUnitChange}
+                    key="1"
+                    value={newUnit}
+                    onChange={handleUnitChange}
+                />
+                <input
+                    key="2"
+                    value={newUnitInfo}
+                    onChange={handleUnitInfoChange} 
                 />
                 <input
                   className="input-integer"
-                  key="2"
+                  key="3"
                   value={newUnitMiniAmount}
                   onChange={handleUnitMiniAmountChange}
                 />
                 <select 
-                  key="3"
+                  key="4"
                   name="bases"
                   id="bases"
                   onChange={handleUnitBaseChange}
@@ -128,7 +125,7 @@ const NewUnit = (props) => {
                   )}
                 </select>
                 <select
-                  key="4" 
+                  key="5" 
                   name="category" 
                   id="category" 
                   onChange={handleUnitCategoryChange}
@@ -140,7 +137,7 @@ const NewUnit = (props) => {
                   )}
                 </select>
                 <select
-                  key="5" 
+                  key="6" 
                   name="initialStatus" 
                   id="initialStatus" 
                   onChange={handleInitialStatusChange}
@@ -158,7 +155,7 @@ const NewUnit = (props) => {
                         allStatuses={props.allStatuses}
                         configureOptions={props.allBases}
                     configureMini={configureBase}
-                />
+                    />
                 <div>
                   <button type="submit">add</button>
                 </div>

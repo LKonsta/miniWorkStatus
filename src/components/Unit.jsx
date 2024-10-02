@@ -18,7 +18,7 @@ const UnitMiniAmount = (props) => {
     )
 }
 
-const UnitName = (props) => {
+const UnitNameInfo = (props) => {
     const name = (props.name) ? (props.name) : ("-undefined-")
     const info = (props.info) ? (props.info) : (null)
     return(
@@ -119,7 +119,7 @@ const Unit = (props) => {
                 miniAmount={unit.miniAmount} 
                 className='unit-table-amount'
             />
-            <UnitName 
+            <UnitNameInfo
                 name={unit.name} 
                 info={unit.info}
                 className='unit-table-name'
@@ -137,6 +137,7 @@ const Unit = (props) => {
                 unit={unit}
                 allBases={props.allBases}
                 allCategories={props.allCategories}
+                allStatuses={props.allStatuses}
                 className='unit-table-right-button'
             />
             <UnitRemove
