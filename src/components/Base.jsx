@@ -23,7 +23,7 @@ const Bases = (props) => {
 
 const DrawBase = (props) => {
     const [dropdownOpen, setDropdownOpen] = useState(false)
-    
+
     const base = props.allBases.find(x => x.id === props.mini.baseId) 
     const status = props.allStatuses.find(x => x.id === props.mini.statusId)
     const color = PrecentageColor(status.precentage)
@@ -39,8 +39,8 @@ const DrawBase = (props) => {
             height: base.height * 2,
             backgroundColor: color
         }) : ({
-            width: base.radius * 2,
-            height: base.radius * 2,
+            width: base.radiusX * 2,
+            height: base.radiusY * 2,
             backgroundColor: color,
             borderRadius: "50%"
         })

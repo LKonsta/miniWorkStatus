@@ -12,8 +12,14 @@ const NewUnit = (props) => {
     const [newUnitCategory, setNewUnitCategory] = useState('null')
     const [newUnitBases, setNewUnitBases] = useState("1")
     const [newInitialStatus, setNewInitialStatus] = useState("1")
-    const [newMiniStatus, setNewMiniStatus] = useState([{"id": 1,"baseId": "1","statusId": "1"}])
-
+    const [newMiniStatus, setNewMiniStatus] = useState([
+        {
+            "id": 1,
+            "baseId": ((props.allBases.length > 0) ? (props.allBases[0].id) : ("null")),
+            "statusId": ((props.allStatuses.length > 0) ? (props.allStatuses[0].id) : ("null"))
+        }
+    ])
+    console.log(newMiniStatus)
     const handleUnitChange = (event) => {
       setNewUnit(event.target.value)
       initBases()
@@ -73,7 +79,7 @@ const NewUnit = (props) => {
     const addNewUnit = (event) => {
       event.preventDefault()
       const unitObject = {
-          name: newUnit,
+        name: newUnit,
         info: newUnitInfo,
         miniAmount: newUnitMiniAmount,
         miniStatus: newMiniStatus,
@@ -84,8 +90,18 @@ const NewUnit = (props) => {
         .create(unitObject)
           .then(returnedUnit => {
             props.setAllUnits(props.allUnits.concat(returnedUnit))
-            setNewUnit('')
-            setNewUnitMiniAmount(1)
+                setNewUnit('')
+                setNewUnitInfo('')
+                setNewUnitMiniAmount(1)
+                setNewInitialStatus(1)
+                setNewUnitBases(1)
+                setNewUnitCategory('null')
+                setNewMiniStatus([{
+                    "id": 1,
+                    "baseId": ((props.allBases.length > 0) ? (props.allBases[0].id) : ("null")),
+                    "statusId": ((props.allStatuses.length > 0) ? (props.allStatuses[0].id) : ("null"))
+                }])
+            
       })
     }
 

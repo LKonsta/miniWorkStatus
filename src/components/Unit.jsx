@@ -138,6 +138,8 @@ const Unit = (props) => {
                 allBases={props.allBases}
                 allCategories={props.allCategories}
                 allStatuses={props.allStatuses}
+                setAllUnits={props.setAllUnits}
+                allUnits={props.allUnits}
                 className='unit-table-right-button'
             />
             <UnitRemove
