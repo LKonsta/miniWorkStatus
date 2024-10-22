@@ -13,7 +13,7 @@ const ArmyList: React.FC = () => {
     return (
         <div className="ArmyList">
             {allArmies.map((army) => (
-                <div key={army.id} >
+                <div key={army.id} className="wrapper">
                     <CategoryProvider armyId={ army.id }>
                         <UnitProvider armyId={ army.id }>
                             <Army id={army.id} name={army.name} /> 
