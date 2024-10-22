@@ -1,0 +1,10 @@
+.header {
+    background-color: white;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 55px;
+    .title {
+        margin: 0;
+    }
+}

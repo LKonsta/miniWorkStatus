@@ -4,7 +4,7 @@ import NewUnit from "./NewUnit";
 
 import { useCategoryContext } from './context/CategoryContext';
 import { useUnitContext } from './context/UnitContext';
-
+import "./Army.scss"
 import { ArmyType } from './types/defaultTypes'
 
 
@@ -16,8 +16,11 @@ const Army: React.FC<ArmyType> = ({ id, name }) => {
     const { allCategories } = useCategoryContext();
 
     return (
-        <div>
-            <h1>{armyName}</h1>
+        <div className="Army">
+            <div>
+                <h1>{armyName}</h1>
+                <Categories armyId={armyId} />
+            </div>
             {allCategories.map((category) => (
                 <div key={category.id}>
                     <h3>{category.name}</h3>
@@ -25,7 +28,7 @@ const Army: React.FC<ArmyType> = ({ id, name }) => {
                         {allUnits.map((unit) => (
                             <div key={unit.id}>
                                 {unit.categoryId === category.id && (
-                                    <div className='div-table-row'>
+                                    <div>
                                         <Unit {...unit} />
                                     </div>
                                 )}
@@ -35,7 +38,6 @@ const Army: React.FC<ArmyType> = ({ id, name }) => {
                 </div>
             ))}
             <NewUnit armyId={armyId} />
-            <Categories armyId={armyId} />
         </div>
     );
 };

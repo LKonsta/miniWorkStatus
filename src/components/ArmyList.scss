@@ -1,0 +1,10 @@
+.ArmyList {
+    //border: 1px solid black;
+    display: flex;
+    overflow-x: scroll;
+    gap: 5px;
+    background-color: lightgray;
+    padding: 5px;
+    flex-grow: 1;
+    
+}

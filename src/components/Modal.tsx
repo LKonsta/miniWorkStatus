@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Modal.scss"
 
 interface ModalProps {
     ModalButton: string;

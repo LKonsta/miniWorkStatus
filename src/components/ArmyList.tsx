@@ -2,22 +2,24 @@ import React from "react";
 import { useArmyContext } from './context/ArmyContext';
 import { CategoryProvider } from './context/CategoryContext';
 import { UnitProvider } from './context/UnitContext';
-
+import "./ArmyList.scss"
 import Army from "./Army"
+
+
 
 const ArmyList: React.FC = () => {
     const { allArmies } = useArmyContext();
 
     return (
-        <div>
+        <div className="ArmyList">
             {allArmies.map((army) => (
-                <CategoryProvider armyId={ army.id }>
-                    <UnitProvider armyId={ army.id }>
-                        <div key={army.id}>
+                <div key={army.id} >
+                    <CategoryProvider armyId={ army.id }>
+                        <UnitProvider armyId={ army.id }>
                             <Army id={army.id} name={army.name} /> 
-                        </div>
-                    </UnitProvider>
-                </CategoryProvider>
+                        </UnitProvider>
+                    </CategoryProvider>
+                </div>
             ))}
         </div>
     );

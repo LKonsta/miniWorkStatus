@@ -7,6 +7,10 @@
     {
       "id": "78d1",
       "name": "dsadsa"
+    },
+    {
+      "id": "0567",
+      "name": "fdsfdsf"
     }
   ],
   "categories": [
@@ -57,7 +61,127 @@
         {
           "id": 1,
           "baseId": "702a",
+          "statusId": "2626"
+        }
+      ],
+      "categoryId": "e960",
+      "armyId": "d432"
+    },
+    {
+      "id": "5f36",
+      "name": "Flame Cannon",
+      "info": "",
+      "miniAmount": 4,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "9ae3",
           "statusId": "5f87"
+        },
+        {
+          "id": 2,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 3,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 4,
+          "baseId": "a547",
+          "statusId": "5f87"
+        }
+      ],
+      "categoryId": "89d8",
+      "armyId": "d432"
+    },
+    {
+      "id": "ab2f",
+      "name": "dsa",
+      "info": "dsa",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "1",
+          "statusId": "1"
+        }
+      ],
+      "categoryId": "ab91",
+      "armyId": "d432"
+    },
+    {
+      "id": "3fc1",
+      "name": "",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "a547",
+          "statusId": "2626"
+        }
+      ],
+      "categoryId": "e960",
+      "armyId": "d432"
+    },
+    {
+      "id": "9c3c",
+      "name": "",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "a547",
+          "statusId": "2626"
+        }
+      ],
+      "categoryId": "e960",
+      "armyId": "d432"
+    },
+    {
+      "id": "8de4",
+      "name": "",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "a547",
+          "statusId": "2626"
+        }
+      ],
+      "categoryId": "e960",
+      "armyId": "d432"
+    },
+    {
+      "id": "96c0",
+      "name": "",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "a547",
+          "statusId": "2626"
+        }
+      ],
+      "categoryId": "e960",
+      "armyId": "d432"
+    },
+    {
+      "id": "d837",
+      "name": "",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "a547",
+          "statusId": "2626"
         }
       ],
       "categoryId": "e960",

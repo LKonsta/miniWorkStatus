@@ -5,6 +5,8 @@ import EditUnit from './EditUnit';
 import Bases from './Base';
 import { useUnitContext } from './context/UnitContext';
 import { useStatusContext } from './context/StatusContext';
+import "./Unit.scss"
+
 
 const UnitMiniAmount: React.FC<{ miniAmount?: number; }> = ({ miniAmount = 0}) => (
     <div>
@@ -74,7 +76,7 @@ const UnitRemove: React.FC<UnitType> = (unit) => {
 
 const Unit: React.FC<UnitType> = (unit) => {
     return (
-        <div>
+        <div className="unit">
             <div className='unit-table-amount'>
                 <UnitMiniAmount miniAmount={unit.miniAmount} />
             </div>
