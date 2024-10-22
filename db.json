@@ -1,166 +1,152 @@
 {
   "armies": [
     {
-      "id": "2343",
-      "name": "Dwarfs",
-      "categories": [],
-      "units": []
+      "id": "d432",
+      "name": "Dwarfs"
     },
     {
-      "id": "186e",
-      "name": "Wood elves",
-      "categories": [],
-      "units": []
+      "id": "78d1",
+      "name": "dsadsa"
     }
   ],
   "categories": [
     {
-      "id": "3424",
-      "name": "Hero/Lord",
+      "id": "e960",
+      "name": "Hero/lord",
       "index": 1,
-      "armyId": "2343"
+      "armyId": "d432"
     },
     {
-      "id": "2289",
+      "id": "ab91",
       "name": "Core",
       "index": 2,
-      "armyId": "2343"
+      "armyId": "d432"
     },
     {
-      "id": "d11b",
-      "name": "dsadsa",
-      "index": 1,
-      "armyId": "186e"
-    },
-    {
-      "id": "0bfe",
+      "id": "ed8e",
       "name": "Special/Rare",
       "index": 3,
-      "armyId": "2343"
+      "armyId": "d432"
     },
     {
-      "id": "de90",
+      "id": "89d8",
       "name": "Warmachine",
       "index": 4,
-      "armyId": "2343"
+      "armyId": "d432"
     },
     {
-      "id": "5bb0",
-      "name": "Extras",
+      "id": "eca0",
+      "name": "Extra",
       "index": 5,
-      "armyId": "2343"
+      "armyId": "d432"
+    },
+    {
+      "id": "8018",
+      "name": "dsadsa",
+      "index": 1,
+      "armyId": "78d1"
     }
   ],
   "units": [
     {
-      "id": "8ced",
-      "name": "Dwarf Lord",
-      "info": "on warbear",
+      "id": "15e1",
+      "name": "Dwarf King",
+      "info": "on Warbear",
       "miniAmount": 1,
       "miniStatus": [
         {
           "id": 1,
-          "baseId": "5",
-          "statusId": "5"
+          "baseId": "702a",
+          "statusId": "5f87"
         }
       ],
-      "categoryId": "3424",
-      "armyId": "2343"
-    },
-    {
-      "id": "145a",
-      "name": "Anvil of Doom",
-      "info": "and kraggi",
-      "miniAmount": "3",
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "4",
-          "statusId": "5"
-        },
-        {
-          "id": 2,
-          "baseId": "1",
-          "statusId": "5"
-        },
-        {
-          "id": 3,
-          "baseId": "5",
-          "statusId": "5"
-        }
-      ],
-      "categoryId": "3424",
-      "armyId": "2343"
+      "categoryId": "e960",
+      "armyId": "d432"
     }
   ],
   "bases": [
     {
-      "id": "1",
+      "id": "a547",
       "name": "20x20",
       "shape": "square",
       "width": 20,
       "height": 20
     },
     {
-      "id": "2",
+      "id": "db97",
       "name": "25x25",
       "shape": "square",
       "width": 25,
       "height": 25
     },
     {
-      "id": "3",
+      "id": "1b0c",
       "name": "40x20",
       "shape": "square",
       "width": 40,
       "height": 20
     },
     {
-      "id": "4",
-      "name": "60mm",
-      "shape": "circle",
-      "radius": 60
-    },
-    {
-      "id": "5",
+      "id": "702a",
       "name": "40x60",
       "shape": "square",
       "width": 40,
       "height": 60
     },
     {
-      "id": "6",
-      "name": "25x50",
+      "id": "16c3",
+      "name": "50x50",
       "shape": "square",
-      "width": 25,
+      "width": 50,
       "height": 50
+    },
+    {
+      "id": "9ae3",
+      "name": "50x75",
+      "shape": "square",
+      "width": 50,
+      "height": 75
+    },
+    {
+      "id": "aecb",
+      "name": "40x40",
+      "shape": "square",
+      "width": 40,
+      "height": 40
+    },
+    {
+      "id": "6528",
+      "name": "60x60mm",
+      "shape": "round",
+      "width": 60,
+      "height": 60
     }
   ],
   "status": [
     {
-      "id": "1",
+      "id": "2626",
       "name": "assembly",
-      "precentage": 0
+      "percentage": 0
     },
     {
-      "id": "2",
+      "id": "9fab",
       "name": "painting",
-      "precentage": 0.25
+      "percentage": 0.25
     },
     {
-      "id": "3",
+      "id": "d458",
       "name": "basing",
-      "precentage": 0.8
+      "percentage": 0.7
     },
     {
-      "id": "4",
+      "id": "5934",
       "name": "varnish",
-      "precentage": 0.9
+      "percentage": 0.9
     },
     {
-      "id": "5",
+      "id": "5f87",
       "name": "complete",
-      "precentage": 1
+      "percentage": 1
     }
   ]
 }
