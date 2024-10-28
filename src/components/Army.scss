@@ -1,6 +1,37 @@
-.Army {
-    border: 1px solid blue;
-    width: 500px;
+.army {
     background-color: white;
-    overflow-y: scroll;
+
+    &-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: brown;
+
+        &-title {
+            margin: 0px;
+        }
+
+        &-total {
+        }
+
+        &-remove {
+        }
+    }
+
+    &-category {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: lightcoral;
+       
+
+        &-title {
+            margin: 0px;
+            width: 84%;
+        }
+
+        &-total {
+            width: 10%;
+        }
+    }
 }

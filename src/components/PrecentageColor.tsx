@@ -1,8 +1,4 @@
-interface ColorPrecentage {
-    value: number;
-}
-
-const PrecentageColor: React.FC<ColorPrecentage> = ({ value }) => {
+const PrecentageColor: React.FC<number> = ( value ) => {
 
     const greater = (Math.pow(value, 1.2) / 1);
     const clampedValue = Math.min(1, Math.max(0, greater));

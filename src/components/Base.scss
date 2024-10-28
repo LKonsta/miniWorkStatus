@@ -1,0 +1,10 @@
+.base-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    max-width: 500px;
+    &-border {
+    }
+}

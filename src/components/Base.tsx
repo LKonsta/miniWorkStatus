@@ -3,6 +3,8 @@ import PrecentageColor from "./PrecentageColor";
 import { MiniStatusType, BaseType, StatusType } from "./types/defaultTypes";
 import { useStatusContext } from "./context/StatusContext";
 import { useBaseContext } from "./context/BaseContext";
+import "./base.scss"
+
 
 interface BasesProps {
     miniStatuses: MiniStatusType[];
@@ -12,9 +14,9 @@ interface BasesProps {
 
 const Bases: React.FC<BasesProps> = ({ miniStatuses, configureMini, configureOptions }) => {
     return (
-        <div className="bases">
+        <div className="base-box">
             {miniStatuses.map(miniStatus => (
-                <div key={miniStatus.id} className="bases-divider">
+                <div key={miniStatus.id} className="base-box-border">
                     <DrawBase
                         miniStatus={miniStatus}
                         configureMini={configureMini}
@@ -47,7 +49,7 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
     const base = allBases.find(x => x.id === miniStatus.baseId) || defaultBase;
     const status = allStatuses.find(x => x.id === miniStatus.statusId);
 
-    const color = PrecentageColor({ value: status?.percentage || 0 });
+    const color = PrecentageColor( status.percentage || 0 );
 
     const handleConfigureMiniChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         configureMini(miniStatus, event.target.value);
@@ -67,7 +69,7 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
     return (
         <div>
             <button
-                className="bases-base"
+                className="base"
                 style={style}
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 type="button"

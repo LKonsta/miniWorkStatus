@@ -5,12 +5,8 @@
       "name": "Dwarfs"
     },
     {
-      "id": "78d1",
-      "name": "dsadsa"
-    },
-    {
-      "id": "0567",
-      "name": "fdsfdsf"
+      "id": "9375",
+      "name": "Wood Elves"
     }
   ],
   "categories": [
@@ -48,7 +44,7 @@
       "id": "8018",
       "name": "dsadsa",
       "index": 1,
-      "armyId": "78d1"
+      "armyId": null
     }
   ],
   "units": [
@@ -61,7 +57,7 @@
         {
           "id": 1,
           "baseId": "702a",
-          "statusId": "2626"
+          "statusId": "5f87"
         }
       ],
       "categoryId": "e960",
@@ -98,93 +94,328 @@
       "armyId": "d432"
     },
     {
-      "id": "ab2f",
-      "name": "dsa",
-      "info": "dsa",
-      "miniAmount": 1,
+      "id": "7667",
+      "name": "Hammerers",
+      "info": "",
+      "miniAmount": 30,
       "miniStatus": [
         {
           "id": 1,
-          "baseId": "1",
-          "statusId": "1"
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 2,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 3,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 4,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 5,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 6,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 7,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 8,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 9,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 10,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 11,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 12,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 13,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 14,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 15,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 16,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 17,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 18,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 19,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 20,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 21,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 22,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 23,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 24,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 25,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 26,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 27,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 28,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 29,
+          "baseId": "a547",
+          "statusId": "5f87"
+        },
+        {
+          "id": 30,
+          "baseId": "a547",
+          "statusId": "5f87"
+        }
+      ],
+      "categoryId": "ed8e",
+      "armyId": "d432"
+    },
+    {
+      "id": "4e03",
+      "name": "Combat markers",
+      "info": "beer lady",
+      "miniAmount": 2,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "8fd8",
+          "statusId": "9fab"
+        },
+        {
+          "id": 2,
+          "baseId": "8fd8",
+          "statusId": "d458"
+        }
+      ],
+      "categoryId": "eca0",
+      "armyId": "d432"
+    },
+    {
+      "id": "77d1",
+      "name": "dsadsa",
+      "info": "dsadsa",
+      "miniAmount": 5,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "16c3",
+          "statusId": "5f87"
+        },
+        {
+          "id": 2,
+          "baseId": "16c3",
+          "statusId": "5f87"
+        },
+        {
+          "id": 3,
+          "baseId": "16c3",
+          "statusId": "5f87"
+        },
+        {
+          "id": 4,
+          "baseId": "16c3",
+          "statusId": "5f87"
+        },
+        {
+          "id": 5,
+          "baseId": "16c3",
+          "statusId": "5f87"
+        }
+      ],
+      "categoryId": "89d8",
+      "armyId": "d432"
+    },
+    {
+      "id": "a1f7",
+      "name": "Warriors",
+      "info": "shields",
+      "miniAmount": 20,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 2,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 3,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 4,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 5,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 6,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 7,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 8,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 9,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 10,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 11,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 12,
+          "baseId": "a547",
+          "statusId": "2626"
+        },
+        {
+          "id": 13,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 14,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 15,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 16,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 17,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 18,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 19,
+          "baseId": "a547",
+          "statusId": "d458"
+        },
+        {
+          "id": 20,
+          "baseId": "a547",
+          "statusId": "d458"
         }
       ],
       "categoryId": "ab91",
-      "armyId": "d432"
-    },
-    {
-      "id": "3fc1",
-      "name": "",
-      "info": "",
-      "miniAmount": 1,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "a547",
-          "statusId": "2626"
-        }
-      ],
-      "categoryId": "e960",
-      "armyId": "d432"
-    },
-    {
-      "id": "9c3c",
-      "name": "",
-      "info": "",
-      "miniAmount": 1,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "a547",
-          "statusId": "2626"
-        }
-      ],
-      "categoryId": "e960",
-      "armyId": "d432"
-    },
-    {
-      "id": "8de4",
-      "name": "",
-      "info": "",
-      "miniAmount": 1,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "a547",
-          "statusId": "2626"
-        }
-      ],
-      "categoryId": "e960",
-      "armyId": "d432"
-    },
-    {
-      "id": "96c0",
-      "name": "",
-      "info": "",
-      "miniAmount": 1,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "a547",
-          "statusId": "2626"
-        }
-      ],
-      "categoryId": "e960",
-      "armyId": "d432"
-    },
-    {
-      "id": "d837",
-      "name": "",
-      "info": "",
-      "miniAmount": 1,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "a547",
-          "statusId": "2626"
-        }
-      ],
-      "categoryId": "e960",
       "armyId": "d432"
     }
   ],
@@ -244,6 +475,13 @@
       "shape": "round",
       "width": 60,
       "height": 60
+    },
+    {
+      "id": "8fd8",
+      "name": "32x32mm",
+      "shape": "round",
+      "width": 32,
+      "height": 32
     }
   ],
   "status": [

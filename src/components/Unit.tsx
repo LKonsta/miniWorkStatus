@@ -6,6 +6,8 @@ import Bases from './Base';
 import { useUnitContext } from './context/UnitContext';
 import { useStatusContext } from './context/StatusContext';
 import "./Unit.scss"
+import { useBaseContext } from './context/BaseContext';
+import PrecentageColor from './PrecentageColor';
 
 
 const UnitMiniAmount: React.FC<{ miniAmount?: number; }> = ({ miniAmount = 0}) => (
@@ -16,8 +18,8 @@ const UnitMiniAmount: React.FC<{ miniAmount?: number; }> = ({ miniAmount = 0}) =
 
 const UnitNameInfo: React.FC<{ name?: string; info?: string; }> = ({ name = '-undefined-', info = null }) => (
     <div>
-        <div>
-            <div>{name}</div>
+        {name}
+        <div className="unit-name-info">
             {info}
         </div>
     </div>
@@ -26,7 +28,7 @@ const UnitNameInfo: React.FC<{ name?: string; info?: string; }> = ({ name = '-un
 const UnitMiniStatus: React.FC<UnitType> = (unit) => {
     const { allStatuses } = useStatusContext();
     const { modifyUnit } = useUnitContext();
-    const [open, setOpen] = useState(false);
+    
 
     const configureStatus = (mini: any, newStatus: string) => {
         const newMiniStatusList = unit.miniStatus.map((miniStatus) => {
@@ -43,23 +45,17 @@ const UnitMiniStatus: React.FC<UnitType> = (unit) => {
 
     return (
         <div>
-            <button onClick={() => setOpen(!open)} type="button">
-                {open ? '⤊' : '⤋'}
-            </button>
-            {open && (
-                <div>
-                    {unit.miniStatus ? (
-                        <Bases
-                            miniStatuses={unit.miniStatus}
-                            configureOptions={allStatuses}
-                            configureMini={configureStatus}
-                            
-                        />
-                    ) : (
-                        '--none--'
-                    )}
-                </div>
-            )}
+            <div className="unit-dropdown">
+                {unit.miniStatus ? (
+                    <Bases
+                        miniStatuses={unit.miniStatus}
+                        configureOptions={allStatuses}
+                        configureMini={configureStatus}
+                    />
+                ) : (
+                    '--none--'
+                )}
+            </div>
         </div>
     );
 };
@@ -74,25 +70,40 @@ const UnitRemove: React.FC<UnitType> = (unit) => {
     );
 };
 
+
+
 const Unit: React.FC<UnitType> = (unit) => {
+    const [open, setOpen] = useState(false);
     return (
-        <div className="unit">
-            <div className='unit-table-amount'>
-                <UnitMiniAmount miniAmount={unit.miniAmount} />
+        <>
+            <div className="unit">
+                <div className='unit-amount'>
+                    <UnitMiniAmount miniAmount={unit.miniAmount} />
+                </div>
+                <div className='unit-name'>
+                    <UnitNameInfo name={unit.name} info={unit.info} />
+                </div>
+                <div className="unit-info-edits">
+                    <div className='unit-info-edits-bases'>
+                        <button onClick={() => setOpen(!open)} type="button">
+                            {open ? '⤊' : '⤋'}
+                        </button>
+                    </div>
+                    <div className='unit-info-edits-edit'>
+                        <button >edit</button>
+                    </div>
+                    <div className="unit-info-edits-percentage">
+                        <UnitPercentage {...unit} />
+                    </div>
+                    <div className='unit-info-edits-remove'>
+                        <UnitRemove {...unit} />
+                    </div>
+                </div>
             </div>
-            <div className='unit-table-name'>
-                <UnitNameInfo name={unit.name} info={unit.info} />
-            </div>
-            <div className='unit-table-dropdown'>
+            {open && (
                 <UnitMiniStatus {...unit} />
-            </div>
-            <div className='unit-table-right-button'>
-                
-            </div>
-            <div className='unit-table-right-button'>
-                <UnitRemove {...unit} />
-            </div>
-        </div>
+            )}
+        </>
     );
 };
 
