@@ -3,10 +3,6 @@
     {
       "id": "d432",
       "name": "Dwarfs"
-    },
-    {
-      "id": "9375",
-      "name": "Wood Elves"
     }
   ],
   "categories": [
@@ -282,7 +278,7 @@
         {
           "id": 1,
           "baseId": "16c3",
-          "statusId": "5f87"
+          "statusId": "2626"
         },
         {
           "id": 2,
@@ -292,7 +288,7 @@
         {
           "id": 3,
           "baseId": "16c3",
-          "statusId": "5f87"
+          "statusId": "9fab"
         },
         {
           "id": 4,

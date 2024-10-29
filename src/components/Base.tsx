@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PrecentageColor from "./PrecentageColor";
+import CalculatePercentage from "./CalculatePercentage";
 import { MiniStatusType, BaseType, StatusType } from "./types/defaultTypes";
 import { useStatusContext } from "./context/StatusContext";
 import { useBaseContext } from "./context/BaseContext";
@@ -49,7 +49,7 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
     const base = allBases.find(x => x.id === miniStatus.baseId) || defaultBase;
     const status = allStatuses.find(x => x.id === miniStatus.statusId);
 
-    const color = PrecentageColor( status.percentage || 0 );
+    const color = status ? CalculatePercentage.calculatePercentageColor( status.percentage ): 'rgb(0, 0, 0)';
 
     const handleConfigureMiniChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         configureMini(miniStatus, event.target.value);

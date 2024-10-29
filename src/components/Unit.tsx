@@ -7,7 +7,8 @@ import { useUnitContext } from './context/UnitContext';
 import { useStatusContext } from './context/StatusContext';
 import "./Unit.scss"
 import { useBaseContext } from './context/BaseContext';
-import PrecentageColor from './PrecentageColor';
+import CalculatePercentage from './CalculatePercentage';
+import DrawPercentage from './DrawPercentage';
 
 
 const UnitMiniAmount: React.FC<{ miniAmount?: number; }> = ({ miniAmount = 0}) => (
@@ -83,19 +84,19 @@ const Unit: React.FC<UnitType> = (unit) => {
                 <div className='unit-name'>
                     <UnitNameInfo name={unit.name} info={unit.info} />
                 </div>
-                <div className="unit-info-edits">
-                    <div className='unit-info-edits-bases'>
+                <div className="unit-right">
+                    <div className='unit-right-bases'>
                         <button onClick={() => setOpen(!open)} type="button">
                             {open ? '⤊' : '⤋'}
                         </button>
                     </div>
-                    <div className='unit-info-edits-edit'>
+                    <div className='unit-right-edit'>
                         <button >edit</button>
                     </div>
-                    <div className="unit-info-edits-percentage">
-                        <UnitPercentage {...unit} />
+                    <div className="unit-right-percentage">
+                        <DrawPercentage value={ CalculatePercentage.calculateUnitPercentage(unit) } />
                     </div>
-                    <div className='unit-info-edits-remove'>
+                    <div className='unit-right-remove'>
                         <UnitRemove {...unit} />
                     </div>
                 </div>

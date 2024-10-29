@@ -4,17 +4,23 @@
     &-header {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         background-color: brown;
 
         &-title {
+            flex: 1;
             margin: 0px;
         }
 
-        &-total {
-        }
+        &-right {
+            display: flex;
 
-        &-remove {
+            &-percentage {
+                height: 100%;
+            }
+
+            &-remove {
+            }
         }
     }
 
@@ -23,15 +29,16 @@
         align-items: center;
         gap: 10px;
         background-color: lightcoral;
-       
 
         &-title {
+            flex: 1;
             margin: 0px;
-            width: 84%;
         }
 
-        &-total {
-            width: 10%;
+        &-right {
+
+            &-percentage {
+            }
         }
     }
 }

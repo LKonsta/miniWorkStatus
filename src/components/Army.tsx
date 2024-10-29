@@ -6,7 +6,9 @@ import { useArmyContext } from "./context/ArmyContext";
 import { useCategoryContext } from './context/CategoryContext';
 import { useUnitContext } from './context/UnitContext';
 import "./Army.scss"
-import { ArmyType } from './types/defaultTypes'
+import { ArmyType, CategoryType, UnitType } from './types/defaultTypes'
+import DrawPercentage from './DrawPercentage';
+import CalculatePercentage from "./CalculatePercentage";
 
 
 const ArmyRemove: React.FC<{ armyId: string }> = ({ armyId }) => {
@@ -19,12 +21,48 @@ const ArmyRemove: React.FC<{ armyId: string }> = ({ armyId }) => {
     );
 };
 
-const Army: React.FC<ArmyType> = ({ id, name }) => {
-    const armyId = id;
-    const armyName = name;
-
-    const { removeArmy } = useArmyContext();
+const ArmyCategory: React.FC<{ category: CategoryType, armyId: string }> = ({ category, armyId }) => {
     const { allUnits } = useUnitContext();
+
+    return (
+        <div>
+            <div key={category.id} className="army-category">
+                <h3 className="army-category-title">
+                    {category.name}
+                </h3>
+                <div className="army-category-right">
+                    <div className="army-category-right-total">
+                        <DrawPercentage value={CalculatePercentage.calculateCategoryPercentage(category)} />
+                    </div>
+                </div>
+            </div>
+            <div>
+                {allUnits.map((unit) => (
+                    <>
+                        <ArmyUnit unit={unit} categoryId={category.id} />
+                    </>
+                ))}
+            </div>
+        </div>
+    )
+};
+
+const ArmyUnit: React.FC<{ unit: UnitType, categoryId: string }> = ({ unit, categoryId }) => {
+    return (
+        <>
+            {unit.categoryId === categoryId && (
+                <div key={unit.id}>
+                    <Unit {...unit} />
+                </div>
+            )}
+        </>
+    )
+};
+
+const Army: React.FC<ArmyType> = (army) => {
+    const armyId = army.id;
+    const armyName = army.name;
+
     const { allCategories } = useCategoryContext();
 
     return (
@@ -32,35 +70,20 @@ const Army: React.FC<ArmyType> = ({ id, name }) => {
             <div className="army-header">
                 <h1 className="army-header-title">{armyName}</h1>
                 <Categories armyId={armyId} />
-                <div className="army-header-total">
-                    <button>100%</button>
-                </div>
-                <div className="army-header-remove">
-                    <ArmyRemove armyId = {armyId} />
+                <div className="army-header-right">
+                    <div className="army-header-right-percentage">
+                        <DrawPercentage value={CalculatePercentage.calculateArmyPercentage(army)} />
+                    </div>
+                    <div className="army-header-right-remove">
+                        <ArmyRemove armyId = {armyId} />
+                    </div>
                 </div>
             </div>
             {allCategories.map((category) => (
                 <div>
-                    <div key={category.id} className="army-category">
-                        <h3 className="army-category-title">
-                            {category.name}
-                        </h3>
-                        <div className="army-category-total">
-                            <button>100%</button>
-                        </div>
-                    </div>
-                    <div>
-                        {allUnits.map((unit) => (
-                            <>
-                                {unit.categoryId === category.id && (
-                                    <div key={unit.id}>
-                                        <Unit {...unit} />
-                                    </div>
-                                )}
-                            </>
-                        ))}
-                    </div>
+                    <ArmyCategory category={ category } armyId={ armyId } />
                 </div>
+
             ))}
             <NewUnit armyId={armyId} />
         </div>
