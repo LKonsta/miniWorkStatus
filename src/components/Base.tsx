@@ -94,4 +94,24 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
     );
 }
 
-export default Bases;
+const DrawDummy: React.FC<{width: number, height: number, shape: string}> = ({ width, height, shape }) => {
+    const color = 'g(255, 0, 0)'
+    const style = shape === "square" ? {
+        width: width * 2,
+        height: height * 2,
+        backgroundColor: color
+    } : {
+        width: width * 2,
+        height: height * 2,
+        backgroundColor: color,
+        borderRadius: "50%"
+    };
+    
+    return (
+        <div>
+            <button style = {style}></button>            
+        </div>
+    )
+}
+
+export {Bases, DrawDummy};

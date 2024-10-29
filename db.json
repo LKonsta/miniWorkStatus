@@ -464,20 +464,6 @@
       "shape": "square",
       "width": 40,
       "height": 40
-    },
-    {
-      "id": "6528",
-      "name": "60x60mm",
-      "shape": "round",
-      "width": 60,
-      "height": 60
-    },
-    {
-      "id": "8fd8",
-      "name": "32x32mm",
-      "shape": "round",
-      "width": 32,
-      "height": 32
     }
   ],
   "status": [

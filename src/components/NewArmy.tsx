@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useArmyContext } from './context/ArmyContext';
+import Modal from "./Modal";
 
 const NewArmy: React.FC = () => {
     const { addArmy } = useArmyContext();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import unitService from '../services/unit';
-import Bases from "./Base";
+import {Bases}  from "./Base";
 import Modal from "./Modal";
 import { UnitType, BaseType, StatusType, CategoryType, MiniStatusType } from '../components/types/defaultTypes';
 import { useBaseContext } from "./context/BaseContext";
@@ -170,7 +170,7 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
                             ))}
                         </select>
                         {(newUnitMiniAmount > 0) ? (
-                            <Bases
+                            <Bases.Bases
                                 miniStatuses={newMiniStatus}
                                 configureMini={configureBase}
                                 configureOptions={allBases}

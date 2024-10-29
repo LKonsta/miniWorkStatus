@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import unitService from '../services/unit';
 import { UnitType, BaseType, StatusType } from '../components/types/defaultTypes';
 import EditUnit from './EditUnit';
-import Bases from './Base';
+import {Bases} from './Base';
 import { useUnitContext } from './context/UnitContext';
 import { useStatusContext } from './context/StatusContext';
 import "./Unit.scss"
@@ -21,7 +21,7 @@ const UnitNameInfo: React.FC<{ name?: string; info?: string; }> = ({ name = '-un
     <div>
         {name}
         <div className="unit-name-info">
-            {info}
+            - {info}
         </div>
     </div>
 );
@@ -91,7 +91,7 @@ const Unit: React.FC<UnitType> = (unit) => {
                         </button>
                     </div>
                     <div className='unit-right-edit'>
-                        <button >edit</button>
+                        <button>edit</button>
                     </div>
                     <div className="unit-right-percentage">
                         <DrawPercentage value={ CalculatePercentage.calculateUnitPercentage(unit) } />

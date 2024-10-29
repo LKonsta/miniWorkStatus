@@ -8,6 +8,8 @@ import { UnitType, BaseType, StatusType, CategoryType, MiniStatusType } from './
 const EditUnit: React.FC<UnitType> = ( unit ) => {
     const modal_header = `Editing: ${unit.name}`;
 
+    const unitEdit: UnitType = unit
+
     const [newUnitName, setNewUnitName] = useState < string > (unit.name);
     const [newUnitInfo, setNewUnitInfo] = useState < string > (unit.info);
     const [newUnitMiniAmount, setNewUnitMiniAmount] = useState<number>(unit.miniAmount);

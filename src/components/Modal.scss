@@ -10,47 +10,54 @@
   }
   /* Modal positioning */
   .modal {
-    padding-top: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-  /* Modal itself */
-  .modal-content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 4;
-    margin: auto;
-    background-color: #fff;
-    position: relative;
-    padding: 0;
-    outline: 0;
-    width: 600px;
+
+  /* Modal itself */
+    &-content {
+      
+      margin: auto;
+      background-color: #fff;
+      position: relative;
+      padding: 0;
+      outline: 0;
+      min-width: 300px;
+    }
+    /* Modal header */
+    &-header {
+      padding: 10px;
+      display: flex;
+      gap: 10px;
+      align-content: center;
+      &-title {
+        flex: 1;
+        font-size: 30px;  
+      }
+      &-exit {
+        
+      }
+    }
+    /* Modal close button */
+    
+    /* Modal contents */
+    &-form {
+      padding: 10px;
+      background-color: lightcyan;
+    
+      /* Modal confrim button for either [add] or [save] */
+      &-confirm-button {
+        background-color: green;
+      }
+      /* Modal remove unit button */
+      &-remove-button {
+        background-color: red;
+      }
+    }
   }
-  /* Modal header */
-  .modal-header {
-    font-size: 30px;
-    padding: 20px;
-  }
-  /* Modal close button */
-  .modal-exit {
-    position: absolute;
-    padding: 10px;
-    right: 0;
-    top: 0;
-    box-sizing: inherit;
-  }
-  /* Modal contents */
-  .modal-form {
-    padding: 10px;
-  }
-  /* Modal confrim button for either [add] or [save] */
-  .modal-confirm-button {
+
   
-  }
-  /* Modal remove unit button */
-  .modal-remove-button {
-  
-  }
   
   
