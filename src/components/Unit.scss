@@ -19,15 +19,15 @@
     }
 
     &-right {
-        display:flex;
+        display: flex;
         align-content: center;
+        gap: 3px;
+
         &-bases {
         }
 
 
-        &-percentage {
-            height: 100%;
-        }
+
 
         &-edit {
         }
@@ -43,4 +43,31 @@
     gap: 5px;
     margin-top: 1px;
     background-color: lightpink;
+
+    &-base-box {
+        width: 75%;
+    }
+
+    &-status-info {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        &-item {
+            display: flex;
+            flex-direction: row;
+            gap: 4px;
+
+            &-color {
+                width: 18px;
+                height: 18px;
+            }
+
+            &-name {
+                flex: 1;
+            }
+        }
+    }
 }
+

@@ -7,7 +7,7 @@ const DrawPercentage: React.FC<{ value: number }> = ({ value }) => {
     const percent = `${(value*100).toFixed(0)}%`
 
     return (
-        <div style={{ backgroundColor }}>
+        <div className="percentage-box" style={{ backgroundColor }}>
             {percent}
         </div>
     );

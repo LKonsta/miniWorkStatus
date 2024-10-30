@@ -21,7 +21,7 @@ const UnitNameInfo: React.FC<{ name?: string; info?: string; }> = ({ name = '-un
     <div>
         {name}
         <div className="unit-name-info">
-            - {info}
+            {(info) ? (<>- {info}</>) : (<></>) }
         </div>
     </div>
 );
@@ -29,6 +29,7 @@ const UnitNameInfo: React.FC<{ name?: string; info?: string; }> = ({ name = '-un
 const UnitMiniStatus: React.FC<UnitType> = (unit) => {
     const { allStatuses } = useStatusContext();
     const { modifyUnit } = useUnitContext();
+    console.log(allStatuses)
     
 
     const configureStatus = (mini: any, newStatus: string) => {
@@ -47,15 +48,31 @@ const UnitMiniStatus: React.FC<UnitType> = (unit) => {
     return (
         <div>
             <div className="unit-dropdown">
-                {unit.miniStatus ? (
-                    <Bases
-                        miniStatuses={unit.miniStatus}
-                        configureOptions={allStatuses}
-                        configureMini={configureStatus}
-                    />
-                ) : (
-                    '--none--'
-                )}
+                <div className="unit-dropdown-base-box">
+                    {unit.miniStatus ? (
+                        <Bases
+                            miniStatuses={unit.miniStatus}
+                            configureOptions={allStatuses}
+                            configureMini={configureStatus}
+                        />
+                    ) : (
+                        '--none--'
+                    )}
+                </div>
+                <div className="unit-dropdown-status-info">
+                    {allStatuses.map((status) => (
+                        <div className="unit-dropdown-status-info-item">
+                            <div
+                                className="unit-dropdown-status-info-item-color"
+                                style={{ backgroundColor: CalculatePercentage.calculatePercentageColor(status.percentage) }}
+                            >
+                            </div>
+                            <div className="unit-dropdown-status-info-item-name">
+                                { status.name }
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
@@ -91,9 +108,9 @@ const Unit: React.FC<UnitType> = (unit) => {
                         </button>
                     </div>
                     <div className='unit-right-edit'>
-                        <button>edit</button>
+                        <button>Edit</button>
                     </div>
-                    <div className="unit-right-percentage">
+                    <div>
                         <DrawPercentage value={ CalculatePercentage.calculateUnitPercentage(unit) } />
                     </div>
                     <div className='unit-right-remove'>

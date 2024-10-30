@@ -31,7 +31,7 @@ const ArmyCategory: React.FC<{ category: CategoryType, armyId: string }> = ({ ca
                     {category.name}
                 </h3>
                 <div className="army-category-right">
-                    <div className="army-category-right-total">
+                    <div>
                         <DrawPercentage value={CalculatePercentage.calculateCategoryPercentage(category)} />
                     </div>
                 </div>
@@ -69,9 +69,10 @@ const Army: React.FC<ArmyType> = (army) => {
         <div className="army">
             <div className="army-header">
                 <h1 className="army-header-title">{armyName}</h1>
-                <Categories armyId={armyId} />
+                
                 <div className="army-header-right">
-                    <div className="army-header-right-percentage">
+                    <Categories armyId={armyId} />
+                    <div>
                         <DrawPercentage value={CalculatePercentage.calculateArmyPercentage(army)} />
                     </div>
                     <div className="army-header-right-remove">

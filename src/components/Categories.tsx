@@ -62,7 +62,7 @@ const Categories: React.FC<{ armyId: string }> = ({ armyId }) => {
     return (
         <div>
             <Modal
-                ModalButton={"Modify categories"}
+                ModalButton={"Edit"}
                 ModalHeader={"Modify categories"}
                 ModalContent={
                     <div>
