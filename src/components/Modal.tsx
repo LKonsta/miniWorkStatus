@@ -26,17 +26,17 @@ const Modal: React.FC<ModalProps> = ({ ModalButton, ModalHeader, ModalContent })
                     />
                     <div className="modal">
                         <div className="modal-content">
-                            <div className="modal-header">
-                                <div className="modal-header-title">
+                            <div className="modal-content-header">
+                                <div className="modal-content-header-title">
                                     {ModalHeader}
                                 </div>
                                 <button
-                                    className="modal-header-exit"
+                                    className="modal-content-header-exit"
                                     onClick={() => setOpen(false)}
                                     type="button"    
                                 >X</button>
                             </div>
-                            <div className="modal-form">
+                            <div className="modal-content-form">
                                 {ModalContent}
                             </div>
                         </div>

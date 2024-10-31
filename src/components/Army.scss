@@ -1,6 +1,7 @@
 .army {
     border-radius: 10px;
     background-color: rgb(194, 240, 255);
+    max-height: 100%;
 
     &-header {
         border-radius: 10px 10px 0 0;
@@ -8,6 +9,7 @@
         display: flex;
         align-items: center;
         padding: 5px;
+        
 
         &-title {
             flex: 1;
@@ -25,40 +27,50 @@
             }
         }
     }
-
-    &-category {
-        border-radius: 10px;
-        padding: 5px;
-
-
-        &-header {
-            border-radius: 10px 10px 0 0;
-            background-color: rgb(0, 140, 184);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+    &-content {
+        width: 100%;
+        overflow-y: scroll;
+        
+        &-category {
+            
+            border-radius: 10px;
             padding: 5px;
 
-            &-title {
-                flex: 1;
-                margin: 0px;
-                color: white;
-                font-size: 1.2em;
-            }
 
-            &-right {
-                &-dummy-box {
+            &-header {
+                border-radius: 10px 10px 0 0;
+                background-color: rgb(0, 140, 184);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 5px;
+
+                &-title {
+                    flex: 1;
+                    margin: 0px;
+                    color: white;
+                    font-size: 1.2em;
+                }
+
+                &-right {
+                    &-dummy-box {
+                    }
                 }
             }
-        }
 
-        &-units {
-            background-color: white;
-            border-radius: 0 0 10px 10px;
+            &-units {
+                background-color: white;
+                border-radius: 0 0 10px 10px;
 
-            &-unit-between {
-                height: 1px;
-                background-color: grey;
+                &-seperator {
+                    height: 1px;
+                    background-color: grey;
+                }
+                &-empty {
+                    border-radius: 0 0 10px 10px;
+                    height: 20px;
+                    width: 100%;
+                }
             }
         }
     }

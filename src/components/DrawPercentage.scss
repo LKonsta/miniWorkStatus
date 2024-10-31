@@ -1,8 +1,12 @@
 .percentage-box {
-    align-content: center;
-    height: 100%;
-    min-width: 40px;
-    border-radius: 5px;
-    border-style: solid;
-    border-color: black;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    padding: 3px; 
+    border-radius: 10px;
+    border: 2px solid #333;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    color: #333;
+    }

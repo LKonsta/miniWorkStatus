@@ -4,6 +4,7 @@ import { UnitType } from '../types/defaultTypes';
 
 interface UnitContextType {
     allUnits: UnitType[];
+    getUnitByCategory: (categoryId: string) => UnitType[];
     addUnit: (newUnit: UnitType) => Promise<void>;
     modifyUnit: (id: string, updatedUnit: UnitType) => Promise<void>;
     removeUnit: (id: string) => Promise<void>;
@@ -21,6 +22,11 @@ export const UnitProvider: React.FC<{ children: React.ReactNode; armyId: string 
         };
         fetchUnits();
     }, []);
+
+    const getUnitByCategory = (categoryId: string): UnitType[] => {
+        const unitList: UnitType[] = allUnits.filter(unit => unit.categoryId === categoryId);
+        return unitList;
+    }
 
     const addUnit = async (newUnit: UnitType) => {
         const returnedUnit = await unitService.create(newUnit);
@@ -40,7 +46,7 @@ export const UnitProvider: React.FC<{ children: React.ReactNode; armyId: string 
     };
 
     return (
-        <UnitContext.Provider value={{ allUnits, addUnit, modifyUnit, removeUnit }}>
+        <UnitContext.Provider value={{ allUnits, getUnitByCategory, addUnit, modifyUnit, removeUnit }}>
             {children}
         </UnitContext.Provider>
     );

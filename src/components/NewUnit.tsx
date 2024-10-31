@@ -170,7 +170,7 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
                             ))}
                         </select>
                         {(newUnitMiniAmount > 0) ? (
-                            <Bases.Bases
+                            <Bases
                                 miniStatuses={newMiniStatus}
                                 configureMini={configureBase}
                                 configureOptions={allBases}

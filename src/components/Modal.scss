@@ -5,33 +5,33 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
   }
-  /* Modal positioning */
-  .modal {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 4;
+/* Modal positioning */
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
 
-  /* Modal itself */
-    &-content {
-      
-      margin: auto;
-      background-color: #fff;
-      position: relative;
-      padding: 0;
-      outline: 0;
-      min-width: 300px;
-    }
-    /* Modal header */
+/* Modal itself */
+  &-content {    
+    margin: auto;
+    background-color: darkcyan;
+    color: white;
+    position: relative;
+    padding: 0;
+    outline: 0;
+    min-width: 300px;
+    border-radius: 10px;
+
     &-header {
       padding: 10px;
       display: flex;
       gap: 10px;
       align-content: center;
+      
       &-title {
         flex: 1;
         font-size: 30px;  
@@ -40,23 +40,16 @@
         
       }
     }
-    /* Modal close button */
     
     /* Modal contents */
     &-form {
-      padding: 10px;
+      padding: 20px;
       background-color: lightcyan;
-    
-      /* Modal confrim button for either [add] or [save] */
-      &-confirm-button {
-        background-color: green;
-      }
-      /* Modal remove unit button */
-      &-remove-button {
-        background-color: red;
-      }
+      color: black;
+      border-radius: 0 0 10px 10px;
     }
   }
+}
 
   
   

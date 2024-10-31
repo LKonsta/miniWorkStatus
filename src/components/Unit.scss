@@ -4,7 +4,16 @@
     align-items: center;
     gap: 2px;
     padding: 3px;
+    &:hover {
+        background-color: lightgray;
+        transition: background-color 0.1s ease-in;
+        border-radius: 0 0 10px 10px;
+    }
     &-amount {
+        min-width: 6%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     &-name {
@@ -19,21 +28,21 @@
     &-right {
         display: flex;
         align-content: center;
+        justify-content: center;
         gap: 3px;
 
-        &-bases {
-        }
-
-
-
-
         &-edit {
+            display: flex;
+            align-content: center;
+            justify-content: center;
         }
 
         &-remove {
+            display: flex;
+            align-content: center;
+            justify-content: center;
         }
     }
-    
 }
 .unit-dropdown {
     display: flex;
@@ -68,4 +77,3 @@
         }
     }
 }
-

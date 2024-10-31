@@ -11,6 +11,8 @@ import DrawPercentage from './DrawPercentage';
 import CalculatePercentage from "./CalculatePercentage";
 
 
+import { BiSolidHide } from "react-icons/bi";
+
 const ArmyRemove: React.FC<{ armyId: string }> = ({ armyId }) => {
     const { removeArmy } = useArmyContext();
 
@@ -22,27 +24,36 @@ const ArmyRemove: React.FC<{ armyId: string }> = ({ armyId }) => {
 };
 
 const ArmyCategory: React.FC<{ category: CategoryType, armyId: string }> = ({ category, armyId }) => {
-    const { allUnits } = useUnitContext();
-
+    const { getUnitByCategory } = useUnitContext();
+    const categorysUnits = getUnitByCategory(category.id);
+    console.log(armyId, "|" ,categorysUnits)
+    
     return (
         <div>
-            <div key={category.id} className="army-category">
-                <div className="army-category-header">
-                    <p className="army-category-header-title">
+            <div key={category.id} className="army-content-category">
+                <div className="army-content-category-header">
+                    <p className="army-content-category-header-title">
                         {category.name}
                     </p>
-                    <div className="army-category-header-right">
+
+                    <div className="army-content-category-header-right">
                         <div>
                             <DrawPercentage value={CalculatePercentage.calculateCategoryPercentage(category)} />
                         </div>
                     </div>
                 </div>
-                <div className="army-category-units">
-                    {allUnits.map((unit) => (
+                <div className="army-content-category-units">
+                    { (categorysUnits.length != 0) ? 
+                    (categorysUnits.map((unit) => (
                         <div>
+                            <div className="army-content-category-units-seperator"/>
                             <ArmyUnit unit={unit} categoryId={category.id} />
                         </div>
-                    ))}
+                    ))) : 
+                    (<div className="army-content-category-units-empty">
+                        
+                    </div>)
+                    }
                 </div>
             </div>
         </div>
@@ -83,13 +94,14 @@ const Army: React.FC<ArmyType> = (army) => {
                     </div>
                 </div>
             </div>
-            {allCategories.map((category) => (
-                <div>
-                    <ArmyCategory category={ category } armyId={ armyId } />
-                </div>
+            <div className="army-content">
+                {allCategories.map((category) => (
+                    <div>
+                        <ArmyCategory category={ category } armyId={ armyId } />
+                    </div>
 
-            ))}
-            
+                ))}
+            </div>
         </div>
     );
 };

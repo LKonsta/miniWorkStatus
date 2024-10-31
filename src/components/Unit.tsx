@@ -10,6 +10,9 @@ import { useBaseContext } from './context/BaseContext';
 import CalculatePercentage from './CalculatePercentage';
 import DrawPercentage from './DrawPercentage';
 
+import { IoMdSettings } from "react-icons/io";
+import { MdDelete } from "react-icons/md";
+
 
 const UnitMiniAmount: React.FC<{ miniAmount?: number; }> = ({ miniAmount = 0}) => (
     <div>
@@ -78,19 +81,8 @@ const UnitMiniStatus: React.FC<UnitType> = (unit) => {
     );
 };
 
-const UnitRemove: React.FC<UnitType> = (unit) => {
-    const { removeUnit } = useUnitContext();
-
-    return (
-        <div>
-            <button onClick={() => removeUnit(unit.id)}> X </button>
-        </div>
-    );
-};
-
-
-
 const Unit: React.FC<UnitType> = (unit) => {
+    const { removeUnit } = useUnitContext();
     const [open, setOpen] = useState(false);
     return (
         <>
@@ -98,23 +90,18 @@ const Unit: React.FC<UnitType> = (unit) => {
                 <div className='unit-amount'>
                     <UnitMiniAmount miniAmount={unit.miniAmount} />
                 </div>
-                <div className='unit-name'>
+                <div className='unit-name' onClick={() => setOpen(!open)}>
                     <UnitNameInfo name={unit.name} info={unit.info} />
                 </div>
                 <div className="unit-right">
-                    <div className='unit-right-bases'>
-                        <button onClick={() => setOpen(!open)} type="button">
-                            {open ? '⤊' : '⤋'}
-                        </button>
-                    </div>
                     <div className='unit-right-edit'>
-                        <button>Edit</button>
+                        <IoMdSettings size={25} />
                     </div>
                     <div>
                         <DrawPercentage value={ CalculatePercentage.calculateUnitPercentage(unit) } />
                     </div>
                     <div className='unit-right-remove'>
-                        <UnitRemove {...unit} />
+                        <MdDelete size={25} onClick={() => removeUnit(unit.id)} />
                     </div>
                 </div>
             </div>
