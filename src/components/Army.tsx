@@ -27,21 +27,23 @@ const ArmyCategory: React.FC<{ category: CategoryType, armyId: string }> = ({ ca
     return (
         <div>
             <div key={category.id} className="army-category">
-                <h3 className="army-category-title">
-                    {category.name}
-                </h3>
-                <div className="army-category-right">
-                    <div>
-                        <DrawPercentage value={CalculatePercentage.calculateCategoryPercentage(category)} />
+                <div className="army-category-header">
+                    <p className="army-category-header-title">
+                        {category.name}
+                    </p>
+                    <div className="army-category-header-right">
+                        <div>
+                            <DrawPercentage value={CalculatePercentage.calculateCategoryPercentage(category)} />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                {allUnits.map((unit) => (
-                    <>
-                        <ArmyUnit unit={unit} categoryId={category.id} />
-                    </>
-                ))}
+                <div className="army-category-units">
+                    {allUnits.map((unit) => (
+                        <div>
+                            <ArmyUnit unit={unit} categoryId={category.id} />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )
@@ -68,9 +70,10 @@ const Army: React.FC<ArmyType> = (army) => {
     return (
         <div className="army">
             <div className="army-header">
-                <h1 className="army-header-title">{armyName}</h1>
+                <p className="army-header-title">{armyName}</p>
                 
                 <div className="army-header-right">
+                    <NewUnit armyId={armyId} />
                     <Categories armyId={armyId} />
                     <div>
                         <DrawPercentage value={CalculatePercentage.calculateArmyPercentage(army)} />
@@ -86,7 +89,7 @@ const Army: React.FC<ArmyType> = (army) => {
                 </div>
 
             ))}
-            <NewUnit armyId={armyId} />
+            
         </div>
     );
 };

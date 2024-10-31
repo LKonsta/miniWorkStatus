@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import unitService from '../services/unit';
 import Modal from "./Modal";
-import Bases from "./Base";
+import { Bases } from "./Base";
 import { UnitType, BaseType, StatusType, CategoryType, MiniStatusType } from './types/defaultTypes';
 
 

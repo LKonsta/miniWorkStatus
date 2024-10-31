@@ -3,6 +3,10 @@
     {
       "id": "d432",
       "name": "Dwarfs"
+    },
+    {
+      "id": "70fc",
+      "name": "dsadsa"
     }
   ],
   "categories": [
@@ -41,6 +45,18 @@
       "name": "dsadsa",
       "index": 1,
       "armyId": null
+    },
+    {
+      "id": "a993",
+      "name": "xzxz<",
+      "index": 1,
+      "armyId": "70fc"
+    },
+    {
+      "id": "3b58",
+      "name": "sweaddsa",
+      "index": 2,
+      "armyId": "70fc"
     }
   ],
   "units": [

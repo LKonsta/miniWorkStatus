@@ -3,9 +3,7 @@
     flex-direction: row;
     align-items: center;
     gap: 2px;
-    margin-top: 1px;
-    background-color: lightpink;
-
+    padding: 3px;
     &-amount {
     }
 
@@ -35,14 +33,14 @@
         &-remove {
         }
     }
+    
 }
 .unit-dropdown {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     gap: 5px;
     margin-top: 1px;
-    background-color: lightpink;
 
     &-base-box {
         width: 75%;
