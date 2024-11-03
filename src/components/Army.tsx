@@ -46,14 +46,15 @@ const ArmyCategory: React.FC<{ category: CategoryType, armyId: string }> = ({ ca
                     { (categorysUnits.length != 0) ? 
                     (categorysUnits.map((unit) => (
                         <div>
-                            <div className="army-content-category-units-seperator"/>
                             <ArmyUnit unit={unit} categoryId={category.id} />
+                            <div className="army-content-category-units-seperator" />
                         </div>
                     ))) : 
-                    (<div className="army-content-category-units-empty">
-                        
-                    </div>)
+                    (<></>)
                     }
+                    <div className="army-content-category-units-empty">
+
+                    </div>
                 </div>
             </div>
         </div>
