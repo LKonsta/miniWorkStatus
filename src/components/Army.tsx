@@ -1,4 +1,4 @@
-import Categories from "./Categories";
+import EditArmy from "./EditArmy";
 import Unit from "./Unit";
 import NewUnit from "./NewUnit";
 
@@ -12,16 +12,9 @@ import CalculatePercentage from "./CalculatePercentage";
 
 
 import { BiSolidHide } from "react-icons/bi";
+import { IoMdSettings } from "react-icons/io";
+import { MdDelete } from "react-icons/md";
 
-const ArmyRemove: React.FC<{ armyId: string }> = ({ armyId }) => {
-    const { removeArmy } = useArmyContext();
-
-    return (
-        <div>
-            <button onClick={() => removeArmy(armyId)}> X </button>
-        </div>
-    );
-};
 
 const ArmyCategory: React.FC<{ category: CategoryType, armyId: string }> = ({ category, armyId }) => {
     const { getUnitByCategory } = useUnitContext();
@@ -78,6 +71,7 @@ const Army: React.FC<ArmyType> = (army) => {
     const armyName = army.name;
 
     const { allCategories } = useCategoryContext();
+    const { removeArmy } = useArmyContext();
 
     return (
         <div className="army">
@@ -85,13 +79,17 @@ const Army: React.FC<ArmyType> = (army) => {
                 <p className="army-header-title">{armyName}</p>
                 
                 <div className="army-header-right">
-                    <NewUnit armyId={armyId} />
-                    <Categories armyId={armyId} />
+                    <div className="army-header-right-new-unit">
+                        <NewUnit armyId={armyId} />
+                    </div>
+                    <div className="army-header-right-edit">
+                        <EditArmy armyId={armyId} />
+                    </div>
                     <div>
                         <DrawPercentage value={CalculatePercentage.calculateArmyPercentage(army)} />
                     </div>
                     <div className="army-header-right-remove">
-                        <ArmyRemove armyId = {armyId} />
+                        <MdDelete color = {"white"} size = {25} onClick={() => removeArmy(armyId)} />
                     </div>
                 </div>
             </div>

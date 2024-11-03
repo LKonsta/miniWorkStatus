@@ -5,8 +5,8 @@
       "name": "Dwarfs"
     },
     {
-      "id": "70fc",
-      "name": "dsadsa"
+      "id": "1724",
+      "name": "Wood elves"
     }
   ],
   "categories": [
@@ -50,13 +50,109 @@
       "id": "a993",
       "name": "xzxz<",
       "index": 1,
-      "armyId": "70fc"
+      "armyId": null
     },
     {
       "id": "3b58",
       "name": "sweaddsa",
       "index": 2,
-      "armyId": "70fc"
+      "armyId": null
+    },
+    {
+      "id": "d289",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "8b3f",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
+    },
+    {
+      "id": "1110",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "49c1",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
+    },
+    {
+      "id": "00b0",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
+    },
+    {
+      "id": "98cb",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": "1724"
+    },
+    {
+      "id": "18a1",
+      "name": "Special",
+      "index": 3,
+      "armyId": "1724"
+    },
+    {
+      "id": "3973",
+      "name": "Rare",
+      "index": 4,
+      "armyId": "1724"
+    },
+    {
+      "id": "9f0c",
+      "name": "Random",
+      "index": 5,
+      "armyId": "1724"
+    },
+    {
+      "id": "f73c",
+      "name": "Filler",
+      "index": 6,
+      "armyId": "1724"
+    },
+    {
+      "id": "a655",
+      "name": "Core",
+      "index": 2,
+      "armyId": "1724"
+    },
+    {
+      "id": "17f3",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "a6f0",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
+    },
+    {
+      "id": "b25d",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
+    },
+    {
+      "id": "b2ed",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "cd93",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
     }
   ],
   "units": [

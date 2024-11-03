@@ -4,7 +4,7 @@ import Modal from "./Modal";
 import { CategoryType } from "./types/defaultTypes"
 import { useCategoryContext } from "./context/CategoryContext";
 
-
+import { IoMdSettings } from "react-icons/io";
 
 const Category: React.FC<CategoryType> = (category) => {
 
@@ -57,12 +57,12 @@ const NewCategory: React.FC<{ armyId: string; }> = ({ armyId }) => {
     );
 }
 
-const Categories: React.FC<{ armyId: string }> = ({ armyId }) => {
+const EditArmy: React.FC<{ armyId: string }> = ({ armyId }) => {
     const { allCategories } = useCategoryContext();
     return (
         <div>
             <Modal
-                ModalButton={"Edit"}
+                ModalButton={<IoMdSettings color={ "white" } size = {25}/>}
                 ModalHeader={"Modify categories"}
                 ModalContent={
                     <div>
@@ -79,4 +79,4 @@ const Categories: React.FC<{ armyId: string }> = ({ armyId }) => {
     );
 }
 
-export default Categories;
+export default EditArmy;

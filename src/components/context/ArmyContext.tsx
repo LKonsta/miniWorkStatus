@@ -25,6 +25,7 @@ export const ArmyProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const addArmy = async (newArmy: ArmyType) => {
         const returnedArmy = await armyService.create(newArmy);
         setAllArmies((prevArmies) => [...prevArmies, returnedArmy]);
+        return returnedArmy;
     };
 
     const modifyArmy = async (id: string, updatedArmy: ArmyType) => {
