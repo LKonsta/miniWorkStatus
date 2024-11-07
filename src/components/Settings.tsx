@@ -7,9 +7,11 @@ import { useBaseContext } from './context/BaseContext';
 import { useStatusContext } from './context/StatusContext';
 import { DrawDummy } from './Base';
 import './Settings.scss'
+import './Container.scss'
 
 const Settings: React.FC = () => {
-    /* Bases Values and Operators */
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
+    const toggleModal = () => { setModalOpen(!modalOpen); };
     const { allBases, addBase, removeBase } = useBaseContext();
 
     const [baseShapes] = useState < string[] > (["square", "round"]);
@@ -42,7 +44,6 @@ const Settings: React.FC = () => {
     };
 
 
-    /* Status Values and Operators */
     const { allStatuses, addStatus, removeStatus } = useStatusContext();
 
     const [newStatusName, setNewStatusName] = useState < string > ('');
@@ -68,101 +69,114 @@ const Settings: React.FC = () => {
     return (
         <div>
             <Modal
-                ModalButton={"Settings"}
+                ModalButton={<button onClick={toggleModal}>Settings</button>}
                 ModalHeader={"Base and Status settings"}
                 ModalContent={
-                    <div>
+                    <>
                         {/* base list */}
-                        <span className='settings-bases-title'> Bases </span>
-                        <div className='settings-bases'>
-                            <div className='settings-bases-list'>
-                            {allBases.length > 0 &&
-                                allBases.map(base =>
-                                    <div key={base.id} className='settings-bases-list-item'>
-                                        {base.shape} {base.name}
-                                        <button 
-                                            onClick={() => removeBase(base.id)} 
-                                            className='settings-bases-list-remove'
-                                        >remove</button>
+                        <div className="inner-container">
+                            <div className="inner-container-header">
+                                <span className='inner-container-header-title'> Bases </span>
+                            </div>
+                            <div className='settings-bases'>
+                                <div className='settings-bases-list'>
+                                    {allBases.length > 0 &&
+                                        allBases.map(base =>
+                                            <div key={base.id} className='settings-bases-list-item'>
+                                                {base.shape} {base.name}
+                                                <button
+                                                    onClick={() => removeBase(base.id)}
+                                                    className='settings-bases-list-remove'
+                                                >remove</button>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+
+                                {/* add base form */}
+                                <form onSubmit={addNewBase} className='settings-bases-form'>
+                                    <div className='settings-bases-form-preview'>
+                                        <DrawDummy
+                                            width={newBaseWidth}
+                                            height={newBaseHeight}
+                                            shape={newBaseShape}
+                                        />
                                     </div>
-                                )
-                            }
+                                    <select
+                                        className='settings-bases-form-input'
+                                        name="bases"
+                                        id="bases"
+                                        onChange={handleNewBaseShapeChange}
+                                        value={newBaseShape}
+                                    >
+                                        {baseShapes.map(shape =>
+                                            <option key={shape} value={shape}>
+                                                {shape}
+                                            </option>
+                                        )}
+                                    </select>
+                                    <div>
+                                        <input
+                                            className='settings-bases-form-input'
+                                            type="number"
+                                            value={newBaseWidth}
+                                            onChange={handleNewBaseWidthChange}
+                                        />
+                                        <input
+                                            className='settings-bases-form-input'
+                                            type="number"
+                                            value={newBaseHeight}
+                                            onChange={handleNewBaseHeightChange}
+                                        />
+                                    </div>
+                                    <button type="submit" className='settings-bases-form-button'> add </button>
+                                </form>
+
                             </div>
-                            
-                            {/* add base form */}
-                            <form onSubmit={addNewBase} className='settings-bases-form'>
-                                <div className='settings-bases-form-preview'>
-                                <DrawDummy width={newBaseWidth} height={newBaseHeight} shape={newBaseShape} />
-                                </div>
-                                <select
-                                    className='settings-bases-form-input'
-                                    name="bases"
-                                    id="bases"
-                                    onChange={handleNewBaseShapeChange}
-                                    value={newBaseShape}
-                                >
-                                    {baseShapes.map(shape =>
-                                        <option key={shape} value={shape}>
-                                            {shape}
-                                        </option>
-                                    )}
-                                </select>
-                                <div>
-                                    <input
-                                        className='settings-bases-form-input'
-                                        type="number"
-                                        value={newBaseWidth}
-                                        onChange={handleNewBaseWidthChange}
-                                    />
-                                    <input
-                                        className='settings-bases-form-input'
-                                        type="number"
-                                        value={newBaseHeight}
-                                        onChange={handleNewBaseHeightChange}
-                                    />
-                                </div>
-                                <button type="submit" className='settings-bases-form-button'> add </button>
-                            </form>
-                            
                         </div>
-                        
                         {/* status list */}
-                        <span className='settings-status-title'> Statuses </span>
-                        <div className='settings-status'>
-                            <div className='settings-status-list'>
-                                {allStatuses.length > 0 &&
-                                    allStatuses.map(status =>
-                                        <div key={status.id} className='settings-status-list-item'>
-                                            {status.name}
-                                            <button 
-                                            onClick={() => removeStatus(status.id)}
-                                            className='settings-status-list-remove'
-                                            >remove</button>
-                                        </div>
-                                    )
-                                }
+                        <div className="inner-container">
+                            <div className="inner-container-header">
+                                <span className='inner-container-header-title'> Statuses </span>
                             </div>
-                            {/* add status form */}
-                            <form onSubmit={addNewStatus} className='settings-status-form'>
-                                <input
-                                    className='settings-status-form-input'
-                                    value={newStatusName}
-                                    onChange={handleNewStatusNameChange}
-                                />
-                                <input
-                                    className='settings-status-form-slider'
-                                    type="range"
-                                    min="0"
-                                    max="100"
-                                    value={newStatusPrecentageValue}
-                                    onChange={handleNewStatusPrecentageValueChange}
-                                />
-                                <div> {newStatusPrecentageValue ? newStatusPrecentageValue : 0} % </div>
-                                <button type="submit" className='settings-status-form-button'> add </button>
-                            </form>
+                            <div className='settings-status'>
+                                <div className='settings-status-list'>
+                                    {allStatuses.length > 0 &&
+                                        allStatuses.map(status =>
+                                            <div key={status.id} className='settings-status-list-item'>
+                                                {status.name}
+                                                <button
+                                                    onClick={() => removeStatus(status.id)}
+                                                    className='settings-status-list-remove'
+                                                >remove</button>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                                {/* add status form */}
+                                <form onSubmit={addNewStatus} className='settings-status-form'>
+                                    <input
+                                        className='settings-status-form-input'
+                                        value={newStatusName}
+                                        onChange={handleNewStatusNameChange}
+                                    />
+                                    <input
+                                        className='settings-status-form-slider'
+                                        type="range"
+                                        min="0"
+                                        max="100"
+                                        value={newStatusPrecentageValue}
+                                        onChange={handleNewStatusPrecentageValueChange}
+                                    />
+                                    <div> {newStatusPrecentageValue ? newStatusPrecentageValue : 0} % </div>
+                                    <button type="submit" className='settings-status-form-button'> add </button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
+                    </>
                 }
+                open={modalOpen}
+                setOpen={setModalOpen}
             />
         </div>
     );

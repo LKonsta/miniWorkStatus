@@ -25,7 +25,7 @@
             display: flex;
             align-content: center;
             justify-content: center;
-            gap: 3px;
+            gap: 8px;
             padding-right: 4px;
             
             &-new-unit {
@@ -98,7 +98,7 @@
 }
 .new-army {
     display: flex;
-    min-height: 250px;
+    min-height: 200px;
     gap: 10px;
     &-form {
         display: flex;

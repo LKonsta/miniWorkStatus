@@ -8,19 +8,24 @@ import { useStatusContext } from "./context/StatusContext";
 import { useCategoryContext } from "./context/CategoryContext";
 import { useUnitContext } from "./context/UnitContext";
 
+import { FaPlus } from "react-icons/fa";
+
 
 const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
+    const toggleModal = () => { setModalOpen(!modalOpen); };
     const { allBases } = useBaseContext();
     const { allStatuses } = useStatusContext();
     const { allCategories } = useCategoryContext();
     const { addUnit } = useUnitContext();
 
+    const [newUnitBases, setNewUnitBases] = useState<string>("1");
+    const [newInitialStatus, setNewInitialStatus] = useState<string>("1");
+
     const [newUnitName, setNewUnitName] = useState<string>('');
     const [newUnitInfo, setNewUnitInfo] = useState < string > ('');
     const [newUnitMiniAmount, setNewUnitMiniAmount] = useState < number > (1);
     const [newUnitCategory, setNewUnitCategory] = useState < string > ('null');
-    const [newUnitBases, setNewUnitBases] = useState < string > ("1");
-    const [newInitialStatus, setNewInitialStatus] = useState < string > ("1");
     const [newMiniStatus, setNewMiniStatus] = useState<MiniStatusType[]> ([
         {
             id: 1,
@@ -83,8 +88,7 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
         setNewMiniStatus(newMiniStatusList);
     };
 
-    const addNewUnit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const addNewUnit = async () => {
         const unitObject = {
             name: newUnitName,
             info: newUnitInfo,
@@ -109,83 +113,94 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
         
     };
 
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        addNewUnit();
+        toggleModal();
+    }
+
     return (
-        <div>
-            <Modal
-                ModalButton={"add new unit"}
-                ModalHeader={"New unit"}
-                ModalContent={
-                    <form onSubmit={addNewUnit}>
-                        <input
-                            key="1"
-                            value={newUnitName}
-                            onChange={handleUnitNameChange}
+        <Modal
+            ModalButton={
+                <FaPlus size={25}
+                    className="outer-right-box-button"
+                    onClick={toggleModal}
+                />
+            }
+            ModalHeader={"New unit"}
+            ModalContent={
+                <form onSubmit={handleSubmit}>
+                    <input
+                        key="1"
+                        value={newUnitName}
+                        onChange={handleUnitNameChange}
+                    />
+                    <input
+                        key="2"
+                        value={newUnitInfo}
+                        onChange={handleUnitInfoChange}
+                    />
+                    <input
+                        className="input-integer"
+                        key="3"
+                        type="number"
+                        value={newUnitMiniAmount}
+                        onChange={handleUnitMiniAmountChange}
+                    />
+                    <select
+                        key="4"
+                        name="bases"
+                        id="bases"
+                        onChange={handleUnitBaseChange}
+                    >
+                        {allBases.map(base => (
+                            <option key={base.id} value={base.id}>
+                                {base.name} {base.shape}
+                            </option>
+                        ))}
+                    </select>
+                    <select
+                        key="5"
+                        name="category"
+                        id="category"
+                        onChange={handleUnitCategoryChange}
+                    >
+                        {allCategories.map(category => (
+                            <option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>
+                        ))}
+                    </select>
+                    <select
+                        key="6"
+                        name="initialStatus"
+                        id="initialStatus"
+                        onChange={handleInitialStatusChange}
+                    >
+                        {allStatuses.map(status => (
+                            <option key={status.id} value={status.id}>
+                                {status.name}
+                            </option>
+                        ))}
+                    </select>
+                    {(newUnitMiniAmount > 0) ? (
+                        <Bases
+                            miniStatuses={newMiniStatus}
+                            configureMini={configureBase}
+                            configureOptions={allBases}
                         />
-                        <input
-                            key="2"
-                            value={newUnitInfo}
-                            onChange={handleUnitInfoChange}
-                        />
-                        <input
-                            className="input-integer"
-                            key="3"
-                            type="number"
-                            value={newUnitMiniAmount}
-                            onChange={handleUnitMiniAmountChange}
-                        />
-                        <select
-                            key="4"
-                            name="bases"
-                            id="bases"
-                            onChange={handleUnitBaseChange}
-                        >
-                            {allBases.map(base => (
-                                <option key={base.id} value={base.id}>
-                                    {base.name} {base.shape}
-                                </option>
-                            ))}
-                        </select>
-                        <select
-                            key="5"
-                            name="category"
-                            id="category"
-                            onChange={handleUnitCategoryChange}
-                        >
-                            {allCategories.map(category => (
-                                <option key={category.id} value={category.id}>
-                                    {category.name}
-                                </option>
-                            ))}
-                        </select>
-                        <select
-                            key="6"
-                            name="initialStatus"
-                            id="initialStatus"
-                            onChange={handleInitialStatusChange}
-                        >
-                            {allStatuses.map(status => (
-                                <option key={status.id} value={status.id}>
-                                    {status.name}
-                                </option>
-                            ))}
-                        </select>
-                        {(newUnitMiniAmount > 0) ? (
-                            <Bases
-                                miniStatuses={newMiniStatus}
-                                configureMini={configureBase}
-                                configureOptions={allBases}
-                            />
-                        ) : (
-                            <div>
-                            </div>
-                        )}
+                    ) : (
                         <div>
-                            <button type="submit">add</button>
                         </div>
-                    </form>
-                }
-            />
-        </div>
+                    )}
+                    <div>
+                        <button type="submit">add</button>
+                    </div>
+                </form>
+            }
+            open={modalOpen}
+            setOpen={setModalOpen}
+        />
     );
 };
 

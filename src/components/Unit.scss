@@ -46,9 +46,9 @@
 .unit-dropdown {
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: 5px;
     margin-top: 1px;
+    padding:3px;
 
     &-base-box {
         width: 75%;
@@ -73,6 +73,22 @@
             &-name {
                 flex: 1;
             }
+        }
+    }
+}
+.new-unit {
+    &-button {
+        height: 100%;
+        display: flex;
+        gap: 2px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.4em;
+
+        &:hover {
+            filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
         }
     }
 }

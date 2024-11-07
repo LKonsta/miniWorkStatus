@@ -1,607 +1,225 @@
 {
   "armies": [
     {
-      "id": "d432",
+      "id": "2bdd",
       "name": "Dwarfs"
-    },
-    {
-      "id": "1724",
-      "name": "Wood elves"
     }
   ],
   "categories": [
     {
-      "id": "e960",
-      "name": "Hero/lord",
+      "id": "8b99",
+      "name": "Hero/Lord",
       "index": 1,
-      "armyId": "d432"
+      "armyId": "2bdd"
     },
     {
-      "id": "ab91",
+      "id": "6394",
       "name": "Core",
       "index": 2,
-      "armyId": "d432"
+      "armyId": "2bdd"
     },
     {
-      "id": "ed8e",
+      "id": "3d6e",
       "name": "Special/Rare",
       "index": 3,
-      "armyId": "d432"
+      "armyId": "2bdd"
     },
     {
-      "id": "89d8",
+      "id": "f799",
       "name": "Warmachine",
       "index": 4,
-      "armyId": "d432"
+      "armyId": "2bdd"
     },
     {
-      "id": "eca0",
+      "id": "2ee4",
       "name": "Extra",
       "index": 5,
-      "armyId": "d432"
+      "armyId": "2bdd"
     },
     {
-      "id": "8018",
+      "id": "d8b7",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
+    },
+    {
+      "id": "4e0e",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "27e0",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "4967",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
+    },
+    {
+      "id": "5635",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
+    },
+    {
+      "id": "f9b6",
       "name": "dsadsa",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "a993",
-      "name": "xzxz<",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "3b58",
-      "name": "sweaddsa",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "d289",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "8b3f",
-      "name": "Core",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "1110",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "49c1",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "00b0",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
-    {
-      "id": "98cb",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": "1724"
-    },
-    {
-      "id": "18a1",
-      "name": "Special",
-      "index": 3,
-      "armyId": "1724"
-    },
-    {
-      "id": "3973",
-      "name": "Rare",
-      "index": 4,
-      "armyId": "1724"
-    },
-    {
-      "id": "9f0c",
-      "name": "Random",
-      "index": 5,
-      "armyId": "1724"
-    },
-    {
-      "id": "f73c",
-      "name": "Filler",
       "index": 6,
-      "armyId": "1724"
-    },
-    {
-      "id": "a655",
-      "name": "Core",
-      "index": 2,
-      "armyId": "1724"
-    },
-    {
-      "id": "17f3",
-      "name": "Hero/Lord",
-      "index": 1,
       "armyId": null
     },
     {
-      "id": "a6f0",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "b25d",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
-    {
-      "id": "b2ed",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "cd93",
-      "name": "Core",
-      "index": 2,
+      "id": "26a7",
+      "name": "dsadsadsa",
+      "index": 7,
       "armyId": null
     }
   ],
   "units": [
     {
-      "id": "15e1",
-      "name": "Dwarf King",
+      "id": "6f7c",
+      "name": "dsadsa",
+      "info": "weqewqewq",
+      "miniAmount": 2,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "8e99",
+          "statusId": "175f"
+        },
+        {
+          "id": 2,
+          "baseId": "8e99",
+          "statusId": "175f"
+        }
+      ],
+      "categoryId": "2ee4",
+      "armyId": "2bdd"
+    },
+    {
+      "id": "bd41",
+      "name": "King",
       "info": "on Warbear",
       "miniAmount": 1,
       "miniStatus": [
         {
           "id": 1,
-          "baseId": "702a",
-          "statusId": "5f87"
+          "baseId": "ed92",
+          "statusId": "6224"
         }
       ],
-      "categoryId": "e960",
-      "armyId": "d432"
+      "categoryId": "8b99",
+      "armyId": "2bdd"
     },
     {
-      "id": "5f36",
-      "name": "Flame Cannon",
-      "info": "",
-      "miniAmount": 4,
+      "id": "b76a",
+      "name": "King",
+      "info": "Greatsword",
+      "miniAmount": 1,
       "miniStatus": [
         {
           "id": 1,
-          "baseId": "9ae3",
-          "statusId": "5f87"
-        },
-        {
-          "id": 2,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 3,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 4,
-          "baseId": "a547",
-          "statusId": "5f87"
+          "baseId": "1",
+          "statusId": "7030"
         }
       ],
-      "categoryId": "89d8",
-      "armyId": "d432"
-    },
-    {
-      "id": "7667",
-      "name": "Hammerers",
-      "info": "",
-      "miniAmount": 30,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 2,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 3,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 4,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 5,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 6,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 7,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 8,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 9,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 10,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 11,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 12,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 13,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 14,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 15,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 16,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 17,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 18,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 19,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 20,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 21,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 22,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 23,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 24,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 25,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 26,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 27,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 28,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 29,
-          "baseId": "a547",
-          "statusId": "5f87"
-        },
-        {
-          "id": 30,
-          "baseId": "a547",
-          "statusId": "5f87"
-        }
-      ],
-      "categoryId": "ed8e",
-      "armyId": "d432"
-    },
-    {
-      "id": "4e03",
-      "name": "Combat markers",
-      "info": "beer lady",
-      "miniAmount": 2,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "8fd8",
-          "statusId": "9fab"
-        },
-        {
-          "id": 2,
-          "baseId": "8fd8",
-          "statusId": "d458"
-        }
-      ],
-      "categoryId": "eca0",
-      "armyId": "d432"
-    },
-    {
-      "id": "77d1",
-      "name": "dsadsa",
-      "info": "dsadsa",
-      "miniAmount": 5,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "16c3",
-          "statusId": "2626"
-        },
-        {
-          "id": 2,
-          "baseId": "16c3",
-          "statusId": "5f87"
-        },
-        {
-          "id": 3,
-          "baseId": "16c3",
-          "statusId": "9fab"
-        },
-        {
-          "id": 4,
-          "baseId": "16c3",
-          "statusId": "5f87"
-        },
-        {
-          "id": 5,
-          "baseId": "16c3",
-          "statusId": "5f87"
-        }
-      ],
-      "categoryId": "89d8",
-      "armyId": "d432"
-    },
-    {
-      "id": "a1f7",
-      "name": "Warriors",
-      "info": "shields",
-      "miniAmount": 20,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 2,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 3,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 4,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 5,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 6,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 7,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 8,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 9,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 10,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 11,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 12,
-          "baseId": "a547",
-          "statusId": "2626"
-        },
-        {
-          "id": 13,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 14,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 15,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 16,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 17,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 18,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 19,
-          "baseId": "a547",
-          "statusId": "d458"
-        },
-        {
-          "id": 20,
-          "baseId": "a547",
-          "statusId": "d458"
-        }
-      ],
-      "categoryId": "ab91",
-      "armyId": "d432"
+      "categoryId": "8b99",
+      "armyId": "2bdd"
     }
   ],
   "bases": [
     {
-      "id": "a547",
+      "id": "2282",
       "name": "20x20",
       "shape": "square",
       "width": 20,
       "height": 20
     },
     {
-      "id": "db97",
+      "id": "2109",
       "name": "25x25",
       "shape": "square",
       "width": 25,
       "height": 25
     },
     {
-      "id": "1b0c",
+      "id": "da2e",
       "name": "40x20",
       "shape": "square",
       "width": 40,
       "height": 20
     },
     {
-      "id": "702a",
+      "id": "ed92",
       "name": "40x60",
       "shape": "square",
       "width": 40,
       "height": 60
     },
     {
-      "id": "16c3",
+      "id": "4e24",
+      "name": "60x60mm",
+      "shape": "round",
+      "width": 60,
+      "height": 60
+    },
+    {
+      "id": "8999",
       "name": "50x50",
       "shape": "square",
       "width": 50,
       "height": 50
     },
     {
-      "id": "9ae3",
+      "id": "5168",
       "name": "50x75",
       "shape": "square",
       "width": 50,
       "height": 75
     },
     {
-      "id": "aecb",
+      "id": "30ab",
       "name": "40x40",
       "shape": "square",
       "width": 40,
       "height": 40
+    },
+    {
+      "id": "8e99",
+      "name": "32x32mm",
+      "shape": "round",
+      "width": 32,
+      "height": 32
     }
   ],
   "status": [
     {
-      "id": "2626",
-      "name": "assembly",
+      "id": "74b9",
+      "name": "building",
       "percentage": 0
     },
     {
-      "id": "9fab",
+      "id": "175f",
       "name": "painting",
       "percentage": 0.25
     },
     {
-      "id": "d458",
+      "id": "7030",
       "name": "basing",
       "percentage": 0.7
     },
     {
-      "id": "5934",
+      "id": "7891",
       "name": "varnish",
-      "percentage": 0.9
+      "percentage": 0.85
     },
     {
-      "id": "5f87",
-      "name": "complete",
+      "id": "6224",
+      "name": "done",
       "percentage": 1
     }
   ]

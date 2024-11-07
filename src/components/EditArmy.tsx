@@ -1,82 +1,124 @@
 import { useEffect, useState } from "react";
 import Modal from "./Modal";
 
-import { CategoryType } from "./types/defaultTypes"
+import { CategoryType, ArmyType } from "./types/defaultTypes"
 import { useCategoryContext } from "./context/CategoryContext";
 
 import { IoMdSettings } from "react-icons/io";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
-const Category: React.FC<CategoryType> = (category) => {
+const EditArmy: React.FC<ArmyType> = (army) => {
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
+    const toggleModal = () => { setModalOpen(true); };
+    const { allCategories, modifyCategory, addCategory, removeCategory } = useCategoryContext();
 
-    return (
-        <div>
-            {category.name}
-            <CategoryRemove {...category} />
-        </div>
+    const [editArmyCategories, setEditArmyCategories] = useState<CategoryType[]>(
+        allCategories
     );
-}
 
+    const handleArmyCategoryNameChange = (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
+        setEditArmyCategories(preArmyCategories =>
+            preArmyCategories.map(armyCategory =>
+                armyCategory.index === index ? { ...armyCategory, name: event.target.value } : armyCategory
+            )
+        );
+    };
 
-const CategoryRemove: React.FC<CategoryType> = (category) => {
-    const { removeCategory } = useCategoryContext();
-
-    return (
-        <button onClick={() => removeCategory(category.id)}> X </button>
-    );
-}
-
-const NewCategory: React.FC<{ armyId: string; }> = ({ armyId }) => {
-    const { allCategories, addCategory } = useCategoryContext();
-    const [newCategory, setNewCategory] = useState < string > ('');
-
-    const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setNewCategory(event.target.value);
-    }
-
-    const addNewCategory = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        const categoryObject = {
-            name: newCategory,
-            index: allCategories.length + 1,
-            armyId: armyId,
+    const addArmyCategory = () => {
+        const newArmyCategoryObject = {
+            name: "",
+            index: (editArmyCategories.length + 1),
+            armyId: army.id
         };
-        await addCategory(categoryObject)
-        setNewCategory('');
-    }
+        setEditArmyCategories(preCategories => [
+            ...preCategories,
+            newArmyCategoryObject
+        ]);
+    };
+    const removeArmyCategory = () => {
+        setEditArmyCategories(preCategories => {
+            return preCategories.slice(0, preCategories.length - 1);
+        });
+    };
+
+    const editCategories = () => {
+        allCategories.forEach(async (category) => {
+            const categoryIsListed = editArmyCategories.some(editCategory => editCategory.id === category.id) 
+            if (!categoryIsListed) {
+                removeCategory(category.id)
+            }
+        });
+        editArmyCategories.forEach(async (category) => {
+            (
+                category.id
+            ) ? (
+                await modifyCategory(category.id, category)
+            ) : (
+                await addCategory(category)
+            );
+        });
+    };
+
+    const openModal = () => {
+        setEditArmyCategories(allCategories);
+        toggleModal();
+    };
+
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        editCategories();
+        toggleModal();
+    };
 
     return (
-        <div>
-            <form onSubmit={addNewCategory}>
-                <input
-                    value={newCategory}
-                    onChange={handleCategoryChange}
+        <Modal
+            ModalButton={
+                <IoMdSettings
+                    size={25}
+                    className="outer-right-box-button"
+                    onClick={openModal}
                 />
-                <button type="submit">add</button>
-            </form>
-        </div>
-    );
-}
-
-const EditArmy: React.FC<{ armyId: string }> = ({ armyId }) => {
-    const { allCategories } = useCategoryContext();
-    return (
-        <div>
-            <Modal
-                ModalButton={<IoMdSettings color={ "white" } size = {25}/>}
-                ModalHeader={"Modify categories"}
-                ModalContent={
-                    <div>
-                        {allCategories.map(category => (
-                            <div key={category.id}>
-                                <Category {...category} />
+            }
+            ModalHeader={army.name + " settings"}
+            ModalContent={
+                <form onSubmit={handleSubmit}>
+                    <div className="inner-container">
+                        <div className="inner-container-header">
+                            <div className="inner-container-header-title">Categories</div>
+                            <div className="outer-right-box">
+                                <div className="outer-right-box-button-container">
+                                    <FaMinus
+                                        className="outer-right-box-button"
+                                        onClick={removeArmyCategory} />
+                                </div>
+                                <div className="outer-right-box-item">{editArmyCategories.length}</div>
+                                <div className="outer-right-box-button-container">
+                                    <FaPlus
+                                        className="outer-right-box-button"
+                                        onClick={addArmyCategory} />
+                                </div>
                             </div>
-                        ))}
-                        <NewCategory armyId={armyId} />
+                        </div>
+                        <div>
+                            {editArmyCategories.map(category => (
+                                <div key={category.index} className="new-army-categories-category">
+                                    {category.index}
+                                    <input value={category.name} onChange={handleArmyCategoryNameChange(category.index)} />
+                                </div>
+                            ))}
+                        </div>
+                        <button type="submit">apply</button>
                     </div>
-                }
-            />
-        </div>
+                </form>
+            }
+            open={modalOpen}
+            setOpen={setModalOpen}
+        />
     );
 }
 
 export default EditArmy;
+
+function setNewArmyName(arg0: string) {
+    throw new Error("Function not implemented.");
+}

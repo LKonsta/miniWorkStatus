@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { useArmyContext } from './context/ArmyContext';
-import { useCategoryContext } from "./context/CategoryContext";
 import Modal from "./Modal";
 import { CategoryType, ArmyType } from "./types/defaultTypes";
+
+import CategoryService from "../services/category";
+import './Container.scss'
+
+import { FaMinus, FaPlus } from "react-icons/fa";
+
 
 interface NewCategoryType {
     name: string,
@@ -10,8 +15,10 @@ interface NewCategoryType {
 }
 
 const NewArmy: React.FC = () => { 
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
+    const toggleModal = () => { setModalOpen(!modalOpen); };
+
     const { addArmy } = useArmyContext();
-    const { addCategory } = useCategoryContext();
     const [newArmyName, setNewArmyName] = useState<string>('');
     const [newArmyCategories, setNewArmyCategories] = useState<NewCategoryType[]>(
         [
@@ -62,53 +69,67 @@ const NewArmy: React.FC = () => {
         setNewArmyName("");
     };
 
-    const addNewArmy = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const addNewArmy = async () => {
         const armyObject = {
             name: newArmyName
         };
-        const returnedArmy:ArmyType = await addArmy(armyObject);
-        setNewArmyName('');
+        const returnedArmy: ArmyType = await addArmy(armyObject);
         newArmyCategories.forEach(async (category) => {
             const categoryObject = {
                 name: category.name,
                 index: category.index,
                 armyId: returnedArmy.id
             };
-            await addCategory(categoryObject);
+            await CategoryService.create(categoryObject);
         });
+        resetSettings();
+    };
+    const openModal = () => {
+        resetSettings();
+        toggleModal();
+    };
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        addNewArmy();
+        toggleModal();
     };
 
     return (
         <div>
             <Modal 
-                ModalButton={<button onClick={resetSettings}>New Army</button>}
+                ModalButton={<button onClick={openModal}>New Army</button>}
                 ModalHeader={"New army"}
                 ModalContent={
                     <div className="new-army">
-                        <form onSubmit={addNewArmy} className="new-army-form">
-                            <div className="new-army-form-inputs">
-                                <div className="new-army-form-inputs-name">Army name</div>
+                        <form onSubmit={handleSubmit} className="inner-container">
+                            <div className="inner-container-header">
+                                <div className="inner-container-header-title">Army name</div>
+                            </div>
+                            <div className="inner-container-content">
                                 <input
                                     className="new-army-form-inputs-name-field"
                                     value={newArmyName}
                                     onChange={handleArmyNameChange}
                                 />
-                            </div>
-                            <div className="new-army-button-form-button">
-                                <button type="submit">Add</button>
+                                <div className="new-army-button-form-button">
+                                    <button type="submit">Add</button>
+                                </div>
                             </div>
                         </form>
-                        <div className="new-army-categories">
-                            <div className="new-army-categories-header">
-                                <div className="new-army-categories-header-title">Categories</div>
-                                <div className="new-army-categories-header-amount">
-                                    <div>
-                                        <button onClick={removeArmyCategory}>-</button>
+                        <div className="inner-container">
+                            <div className="inner-container-header">
+                                <div className="inner-container-header-title">Categories</div>
+                                <div className="outer-right-box">
+                                    <div className="outer-right-box-button-container">
+                                        <FaMinus
+                                            className="outer-right-box-button"
+                                            onClick={removeArmyCategory} />
                                     </div>
-                                    <div className="new-army-categories-header-amount-number">{newArmyCategories.length}</div>
-                                    <div>
-                                        <button onClick={addArmyCategory}>+</button>
+                                    <div className="outer-right-box-item">{newArmyCategories.length}</div>
+                                    <div className="outer-right-box-button-container">
+                                        <FaPlus
+                                            className="outer-right-box-button"
+                                            onClick={addArmyCategory} />
                                     </div>
                                 </div>
                             </div>
@@ -123,6 +144,8 @@ const NewArmy: React.FC = () => {
                         </div>
                     </div>
                 }
+                open={modalOpen}
+                setOpen={setModalOpen}
             />
         </div>
     );

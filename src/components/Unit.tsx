@@ -32,7 +32,6 @@ const UnitNameInfo: React.FC<{ name?: string; info?: string; }> = ({ name = '-un
 const UnitMiniStatus: React.FC<UnitType> = (unit) => {
     const { allStatuses } = useStatusContext();
     const { modifyUnit } = useUnitContext();
-    console.log(allStatuses)
     
 
     const configureStatus = (mini: any, newStatus: string) => {
@@ -93,14 +92,14 @@ const Unit: React.FC<UnitType> = (unit) => {
                 <div className='unit-name' onClick={() => setOpen(!open)}>
                     <UnitNameInfo name={unit.name} info={unit.info} />
                 </div>
-                <div className="unit-right">
-                    <div className='unit-right-edit'>
+                <div className="inner-right-box">
+                    <div className='inner-right-box-button-container'>
                         <IoMdSettings size={25} />
                     </div>
-                    <div>
+                    <div className='inner-right-box-item'>
                         <DrawPercentage value={ CalculatePercentage.calculateUnitPercentage(unit) } />
                     </div>
-                    <div className='unit-right-remove'>
+                    <div className='inner-right-box-button-container'>
                         <MdDelete size={25} onClick={() => removeUnit(unit.id)} />
                     </div>
                 </div>
