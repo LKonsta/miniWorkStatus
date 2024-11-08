@@ -16,13 +16,13 @@ const create = async (newObject: Omit<StatusType, 'id'>): Promise<StatusType> =>
 };
 
 // Update an existing status
-const update = async (id: number, newObject: Partial<StatusType>): Promise<StatusType> => {
+const update = async (id: string, newObject: Partial<StatusType>): Promise<StatusType> => {
     const response = await axios.put<StatusType>(`${baseUrl}/${id}`, newObject);
     return response.data;
 };
 
 // Delete an status
-const remove = async (id: number): Promise<void> => {
+const remove = async (id: string): Promise<void> => {
     await axios.delete(`${baseUrl}/${id}`);
 };
 

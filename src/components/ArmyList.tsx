@@ -5,8 +5,6 @@ import { UnitProvider } from './context/UnitContext';
 import "./ArmyList.scss"
 import Army from "./Army"
 
-
-
 const ArmyList: React.FC = () => {
     const { allArmies } = useArmyContext();
 

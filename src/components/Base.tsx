@@ -37,7 +37,11 @@ interface DrawBaseProps {
 const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configureOptions }) => {
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
     const { allBases } = useBaseContext();
-    const { allStatuses } = useStatusContext();
+    const { sortedStatuses } = useStatusContext();
+
+
+    const isBaseType = (configureOptions[0].shape !== undefined)
+
     const defaultBase: BaseType = {
         id: "1",
         name: "null",
@@ -47,7 +51,7 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
     }
 
     const base = allBases.find(x => x.id === miniStatus.baseId) || defaultBase;
-    const status = allStatuses.find(x => x.id === miniStatus.statusId);
+    const status = sortedStatuses.find(x => x.id === miniStatus.statusId);
 
     const color = status ? CalculatePercentage.calculatePercentageColor( status.percentage ): 'rgb(0, 0, 0)';
 
@@ -65,7 +69,6 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
         backgroundColor: color,
         borderRadius: "50%"
     };
-
     return (
         <div>
             <button
@@ -80,8 +83,8 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
                         name="settings"
                         id="settings"
                         onChange={handleConfigureMiniChange}
+                        value={(isBaseType)?(miniStatus.baseId):(miniStatus.statusId)}
                     >
-                        <option key="0" value="0">options</option>
                         {configureOptions.map(option => (
                             <option key={option.id} value={option.id}>
                                 {option.name}

@@ -4,6 +4,7 @@ import { CategoryType } from '../types/defaultTypes';
 
 interface CategoryContextType {
     allCategories: CategoryType[];
+    sortedCategories: CategoryType[];
     addCategory: (newCategory: CategoryType) => Promise<void>;
     modifyCategory: (id: string, updatedCategory: CategoryType) => Promise<void>;
     removeCategory: (id: string) => Promise<void>;
@@ -13,14 +14,24 @@ const CategoryContext = createContext<CategoryContextType | undefined>(undefined
 
 export const CategoryProvider: React.FC<{ children: React.ReactNode; armyId: string }> = ({ children, armyId }) => {
     const [allCategories, setAllCategories] = useState<CategoryType[]>([]);
+    const sortedCategories = allCategories.sort((a, b) => a.index - b.index);
+    const [loading, setLoading] = useState<boolean>(true);
+
 
     useEffect(() => {
         const fetchCategories = async () => {
-            const initialCategories = await categoryService.getAll(armyId);
-            setAllCategories(initialCategories);
+            setLoading(true);
+            try {
+                const initialCategories = await categoryService.getAll(armyId);
+                setAllCategories(initialCategories);
+            } catch (error) {
+                console.error('Failed to fetch categories', error);
+            } finally {
+                setLoading(false);
+            }
         };
         fetchCategories();
-    }, []);
+    }, [armyId]);
 
     const addCategory = async (newCategory: CategoryType) => {
         const returnedCategory = await categoryService.create(newCategory);
@@ -40,7 +51,7 @@ export const CategoryProvider: React.FC<{ children: React.ReactNode; armyId: str
     };
 
     return (
-        <CategoryContext.Provider value={{ allCategories, addCategory, modifyCategory, removeCategory }}>
+        <CategoryContext.Provider value={{ allCategories, sortedCategories, addCategory, modifyCategory, removeCategory }}>
             {children}
         </CategoryContext.Provider>
     );

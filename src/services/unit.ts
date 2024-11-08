@@ -24,13 +24,13 @@ const create = async (newObject: Omit<UnitType, 'id'>): Promise<UnitType> => {
 };
 
 // Update an existing unit
-const update = async (id: number, newObject: Partial<UnitType>): Promise<UnitType> => {
+const update = async (id: string, newObject: Partial<UnitType>): Promise<UnitType> => {
     const response = await axios.put<UnitType>(`${baseUrl}/${id}`, newObject);
     return response.data;
 };
 
 // Delete an unit
-const remove = async (id: number): Promise<void> => {
+const remove = async (id: string): Promise<void> => {
     await axios.delete(`${baseUrl}/${id}`);
 };
 

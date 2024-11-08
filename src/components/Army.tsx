@@ -21,7 +21,6 @@ import { useState } from "react";
 const ArmyCategory: React.FC<{ category: CategoryType, armyId: string }> = ({ category, armyId }) => {
     const { getUnitByCategory } = useUnitContext();
     const categorysUnits = getUnitByCategory(category.id);
-    console.log(armyId, "|" ,categorysUnits)
     
     return (
         <div>
@@ -37,15 +36,15 @@ const ArmyCategory: React.FC<{ category: CategoryType, armyId: string }> = ({ ca
                         </div>
                     </div>
                 </div>
-                <div className="inner-container-content">
-                    { (categorysUnits.length != 0) ? 
-                    (categorysUnits.map((unit) => (
-                        <div key={unit.id}>
-                            <ArmyUnit unit={unit} categoryId={category.id} />
-                            <div className="army-content-category-units-seperator" />
-                        </div>
-                    ))) : 
-                    (<></>)
+                <div className="inner-container-content-column">
+                    {(categorysUnits.length != 0) ?
+                        (categorysUnits.map((unit) => (
+                            <div key={unit.id}>
+                                <ArmyUnit unit={unit} />
+                                <div className="army-content-category-units-seperator" />
+                            </div>
+                        ))) :
+                        (<></>)
                     }
                     <div className="army-content-category-units-empty">
 
@@ -53,18 +52,55 @@ const ArmyCategory: React.FC<{ category: CategoryType, armyId: string }> = ({ ca
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
-const ArmyUnit: React.FC<{ unit: UnitType, categoryId: string }> = ({ unit, categoryId }) => {
+const Uncategorized: React.FC<{ categories: CategoryType[], armyId: string }> = ({ categories, armyId }) => {
+    const { allUnits } = useUnitContext();
+    const categoryIds: string[] = Array.from({ length: categories.length }, (v, i) => (
+        categories[i].id
+    ));
+    const uncategorizedUnits = allUnits.filter(unit => !categoryIds.includes(unit.categoryId));
+
     return (
         <>
-            {unit.categoryId === categoryId && (
-                <div key={unit.id}>
-                    <Unit {...unit} />
+            {(uncategorizedUnits.length > 0) ? 
+                <div className="inner-container">
+                    <div className="inner-container-header">
+                        <p className="inner-container-header-title">
+                            Uncategorized
+                        </p>
+
+                        <div className="inner-right-box">
+
+                        </div>
+                    </div>
+                    <div className="inner-container-content-column">
+                        {(uncategorizedUnits.length != 0) ?
+                            (uncategorizedUnits.map((unit) => (
+                                <div key={unit.id}>
+                                    <ArmyUnit unit={unit} />
+                                    <div className="army-content-category-units-seperator" />
+                                </div>
+                            ))) :
+                            (<></>)
+                        }
+                        <div className="army-content-category-units-empty">
+
+                        </div>
+                    </div>
                 </div>
-            )}
+            : (<></>)
+            }
         </>
+    );
+};
+
+const ArmyUnit: React.FC<{ unit: UnitType }> = ({ unit }) => {
+    return (
+        <div key={unit.id}>
+            <Unit {...unit} />
+        </div>
     )
 };
 
@@ -83,7 +119,7 @@ const Army: React.FC<ArmyType> = (army) => {
     const armyId = army.id;
     const armyName = army.name;
 
-    const { allCategories } = useCategoryContext();
+    const { sortedCategories } = useCategoryContext();
 
     return (
         <div className="outer-container">
@@ -104,13 +140,15 @@ const Army: React.FC<ArmyType> = (army) => {
                     </div>
                 </div>
             </div>
-            <div className="outer-container-content">
-                {allCategories.map((category) => (
+            <div className="outer-container-content-column">
+                {sortedCategories.map((category) => (
                     <div key={category.id}>
                         <ArmyCategory category={ category } armyId={ armyId } />
                     </div>
-
                 ))}
+                <div>
+                    <Uncategorized categories={sortedCategories} armyId={armyId}/>
+                </div>
             </div>
         </div>
     );

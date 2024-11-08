@@ -24,13 +24,13 @@ const create = async (newObject: Omit<CategoryType, 'id'>): Promise<CategoryType
 };
 
 // Update an existing category
-const update = async (id: number, newObject: Partial<CategoryType>): Promise<CategoryType> => {
+const update = async (id: string, newObject: Partial<CategoryType>): Promise<CategoryType> => {
     const response = await axios.put<CategoryType>(`${baseUrl}/${id}`, newObject);
     return response.data;
 };
 
 // Delete an category
-const remove = async (id: number): Promise<void> => {
+const remove = async (id: string): Promise<void> => {
     await axios.delete(`${baseUrl}/${id}`);
 };
 

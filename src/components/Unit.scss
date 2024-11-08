@@ -23,25 +23,6 @@
             color: #666;
         }
     }
-
-    &-right {
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        gap: 3px;
-
-        &-edit {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-        }
-
-        &-remove {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-        }
-    }
 }
 .unit-dropdown {
     display: flex;
@@ -73,22 +54,9 @@
             &-name {
                 flex: 1;
             }
-        }
-    }
-}
-.new-unit {
-    &-button {
-        height: 100%;
-        display: flex;
-        gap: 2px;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 1.4em;
+            &-percentage {
 
-        &:hover {
-            filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+            }
         }
     }
 }

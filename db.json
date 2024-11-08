@@ -1,108 +1,95 @@
 {
   "armies": [
     {
-      "id": "2bdd",
-      "name": "Dwarfs"
+      "name": "Dwarfs",
+      "id": "78d1"
+    },
+    {
+      "id": "8ed9",
+      "name": "dsadsa"
     }
   ],
   "categories": [
     {
-      "id": "8b99",
+      "id": "4598",
       "name": "Hero/Lord",
       "index": 1,
-      "armyId": "2bdd"
+      "armyId": "78d1"
     },
     {
-      "id": "6394",
+      "id": "cec0",
       "name": "Core",
       "index": 2,
-      "armyId": "2bdd"
+      "armyId": "78d1"
     },
     {
-      "id": "3d6e",
+      "id": "4084",
       "name": "Special/Rare",
       "index": 3,
-      "armyId": "2bdd"
+      "armyId": "78d1"
     },
     {
-      "id": "f799",
-      "name": "Warmachine",
+      "id": "e314",
+      "name": "Warmachines",
       "index": 4,
-      "armyId": "2bdd"
+      "armyId": "78d1"
     },
     {
-      "id": "2ee4",
-      "name": "Extra",
-      "index": 5,
-      "armyId": "2bdd"
-    },
-    {
-      "id": "d8b7",
-      "name": "Core",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "4e0e",
+      "id": "bdd3",
       "name": "Hero/Lord",
       "index": 1,
-      "armyId": null
+      "armyId": "8ed9"
     },
     {
-      "id": "27e0",
+      "id": "a906",
+      "name": "Core",
+      "index": 2,
+      "armyId": "8ed9"
+    },
+    {
+      "id": "d958",
       "name": "Special",
       "index": 3,
-      "armyId": null
+      "armyId": "8ed9"
     },
     {
-      "id": "4967",
+      "id": "c11f",
       "name": "Rare",
       "index": 4,
-      "armyId": null
+      "armyId": "8ed9"
     },
     {
-      "id": "5635",
+      "id": "c051",
       "name": "Extra",
       "index": 5,
-      "armyId": null
+      "armyId": "8ed9"
     },
     {
-      "id": "f9b6",
-      "name": "dsadsa",
-      "index": 6,
-      "armyId": null
-    },
-    {
-      "id": "26a7",
-      "name": "dsadsadsa",
-      "index": 7,
-      "armyId": null
+      "id": "a822",
+      "name": "Extra",
+      "index": 5,
+      "armyId": "78d1"
     }
   ],
   "units": [
     {
-      "id": "6f7c",
+      "id": "9367",
       "name": "dsadsa",
-      "info": "weqewqewq",
-      "miniAmount": 2,
+      "info": "dsadsadsa",
+      "miniAmount": 1,
       "miniStatus": [
         {
           "id": 1,
-          "baseId": "8e99",
-          "statusId": "175f"
-        },
-        {
-          "id": 2,
-          "baseId": "8e99",
-          "statusId": "175f"
+          "baseId": "4e24",
+          "statusId": "7891"
         }
       ],
-      "categoryId": "2ee4",
-      "armyId": "2bdd"
+      "categoryId": "c051",
+      "armyId": "8ed9"
     },
     {
-      "id": "bd41",
-      "name": "King",
+      "id": "148a",
+      "name": "Dwarf King",
       "info": "on Warbear",
       "miniAmount": 1,
       "miniStatus": [
@@ -112,28 +99,153 @@
           "statusId": "6224"
         }
       ],
-      "categoryId": "8b99",
-      "armyId": "2bdd"
+      "categoryId": "4598",
+      "armyId": "78d1"
     },
     {
-      "id": "b76a",
-      "name": "King",
-      "info": "Greatsword",
-      "miniAmount": 1,
+      "id": "093a",
+      "name": "Catapult",
+      "info": "",
+      "miniAmount": "4",
       "miniStatus": [
         {
           "id": 1,
-          "baseId": "1",
-          "statusId": "7030"
+          "baseId": "5168",
+          "statusId": "6224"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "6224"
         }
       ],
-      "categoryId": "8b99",
-      "armyId": "2bdd"
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "0ff1",
+      "name": "Anvil of Doom",
+      "info": "and Kraggi",
+      "miniAmount": "3",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "4e24",
+          "statusId": "6224"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 3,
+          "baseId": "30ab",
+          "statusId": "6224"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
+    },
+    {
+      "id": "2233",
+      "name": "Random guy",
+      "info": "dsadsa",
+      "miniAmount": "15",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "6224"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "6224"
+        }
+      ],
+      "categoryId": "4084",
+      "armyId": "78d1"
     }
   ],
   "bases": [
     {
-      "id": "2282",
+      "id": "abcd",
       "name": "20x20",
       "shape": "square",
       "width": 20,

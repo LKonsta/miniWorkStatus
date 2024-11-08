@@ -100,20 +100,18 @@ const NewArmy: React.FC = () => {
                 ModalButton={<button onClick={openModal}>New Army</button>}
                 ModalHeader={"New army"}
                 ModalContent={
-                    <div className="new-army">
+                    <>
                         <form onSubmit={handleSubmit} className="inner-container">
                             <div className="inner-container-header">
                                 <div className="inner-container-header-title">Army name</div>
                             </div>
-                            <div className="inner-container-content">
+                            <div className="inner-container-content-column">
                                 <input
                                     className="new-army-form-inputs-name-field"
                                     value={newArmyName}
                                     onChange={handleArmyNameChange}
                                 />
-                                <div className="new-army-button-form-button">
-                                    <button type="submit">Add</button>
-                                </div>
+                                <button type="submit">Add</button>
                             </div>
                         </form>
                         <div className="inner-container">
@@ -133,16 +131,16 @@ const NewArmy: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div>
+                            <div className="inner-container-content-column">
                                 {newArmyCategories.map(category => (
-                                    <div key={category.index} className="new-army-categories-category">
+                                    <div key={category.index}>
                                         {category.index}
                                         <input value={category.name} onChange={handleArmyCategoryNameChange(category.index)} />
                                     </div>
                                 ))}
                             </div>
                         </div>
-                    </div>
+                    </>
                 }
                 open={modalOpen}
                 setOpen={setModalOpen}

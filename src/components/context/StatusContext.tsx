@@ -4,6 +4,7 @@ import { StatusType } from '../types/defaultTypes';
 
 interface StatusContextType {
     allStatuses: StatusType[];
+    sortedStatuses: StatusType[];
     addStatus: (newStatus: StatusType) => Promise<void>;
     modifyStatus: (id: string, updatedStatus: StatusType) => Promise<void>;
     removeStatus: (id: string) => Promise<void>;
@@ -13,6 +14,7 @@ const StatusContext = createContext<StatusContextType | undefined>(undefined);
 
 export const StatusProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [allStatuses, setAllStatuses] = useState<StatusType[]>([]);
+    const sortedStatuses = allStatuses.sort((a, b) => a.percentage - b.percentage);
 
     useEffect(() => {
         const fetchStatuses = async () => {
@@ -40,7 +42,7 @@ export const StatusProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     };
 
     return (
-        <StatusContext.Provider value={{ allStatuses, addStatus, modifyStatus, removeStatus }}>
+        <StatusContext.Provider value={{ allStatuses, sortedStatuses, addStatus, modifyStatus, removeStatus }}>
             {children}
         </StatusContext.Provider>
     );

@@ -94,13 +94,17 @@ const Unit: React.FC<UnitType> = (unit) => {
                 </div>
                 <div className="inner-right-box">
                     <div className='inner-right-box-button-container'>
-                        <IoMdSettings size={25} />
+                        <EditUnit {...unit} />
                     </div>
                     <div className='inner-right-box-item'>
                         <DrawPercentage value={ CalculatePercentage.calculateUnitPercentage(unit) } />
                     </div>
                     <div className='inner-right-box-button-container'>
-                        <MdDelete size={25} onClick={() => removeUnit(unit.id)} />
+                        <MdDelete
+                            size={25}
+                            className="inner-right-box-button"
+                            onClick={() => removeUnit(unit.id)}
+                        />
                     </div>
                 </div>
             </div>

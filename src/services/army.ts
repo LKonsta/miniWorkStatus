@@ -16,13 +16,13 @@ const create = async (newObject: Omit<ArmyType, 'id'>): Promise<ArmyType> => {
 };
 
 // Update an existing army
-const update = async (id: number, newObject: Partial<ArmyType>): Promise<ArmyType> => {
+const update = async (id: string, newObject: Partial<ArmyType>): Promise<ArmyType> => {
     const response = await axios.put<ArmyType>(`${baseUrl}/${id}`, newObject);
     return response.data;
 };
 
 // Delete an army
-const remove = async (id: number): Promise<void> => {
+const remove = async (id: string): Promise<void> => {
     await axios.delete(`${baseUrl}/${id}`);
 };
 

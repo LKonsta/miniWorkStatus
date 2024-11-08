@@ -13,6 +13,7 @@ const Settings: React.FC = () => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const toggleModal = () => { setModalOpen(!modalOpen); };
     const { allBases, addBase, removeBase } = useBaseContext();
+    const { allStatuses, addStatus, removeStatus } = useStatusContext();
 
     const [baseShapes] = useState < string[] > (["square", "round"]);
     const [newBaseShape, setNewBaseShape] = useState < string > ('square');
@@ -42,9 +43,6 @@ const Settings: React.FC = () => {
         };
         await addBase(newBaseObject)
     };
-
-
-    const { allStatuses, addStatus, removeStatus } = useStatusContext();
 
     const [newStatusName, setNewStatusName] = useState < string > ('');
     const [newStatusPrecentageValue, setNewStatusPrecentageValue] = useState < string > ('50');

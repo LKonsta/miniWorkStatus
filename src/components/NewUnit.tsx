@@ -16,101 +16,104 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
     const toggleModal = () => { setModalOpen(!modalOpen); };
     const { allBases } = useBaseContext();
     const { allStatuses } = useStatusContext();
-    const { allCategories } = useCategoryContext();
+    const { allCategories, sortedCategories } = useCategoryContext();
     const { addUnit } = useUnitContext();
 
-    const [newUnitBases, setNewUnitBases] = useState<string>("1");
-    const [newInitialStatus, setNewInitialStatus] = useState<string>("1");
-
-    const [newUnitName, setNewUnitName] = useState<string>('');
-    const [newUnitInfo, setNewUnitInfo] = useState < string > ('');
-    const [newUnitMiniAmount, setNewUnitMiniAmount] = useState < number > (1);
-    const [newUnitCategory, setNewUnitCategory] = useState < string > ('null');
-    const [newMiniStatus, setNewMiniStatus] = useState<MiniStatusType[]> ([
-        {
+    const nullUnit: UnitType = {
+        name: "",
+        info: "",
+        miniAmount: 1,
+        miniStatus: [{
             id: 1,
-            baseId: (allBases.length > 0) ? (allBases[0].id) : ("null"),
-            statusId: (allStatuses.length > 0) ? (allStatuses[0].id) : ("null"),
-        }
-    ]);
-
-    const handleUnitNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setNewUnitName(event.target.value);
-        initBases();
+            baseId: allBases[0].id,
+            statusId: allStatuses[0].id
+        }],
+        categoryId: (allCategories.length > 0) ? (allCategories[0].id) : ("0"),
+        armyId: armyId
     };
 
-    const handleUnitInfoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setNewUnitInfo(event.target.value);
+    const [newUnit, setNewUnit] = useState<UnitType>(nullUnit);
+
+    const [newUnitDefaultBaseId, setNewUnitDefaultBaseId] = useState<string>(nullUnit.miniStatus[0].baseId);
+    const [newUnitDefaultStatusId, setNewUnitDefaultStatusId] = useState<string>(nullUnit.miniStatus[0].statusId);
+
+    const handleUnitChange = (field: keyof UnitType, event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
+        setNewUnit(prevUnit => ({
+            ...prevUnit, [field]: event.target.value
+        }));
     };
 
-    const handleUnitMiniAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const amount = parseInt(event.target.value, 10);
-        setNewUnitMiniAmount(amount);
-        initBases({ amount });
+    const handleUnitAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const miniAmount = event.target.value;
+        refreshStatusList({ miniAmount });
     };
 
-    const handleUnitCategoryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setNewUnitCategory(event.target.value);
-    };
+    const handleMiniStatusChange = (field: keyof MiniStatusType, event: React.ChangeEvent<HTMLSelectElement>) => {
+        if (field === "baseId") {
+            const baseId = event.target.value;
+            setNewUnitDefaultBaseId(baseId)
+            refreshStatusList({ baseId })
+        } else {
+            const statusId = event.target.value;
+            setNewUnitDefaultStatusId(statusId)
+            refreshStatusList({ statusId })
+        };
+    }
 
-    const handleUnitBaseChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setNewUnitBases(event.target.value);
-        initBases({ bases: event.target.value });
-    };
-
-    const handleInitialStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setNewInitialStatus(event.target.value);
-        initBases({ status: event.target.value });
-    };
-
-    const initBases = (props?: { amount?: number; bases?: string; status?: string }) => {
-        console.log("taala")
-        const mAmount = props?.amount || newUnitMiniAmount;
-        const mBases = props?.bases || newUnitBases;
-        const mStatus = props?.status || newInitialStatus;
-
+    const refreshStatusList = (props?: { miniAmount?: number; baseId?: string; statusId?: string }) => {
+        const mAmount = (props?.miniAmount) ? props?.miniAmount : newUnit.miniAmount;
+        const mBases = props?.baseId || newUnitDefaultBaseId;
+        const mStatus = props?.statusId || newUnitDefaultStatusId;
+        
         const miniStatusList: MiniStatusType[] = Array.from({ length: mAmount }, (v, i) => ({
             id: i + 1,
             baseId: mBases,
             statusId: mStatus,
         }));
-
-        setNewMiniStatus(miniStatusList);
+        if (miniStatusList.length === 0) {
+            setNewUnit(prevUnit => ({
+                ...prevUnit,
+                miniStatus: [],
+                miniAmount: 0
+            }));
+        } else {
+            setNewUnit(prevUnit => ({
+                ...prevUnit,
+                miniStatus: miniStatusList,
+                miniAmount: mAmount
+            })); 
+        };
     };
 
     const configureBase = (mini: { id: number }, newBase: string) => {
-        const newMiniStatusList = newMiniStatus.map((miniStatus) => {
+        const newMiniStatusList = newUnit.miniStatus.map((miniStatus) => {
             if (miniStatus.id === mini.id) {
                 return { ...miniStatus, baseId: newBase };
             }
             return miniStatus;
         });
-        setNewMiniStatus(newMiniStatusList);
+        setNewUnit(prevUnit => ({
+            ...prevUnit, miniStatus: newMiniStatusList
+        }));
     };
 
     const addNewUnit = async () => {
-        const unitObject = {
-            name: newUnitName,
-            info: newUnitInfo,
-            miniAmount: newUnitMiniAmount,
-            miniStatus: newMiniStatus,
-            categoryId: (newUnitCategory === 'null') ? allCategories[0].id : newUnitCategory,
-            armyId: armyId,
+        if (newUnit.categoryId === "0") {
+            setNewUnit(prevUnit => ({
+                ...prevUnit, categoryId: allCategories[0].id
+            }));
         };
-        await addUnit(unitObject);
-        
-        setNewUnitName('');
-        setNewUnitInfo('');
-        setNewUnitMiniAmount(1);
-        setNewInitialStatus("1");
-        setNewUnitBases("1");
-        setNewUnitCategory('null');
-        setNewMiniStatus([{
-            id: 1,
-            baseId: (allBases.length > 0) ? (allBases[0].id) : ("null"),
-            statusId: (allStatuses.length > 0) ? (allStatuses[0].id) : ("null"),
-        }]);
-        
+        await addUnit(newUnit);
+        setNewUnit(nullUnit);
+        setNewUnitDefaultBaseId(nullUnit.miniStatus[0].baseId);
+        setNewUnitDefaultBaseId(nullUnit.miniStatus[0].statusId);
+    };
+
+    const openModal = () => {
+        setNewUnit(nullUnit);
+        setNewUnitDefaultBaseId(nullUnit.miniStatus[0].baseId);
+        setNewUnitDefaultStatusId(nullUnit.miniStatus[0].statusId);
+        toggleModal();
     };
 
     const handleSubmit = (event: React.FormEvent) => {
@@ -122,60 +125,59 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
     return (
         <Modal
             ModalButton={
-                <FaPlus size={25}
+                <FaPlus
+                    size={25}
                     className="outer-right-box-button"
-                    onClick={toggleModal}
+                    onClick={openModal}
                 />
             }
             ModalHeader={"New unit"}
             ModalContent={
                 <form onSubmit={handleSubmit}>
                     <input
-                        key="1"
-                        value={newUnitName}
-                        onChange={handleUnitNameChange}
-                    />
-                    <input
-                        key="2"
-                        value={newUnitInfo}
-                        onChange={handleUnitInfoChange}
-                    />
-                    <input
-                        className="input-integer"
-                        key="3"
                         type="number"
-                        value={newUnitMiniAmount}
-                        onChange={handleUnitMiniAmountChange}
+                        value={newUnit.miniAmount}
+                        onChange={handleUnitAmountChange}
+                    />
+                    <input
+                        type="text"
+                        value={newUnit.name}
+                        onChange={(e) => handleUnitChange("name", e)}
+                    />
+                    <input
+                        type="text"
+                        value={newUnit.info}
+                        onChange={(e) => handleUnitChange("info", e)}
                     />
                     <select
-                        key="4"
-                        name="bases"
-                        id="bases"
-                        onChange={handleUnitBaseChange}
-                    >
-                        {allBases.map(base => (
-                            <option key={base.id} value={base.id}>
-                                {base.name} {base.shape}
-                            </option>
-                        ))}
-                    </select>
-                    <select
-                        key="5"
                         name="category"
                         id="category"
-                        onChange={handleUnitCategoryChange}
+                        onChange={(e) => handleUnitChange("categoryId", e)}
                     >
-                        {allCategories.map(category => (
+                        {sortedCategories.map(category => (
                             <option key={category.id} value={category.id}>
                                 {category.name}
                             </option>
                         ))}
                     </select>
+
                     <select
-                        key="6"
-                        name="initialStatus"
-                        id="initialStatus"
-                        onChange={handleInitialStatusChange}
+                        name="bases"
+                        id="bases"
+                        onChange={(e) => handleMiniStatusChange("baseId", e)}
+                    >
+                        {allBases.map(base => (
+                            <option
+                                key={base.id}
+                                value={base.id}>
+                                {base.name} {base.shape}
+                            </option>
+                        ))}
+                    </select>
+                    <select
+                        name="status"
+                        id="status"
+                        onChange={(e) => handleMiniStatusChange("statusId", e)}
                     >
                         {allStatuses.map(status => (
                             <option key={status.id} value={status.id}>
@@ -183,9 +185,9 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
                             </option>
                         ))}
                     </select>
-                    {(newUnitMiniAmount > 0) ? (
+                    {(newUnit.miniAmount > 0) ? (
                         <Bases
-                            miniStatuses={newMiniStatus}
+                            miniStatuses={newUnit.miniStatus}
                             configureMini={configureBase}
                             configureOptions={allBases}
                         />
@@ -193,6 +195,7 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
                         <div>
                         </div>
                     )}
+
                     <div>
                         <button type="submit">add</button>
                     </div>

@@ -16,13 +16,13 @@ const create = async (newObject: Omit<BaseType, 'id'>): Promise<BaseType> => {
 };
 
 // Update an existing base
-const update = async (id: number, newObject: Partial<BaseType>): Promise<BaseType> => {
+const update = async (id: string, newObject: Partial<BaseType>): Promise<BaseType> => {
     const response = await axios.put<BaseType>(`${baseUrl}/${id}`, newObject);
     return response.data;
 };
 
 // Delete an base
-const remove = async (id: number): Promise<void> => {
+const remove = async (id: string): Promise<void> => {
     await axios.delete(`${baseUrl}/${id}`);
 };
 

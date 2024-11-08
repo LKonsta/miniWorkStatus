@@ -15,6 +15,8 @@
             border-radius: 10px 10px 0 0;
             background-color: rgb(0, 140, 184);
             padding: 6px 8px 6px 12px;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 5px;
+            z-index: 1;
 
             &-title {
                 flex: 1;
@@ -25,6 +27,17 @@
         }
 
         &-content {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            padding: 5px;
+            overflow: auto;
+            height: 100%;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        &-content-column {
             display: flex;
             flex-direction: column;
             gap: 5px;
@@ -82,6 +95,8 @@
             border-radius: 10px 10px 0 0;
             background-color: rgb(0, 140, 184);
             padding: 6px 8px 6px 8px;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 5px;
+            z-index: 0;
 
             &-title {
                 flex: 1;
@@ -92,6 +107,17 @@
         }
 
         &-content {
+            gap: 5px;
+            display: flex;
+            padding: 5px;
+            flex-direction: row;
+        }
+
+        &-content-column {
+            gap: 5px;
+            display: flex;
+            padding: 5px;
+            flex-direction: column;
         }
     }
 
@@ -110,14 +136,14 @@
         &-button {
             align-content: center;
             justify-content: center;
-            color: white;
+            color: black;
             border: none;
             cursor: pointer;
             border-radius: 5px;
         }
 
         &-button:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.2);
         }
 
         &-item {
