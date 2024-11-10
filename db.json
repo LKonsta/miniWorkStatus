@@ -65,10 +65,112 @@
       "armyId": "8ed9"
     },
     {
-      "id": "a822",
+      "id": "5057",
       "name": "Extra",
       "index": 5,
       "armyId": "78d1"
+    },
+    {
+      "id": "b842",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "ef98",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
+    },
+    {
+      "id": "005e",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "9502",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
+    },
+    {
+      "id": "2515",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
+    },
+    {
+      "id": "34ac",
+      "name": "dsadsa",
+      "index": 7,
+      "armyId": null
+    },
+    {
+      "id": "0d6b",
+      "name": "dsadsa",
+      "index": 6,
+      "armyId": null
+    },
+    {
+      "id": "595f",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "4f2c",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
+    },
+    {
+      "id": "cbe1",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "d33b",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
+    },
+    {
+      "id": "1a98",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
+    },
+    {
+      "id": "c2b8",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "08c9",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
+    },
+    {
+      "id": "d992",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "509f",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
+    },
+    {
+      "id": "812f",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
     }
   ],
   "units": [
@@ -239,7 +341,72 @@
           "statusId": "6224"
         }
       ],
-      "categoryId": "4084",
+      "categoryId": "cec0",
+      "armyId": "78d1"
+    },
+    {
+      "id": "aba3",
+      "name": "Thorgrim Grudgebearer",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "ed92",
+          "statusId": "7030"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
+    },
+    {
+      "id": "8c79",
+      "name": "dsadsa",
+      "info": "dsadsa",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        }
+      ],
+      "categoryId": "08c9",
+      "armyId": null
+    },
+    {
+      "id": "3b4b",
+      "name": "fdsfsd",
+      "info": "312321",
+      "miniAmount": "5",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        }
+      ],
+      "categoryId": "e314",
       "armyId": "78d1"
     }
   ],

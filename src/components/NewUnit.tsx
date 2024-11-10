@@ -7,8 +7,12 @@ import { useBaseContext } from "./context/BaseContext";
 import { useStatusContext } from "./context/StatusContext";
 import { useCategoryContext } from "./context/CategoryContext";
 import { useUnitContext } from "./context/UnitContext";
+import CalculatePercentage from './CalculatePercentage';
+import DrawPercentage from './DrawPercentage';
 
 import { FaPlus } from "react-icons/fa";
+import './styles/InputFields.scss';
+import CustomSelect from './CustomSelect';
 
 
 const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
@@ -40,6 +44,12 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
     const handleUnitChange = (field: keyof UnitType, event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
         setNewUnit(prevUnit => ({
             ...prevUnit, [field]: event.target.value
+        }));
+    };
+
+    const handleUnitCategoryChange = (categoryId: string) => {
+        setNewUnit(prevUnit => ({
+            ...prevUnit, categoryId: categoryId
         }));
     };
 
@@ -134,70 +144,89 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
             ModalHeader={"New unit"}
             ModalContent={
                 <form onSubmit={handleSubmit}>
-                    <input
-                        type="number"
-                        value={newUnit.miniAmount}
-                        onChange={handleUnitAmountChange}
-                    />
-                    <input
-                        type="text"
-                        value={newUnit.name}
-                        onChange={(e) => handleUnitChange("name", e)}
-                    />
-                    <input
-                        type="text"
-                        value={newUnit.info}
-                        onChange={(e) => handleUnitChange("info", e)}
-                    />
-                    <select
-                        name="category"
-                        id="category"
-                        onChange={(e) => handleUnitChange("categoryId", e)}
-                    >
-                        {sortedCategories.map(category => (
-                            <option key={category.id} value={category.id}>
-                                {category.name}
-                            </option>
-                        ))}
-                    </select>
-
-                    <select
-                        name="bases"
-                        id="bases"
-                        onChange={(e) => handleMiniStatusChange("baseId", e)}
-                    >
-                        {allBases.map(base => (
-                            <option
-                                key={base.id}
-                                value={base.id}>
-                                {base.name} {base.shape}
-                            </option>
-                        ))}
-                    </select>
-                    <select
-                        name="status"
-                        id="status"
-                        onChange={(e) => handleMiniStatusChange("statusId", e)}
-                    >
-                        {allStatuses.map(status => (
-                            <option key={status.id} value={status.id}>
-                                {status.name}
-                            </option>
-                        ))}
-                    </select>
-                    {(newUnit.miniAmount > 0) ? (
-                        <Bases
-                            miniStatuses={newUnit.miniStatus}
-                            configureMini={configureBase}
-                            configureOptions={allBases}
-                        />
-                    ) : (
-                        <div>
+                    <div className="inner-container">
+                        <div className="inner-container-header">
+                            <div>
+                                <CustomSelect
+                                    style="header-select"
+                                    options={sortedCategories}
+                                    selectedValue={newUnit.categoryId}
+                                    onSelect={handleUnitCategoryChange}
+                                />
+                            </div>
                         </div>
-                    )}
-
-                    <div>
-                        <button type="submit">add</button>
+                        <div className="inner-container-content-column">
+                            <div className="edit-unit">
+                                <input className="edit-unit-amount"
+                                    type="number"
+                                    value={newUnit.miniAmount}
+                                    onChange={handleUnitAmountChange}
+                                />
+                                <div className="edit-unit-name">
+                                    <input
+                                        type="text"
+                                        value={newUnit.name}
+                                        onChange={(e) => handleUnitChange("name", e)}
+                                    />
+                                    <div className="edit-unit-name-info">
+                                        -
+                                        <input 
+                                            type="text"
+                                            value={newUnit.info}
+                                            onChange={(e) => handleUnitChange("info", e)}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="outer-right-box">
+                                    <div className='inner-right-box-item'>
+                                        <DrawPercentage value={CalculatePercentage.calculateUnitPercentage(newUnit)} />
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                {(newUnit.miniAmount > 0) ? (
+                                    <div>
+                                        <select
+                                            name="bases"
+                                            id="bases"
+                                            onChange={(e) => handleMiniStatusChange("baseId", e)}
+                                        >
+                                            {allBases.map(base => (
+                                                <option
+                                                    key={base.id}
+                                                    value={base.id}>
+                                                    {base.name} {base.shape}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <select
+                                            name="status"
+                                            id="status"
+                                            onChange={(e) => handleMiniStatusChange("statusId", e)}
+                                        >
+                                            {allStatuses.map(status => (
+                                                <option key={status.id} value={status.id}>
+                                                    {status.name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <div className="edit-unit-dropdown">
+                                            <Bases
+                                                miniStatuses={newUnit.miniStatus}
+                                                configureMini={configureBase}
+                                                configureOptions={allBases}
+                                            />
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div>
+                                    </div>
+                                )}
+                                <div>
+                                    <button type="submit">add</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
             }

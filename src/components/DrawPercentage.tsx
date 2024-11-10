@@ -1,6 +1,6 @@
 import React from "react";
 import CalculatePrecentage from "./CalculatePercentage";
-import './DrawPercentage.scss'
+import './styles/DrawPercentage.scss'
 
 const DrawPercentage: React.FC<{ value: number }> = ({ value }) => {
     const backgroundColor = CalculatePrecentage.calculatePercentageColor(value);

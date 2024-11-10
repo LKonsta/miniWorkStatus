@@ -5,7 +5,7 @@ import EditUnit from './EditUnit';
 import {Bases} from './Base';
 import { useUnitContext } from './context/UnitContext';
 import { useStatusContext } from './context/StatusContext';
-import "./Unit.scss"
+import "./styles/Unit.scss"
 import { useBaseContext } from './context/BaseContext';
 import CalculatePercentage from './CalculatePercentage';
 import DrawPercentage from './DrawPercentage';

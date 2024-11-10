@@ -6,8 +6,8 @@ import { BaseType, StatusType } from './types/defaultTypes';
 import { useBaseContext } from './context/BaseContext';
 import { useStatusContext } from './context/StatusContext';
 import { DrawDummy } from './Base';
-import './Settings.scss'
-import './Container.scss'
+import './styles/Settings.scss'
+import './styles/Container.scss'
 
 const Settings: React.FC = () => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);

@@ -60,3 +60,37 @@
         }
     }
 }
+.edit-unit {
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    padding: 3px;
+
+    &-amount {
+        min-width: 6%;
+        max-width: 8%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-name {
+        flex-grow: 1;
+        background-color: rbga(0.0.0.0);
+
+        &-info {
+            font-size: 0.8em;
+            color: #666;
+        }
+    }
+
+    &-dropdown {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-top: 1px;
+        padding: 3px;
+    }
+}

@@ -3,7 +3,7 @@ import CalculatePercentage from "./CalculatePercentage";
 import { MiniStatusType, BaseType, StatusType } from "./types/defaultTypes";
 import { useStatusContext } from "./context/StatusContext";
 import { useBaseContext } from "./context/BaseContext";
-import "./Base.scss"
+import "./styles/Base.scss"
 
 
 interface BasesProps {

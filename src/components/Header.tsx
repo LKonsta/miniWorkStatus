@@ -1,6 +1,6 @@
 import NewArmy from './NewArmy';
 import Settings from './Settings';
-import "./Header.scss"
+import "./styles/Header.scss"
 
 const Header: React.FC = () => {
     return (

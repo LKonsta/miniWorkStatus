@@ -5,8 +5,8 @@ import NewUnit from "./NewUnit";
 import { useArmyContext } from "./context/ArmyContext";
 import { useCategoryContext } from './context/CategoryContext';
 import { useUnitContext } from './context/UnitContext';
-import "./Army.scss"
-import "./Container.scss"
+import "./styles/Army.scss"
+import "./styles/Container.scss"
 import { ArmyType, CategoryType, UnitType } from './types/defaultTypes'
 import DrawPercentage from './DrawPercentage';
 import CalculatePercentage from "./CalculatePercentage";

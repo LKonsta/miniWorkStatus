@@ -4,7 +4,7 @@ import Modal from "./Modal";
 import { CategoryType, ArmyType } from "./types/defaultTypes";
 
 import CategoryService from "../services/category";
-import './Container.scss'
+import './styles/Container.scss'
 
 import { FaMinus, FaPlus } from "react-icons/fa";
 

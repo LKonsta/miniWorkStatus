@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./Modal.scss"    
-import "./Container.scss"
+import "./styles/Modal.scss"    
+import "./styles/Container.scss"
 import { IoClose } from "react-icons/io5";
 
 interface ModalProps {

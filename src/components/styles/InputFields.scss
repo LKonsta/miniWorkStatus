@@ -1,0 +1,74 @@
+// Variables for easy customization
+$primary-color: #3498db;
+$border-color: #ccc;
+$hover-border-color: #888;
+$focus-color: $primary-color;
+$input-padding: 10px;
+$border-radius: 5px;
+$transition-speed: 0.3s;
+
+$header-color: rgb(0, 140, 184);
+$header-text-color: rgb(255, 255, 255);
+$outer-container-color: rgb(194, 240, 255);
+$inner-container-color: rgb(255, 255, 255);
+
+.header-select {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    max-width: 100%;
+    background-color: $header-color;
+    font-size: 1.4em;
+    color: $header-text-color;
+    cursor: pointer;
+    outline: none;
+
+    &-button {
+        padding: 3px;
+        align-content: center;
+        justify-content: center;
+        color: $header-text-color;
+        border: none;
+        cursor: pointer;
+        border-radius: $border-radius;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    &-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 5px;
+        background-color: $header-color;
+        z-index: 1000;
+        border-radius: 4px;
+        max-height: 200px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    &-option {
+        padding: 0px;
+        cursor: pointer;
+        border-radius: $border-radius;
+    }
+
+    &-option:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+
+
+
+
+
+
+

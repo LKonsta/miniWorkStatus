@@ -2,7 +2,7 @@ import React from "react";
 import { useArmyContext } from './context/ArmyContext';
 import { CategoryProvider } from './context/CategoryContext';
 import { UnitProvider } from './context/UnitContext';
-import "./ArmyList.scss"
+import "./styles/ArmyList.scss"
 import Army from "./Army"
 
 const ArmyList: React.FC = () => {

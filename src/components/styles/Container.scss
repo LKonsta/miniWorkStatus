@@ -1,3 +1,9 @@
+$header-color: rgb(0, 140, 184) ;
+$header-text-color: rgb(255, 255, 255);
+$outer-container-color: rgb(194, 240, 255);
+$inner-container-color: rgb(255, 255, 255);
+
+
 .outer {
     &-container {
         max-height: 100%;
@@ -5,7 +11,7 @@
         flex-direction: column;
         border-radius: 10px;
         max-height: 100%;
-        background-color: rgb(194, 240, 255);
+        background-color: $outer-container-color;
 
         &-header {
             display: flex;
@@ -13,7 +19,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 10px 10px 0 0;
-            background-color: rgb(0, 140, 184);
+            background-color: $header-color;
             padding: 6px 8px 6px 12px;
             box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 5px;
             z-index: 1;
@@ -21,7 +27,7 @@
             &-title {
                 flex: 1;
                 margin: 0px;
-                color: white;
+                color: $header-text-color;
                 font-size: 1.8em;
             }
         }
@@ -64,14 +70,14 @@
         &-button {
             align-content: center;
             justify-content: center;
-            color: white;
+            color: $header-text-color;
             border: none;
             cursor: pointer;
             border-radius: 5px;
-        }
 
-        &-button:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
         }
 
         &-item {
@@ -86,14 +92,14 @@
         flex-direction: column;
         border-radius: 10px;
         max-height: 100%;
-        background-color: white;
+        background-color: $inner-container-color;
 
         &-header {
             display: flex;
             flex-direction: row;
             align-items: center;
             border-radius: 10px 10px 0 0;
-            background-color: rgb(0, 140, 184);
+            background-color: $header-color;
             padding: 6px 8px 6px 8px;
             box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 5px;
             z-index: 0;
@@ -101,7 +107,7 @@
             &-title {
                 flex: 1;
                 margin: 0px;
-                color: white;
+                color: $header-text-color;
                 font-size: 1.4em;
             }
         }
