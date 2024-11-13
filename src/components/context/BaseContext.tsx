@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import baseService from '../../services/bases';
 import { BaseType } from '../types/defaultTypes';
+import Loading from '../Loading';
 
 interface BaseContextType {
     allBases: BaseType[];

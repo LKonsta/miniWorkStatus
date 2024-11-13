@@ -1,21 +1,20 @@
 import { useStatusContext } from "../components/context/StatusContext";
 import { useBaseContext } from "../components/context/BaseContext";
-import { UnitType, CategoryType, ArmyType } from "../components/types/defaultTypes";
-import { useUnitContext } from "./context/UnitContext";
+import { UnitType } from "../components/types/defaultTypes";
 
-// returns a units done percentage value in percentage value format
-const calculateUnitPercentage = (unit: UnitType): number => {
+const calculateUnitPercentage = ( unit : UnitType): [number, number] => {
     const { allStatuses } = useStatusContext();
     const { allBases } = useBaseContext();
 
-    var totalArea: number = 0;
+    var unitArea: number = 0;
     var doneArea: number = 0;
 
     for (var status of unit.miniStatus) {
         const base = allBases.filter(base => base.id === status.baseId)[0];
-        const baseHeight = (base) ? (base.height) : (0);
-        const baseWidth = (base) ? (base.width) : (0);
-        const baseShape = (base) ? (base.shape) : ("none");
+
+        const [baseHeight, baseWidth, baseShape] = (base)
+            ? [base.height, base.width, base.shape]
+            : [0, 0, "none"];
 
         const sta = allStatuses.filter(sta => sta.id === status.statusId)[0];
         const donePercentage = (sta) ? (sta.percentage) : (0);
@@ -26,52 +25,25 @@ const calculateUnitPercentage = (unit: UnitType): number => {
         } else {
             Area = ((1 / 4) * baseHeight * baseWidth * Math.PI)
         };
-        totalArea = totalArea + Area;
+        unitArea = unitArea + Area;
         doneArea = doneArea + (Area * donePercentage);
-    }
+    };
     
-    const percent: number = totalArea ? ((doneArea / totalArea)) : 0;
-    
-    return percent;
+    return [unitArea, doneArea];
 };
 
-const calculateCategoryPercentage = (category: CategoryType): number => {
-    const { allUnits } = useUnitContext();
-    let CategorysUnits: UnitType[] = [];
-    let addedPercentages: number = 0;
+const calculatePercentage = ( units : UnitType[]): number => {
 
-    for (var unit of allUnits) {
-        if (unit.categoryId == category.id) {
-            CategorysUnits.push(unit)
-        }
-    }
-    if (CategorysUnits.length > 0) {
-        for (var unit of CategorysUnits) {
-            addedPercentages = addedPercentages + calculateUnitPercentage(unit)
-        }
-    }
-    const percent: number = (addedPercentages / CategorysUnits.length)
-    
-    return percent;
-};
+    var totalArea: number = 0;
+    var doneArea: number = 0;
 
-const calculateArmyPercentage = (army: ArmyType): number => {
-    const { allUnits } = useUnitContext();
-    let ArmysUnits: UnitType[] = [];
-    let addedPercentages: number = 0;
+    for (var unit of units) {
+        const unitAreas = calculateUnitPercentage(unit)
+        totalArea = totalArea + unitAreas[0];
+        doneArea = doneArea + unitAreas[1];
+    };
+    const percent: number = (doneArea / totalArea);
 
-    for (var unit of allUnits) {
-        if (unit.armyId == army.id) {
-            ArmysUnits.push(unit)
-        }
-    }
-    if (ArmysUnits.length > 0) {
-        for (var unit of ArmysUnits) {
-            addedPercentages = addedPercentages + calculateUnitPercentage(unit)
-        }
-    }
-    const percent: number = (addedPercentages / ArmysUnits.length)
-   
     return percent;
 };
 
@@ -88,8 +60,6 @@ const calculatePercentageColor = (value: number): string => {
 };
 
 export default {
-    calculateUnitPercentage,
-    calculateCategoryPercentage,
-    calculateArmyPercentage,
+    calculatePercentage,
     calculatePercentageColor
 };

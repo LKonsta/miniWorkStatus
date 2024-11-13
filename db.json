@@ -261,6 +261,36 @@
       "name": "Extra",
       "index": 5,
       "armyId": "bafc"
+    },
+    {
+      "id": "37d3",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "3b93",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
+    },
+    {
+      "id": "6aeb",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "8b67",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
+    },
+    {
+      "id": "437c",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
     }
   ],
   "units": [
@@ -343,7 +373,7 @@
         {
           "id": 3,
           "baseId": "30ab",
-          "statusId": "175f"
+          "statusId": "74b9"
         }
       ],
       "categoryId": "4598",
@@ -443,7 +473,7 @@
         {
           "id": 1,
           "baseId": "ed92",
-          "statusId": "7030"
+          "statusId": "175f"
         }
       ],
       "categoryId": "4598",

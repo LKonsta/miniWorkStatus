@@ -2,17 +2,23 @@ import { useEffect, useState } from "react";
 import Modal from "./Modal";
 
 import { CategoryType, ArmyType } from "./types/defaultTypes"
-import { useCategoryContext } from "./context/CategoryContext";
-import { useArmyContext } from "./context/ArmyContext";
 
 import { IoMdSettings } from "react-icons/io";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
-const EditArmy: React.FC<ArmyType> = (army) => {
+type EditArmyPropsType = {
+    army: ArmyType,
+    modifyArmy: any,
+    sortedCategories: CategoryType[],
+    modifyCategory: any,
+    addCategory: any,
+    removeCategory: any,
+}
+
+
+const EditArmy: React.FC<EditArmyPropsType> = ({ army, modifyArmy, sortedCategories, modifyCategory, addCategory, removeCategory }) => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const toggleModal = () => { setModalOpen(true); };
-    const { sortedCategories, modifyCategory, addCategory, removeCategory } = useCategoryContext();
-    const { modifyArmy } = useArmyContext();
 
     const [editArmyName, setEditArmyName] = useState<string>(army.name);
     const [editArmyCategories, setEditArmyCategories] = useState<CategoryType[]>(

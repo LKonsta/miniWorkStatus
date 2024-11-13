@@ -5,8 +5,6 @@ import Modal from "./Modal";
 import { UnitType, BaseType, StatusType, CategoryType, MiniStatusType } from '../components/types/defaultTypes';
 import { useBaseContext } from "./context/BaseContext";
 import { useStatusContext } from "./context/StatusContext";
-import { useCategoryContext } from "./context/CategoryContext";
-import { useUnitContext } from "./context/UnitContext";
 import CalculatePercentage from './CalculatePercentage';
 import DrawPercentage from './DrawPercentage';
 
@@ -14,14 +12,19 @@ import { FaPlus } from "react-icons/fa";
 import './styles/InputFields.scss';
 import CustomSelect from './CustomSelect';
 
+type NewUnitPropsType = {
+    armyId: string,
+    sortedCategories: CategoryType[],
+    addUnit: any,
+}
 
-const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
+
+const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, sortedCategories, addUnit }) => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const toggleModal = () => { setModalOpen(!modalOpen); };
+
     const { allBases } = useBaseContext();
     const { allStatuses } = useStatusContext();
-    const { allCategories, sortedCategories } = useCategoryContext();
-    const { addUnit } = useUnitContext();
 
     const nullUnit: UnitType = {
         name: "",
@@ -32,7 +35,7 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
             baseId: allBases[0].id,
             statusId: allStatuses[0].id
         }],
-        categoryId: (allCategories.length > 0) ? (allCategories[0].id) : ("0"),
+        categoryId: (sortedCategories.length > 0) ? (sortedCategories[0].id) : ("0"),
         armyId: armyId
     };
 
@@ -110,7 +113,7 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
     const addNewUnit = async () => {
         if (newUnit.categoryId === "0") {
             setNewUnit(prevUnit => ({
-                ...prevUnit, categoryId: allCategories[0].id
+                ...prevUnit, categoryId: sortedCategories[0].id
             }));
         };
         await addUnit(newUnit);
@@ -179,7 +182,7 @@ const NewUnit: React.FC<{ armyId: string; }> = ({ armyId }) => {
                                 </div>
                                 <div className="outer-right-box">
                                     <div className='inner-right-box-item'>
-                                        <DrawPercentage value={CalculatePercentage.calculateUnitPercentage(newUnit)} />
+                                        <DrawPercentage value={CalculatePercentage.calculatePercentage([newUnit])} />
                                     </div>
                                 </div>
                             </div>

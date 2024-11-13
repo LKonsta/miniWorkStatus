@@ -1,22 +1,27 @@
 import React from "react";
-import { useArmyContext } from './context/ArmyContext';
-import { CategoryProvider } from './context/CategoryContext';
-import { UnitProvider } from './context/UnitContext';
-import "./styles/ArmyList.scss"
+import { useState, useEffect } from 'react';
+
+import armyService from '../services/army';
+
 import Army from "./Army"
 
-const ArmyList: React.FC = () => {
-    const { allArmies } = useArmyContext();
+import { ArmyType } from './types/defaultTypes'
 
+import "./styles/ArmyList.scss"
+
+type ArmyListPropsType = {
+    allArmies: ArmyType[],
+    removeArmy: any,
+    modifyArmy: any,
+}
+
+const ArmyList: React.FC<ArmyListPropsType> = ({allArmies, removeArmy, modifyArmy}) => {
+    
     return (
         <div className="ArmyList">
             {allArmies.map((army) => (
                 <div key={army.id} className="wrapper">
-                    <CategoryProvider armyId={ army.id }>
-                        <UnitProvider armyId={ army.id }>
-                            <Army id={army.id} name={army.name} /> 
-                        </UnitProvider>
-                    </CategoryProvider>
+                    <Army army={army} removeArmy={removeArmy} modifyArmy={modifyArmy} /> 
                 </div>
             ))}
         </div>

@@ -10,12 +10,16 @@ import { useStatusContext } from "./context/StatusContext";
 import { IoMdSettings } from "react-icons/io";
 import CustomSelect from "./CustomSelect";
 
+type EditUnitPropsType = {
+    unit: UnitType,
+    modifyUnit: any,
+    removeUnit: any,
+    sortedCategories: CategoryType[],
+};
 
-const EditUnit: React.FC<UnitType> = ( unit ) => {
+const EditUnit: React.FC<EditUnitPropsType> = ({ unit, modifyUnit, removeUnit, sortedCategories }) => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const toggleModal = () => { setModalOpen(!modalOpen); };
-    const { modifyUnit, removeUnit } = useUnitContext();
-    const { sortedCategories } = useCategoryContext();
     const { allBases } = useBaseContext();
     const { sortedStatuses } = useStatusContext();
 
@@ -129,6 +133,7 @@ const EditUnit: React.FC<UnitType> = ( unit ) => {
             ModalContent={
                 <form onSubmit={handleSubmit}>
                     <CustomSelect
+                        style=""
                         options={sortedCategories}
                         selectedValue={unitToEdit.categoryId}
                         onSelect={handleUnitCategoryChange}
@@ -203,7 +208,6 @@ const EditUnit: React.FC<UnitType> = ( unit ) => {
             }
             open={modalOpen}
             setOpen={setModalOpen}
-
         />
     );
 };

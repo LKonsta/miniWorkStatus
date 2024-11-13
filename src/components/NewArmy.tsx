@@ -9,16 +9,18 @@ import './styles/Container.scss'
 import { FaMinus, FaPlus } from "react-icons/fa";
 
 
-interface NewCategoryType {
-    name: string,
-    index: number
+type NewArmyPropsType = {
+    addArmy: any,
 }
 
-const NewArmy: React.FC = () => { 
+const NewArmy: React.FC<NewArmyPropsType> = ({ addArmy }) => { 
+    interface NewCategoryType {
+        name: string,
+        index: number
+    }
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const toggleModal = () => { setModalOpen(!modalOpen); };
 
-    const { addArmy } = useArmyContext();
     const [newArmyName, setNewArmyName] = useState<string>('');
     const [newArmyCategories, setNewArmyCategories] = useState<NewCategoryType[]>(
         [

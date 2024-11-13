@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import unitService from '../services/unit';
-import { UnitType, BaseType, StatusType } from '../components/types/defaultTypes';
+import { UnitType, BaseType, StatusType, CategoryType } from '../components/types/defaultTypes';
 import EditUnit from './EditUnit';
 import {Bases} from './Base';
-import { useUnitContext } from './context/UnitContext';
 import { useStatusContext } from './context/StatusContext';
 import "./styles/Unit.scss"
 import { useBaseContext } from './context/BaseContext';
@@ -13,26 +12,13 @@ import DrawPercentage from './DrawPercentage';
 import { IoMdSettings } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 
+type UnitMiniStatusPropsType = {
+    unit: UnitType,
+    modifyUnit: any,
+};
 
-const UnitMiniAmount: React.FC<{ miniAmount?: number; }> = ({ miniAmount = 0}) => (
-    <div>
-        {miniAmount}
-    </div>
-);
-
-const UnitNameInfo: React.FC<{ name?: string; info?: string; }> = ({ name = '-undefined-', info = null }) => (
-    <div>
-        {name}
-        <div className="unit-name-info">
-            {(info) ? (<>- {info}</>) : (<></>) }
-        </div>
-    </div>
-);
-
-const UnitMiniStatus: React.FC<UnitType> = (unit) => {
+const UnitMiniStatus: React.FC<UnitMiniStatusPropsType> = ({ unit, modifyUnit }) => {
     const { allStatuses } = useStatusContext();
-    const { modifyUnit } = useUnitContext();
-    
 
     const configureStatus = (mini: any, newStatus: string) => {
         const newMiniStatusList = unit.miniStatus.map((miniStatus) => {
@@ -80,24 +66,42 @@ const UnitMiniStatus: React.FC<UnitType> = (unit) => {
     );
 };
 
-const Unit: React.FC<UnitType> = (unit) => {
-    const { removeUnit } = useUnitContext();
+type UnitPropsType = {
+    unit: UnitType,
+    removeUnit: any,
+    modifyUnit: any,
+    sortedCategories: CategoryType[]
+};
+
+const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCategories }) => {
     const [open, setOpen] = useState(false);
+
     return (
         <>
             <div className="unit">
                 <div className='unit-amount'>
-                    <UnitMiniAmount miniAmount={unit.miniAmount} />
+                    {unit.miniAmount}
                 </div>
                 <div className='unit-name' onClick={() => setOpen(!open)}>
-                    <UnitNameInfo name={unit.name} info={unit.info} />
+                    <div>
+                        {unit.name}
+                        <div className="unit-name-info">
+                            {(unit.info) ? (<>- {unit.info}</>) : (<></>)}
+                        </div>
+                    </div>
                 </div>
                 <div className="inner-right-box">
                     <div className='inner-right-box-button-container'>
-                        <EditUnit {...unit} />
+                        <EditUnit
+                            unit={unit}
+                            modifyUnit={modifyUnit}
+                            removeUnit={removeUnit}
+                            sortedCategories={sortedCategories}
+                        />
                     </div>
                     <div className='inner-right-box-item'>
-                        <DrawPercentage value={ CalculatePercentage.calculateUnitPercentage(unit) } />
+                        <DrawPercentage
+                            value={CalculatePercentage.calculatePercentage([unit])} />
                     </div>
                     <div className='inner-right-box-button-container'>
                         <MdDelete
@@ -109,7 +113,10 @@ const Unit: React.FC<UnitType> = (unit) => {
                 </div>
             </div>
             {open && (
-                <UnitMiniStatus {...unit} />
+                <UnitMiniStatus
+                    unit={unit}
+                    modifyUnit={modifyUnit}
+                />
             )}
         </>
     );
