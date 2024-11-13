@@ -53,7 +53,7 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
     const base = allBases.find(x => x.id === miniStatus.baseId) || defaultBase;
     const status = sortedStatuses.find(x => x.id === miniStatus.statusId);
 
-    const color = status ? CalculatePercentage.calculatePercentageColor( status.percentage ): 'rgb(0, 0, 0)';
+    const color = status ? CalculatePercentage.calculatePercentageColor( status.percentage ): 'rgb(255, 255, 255)';
 
     const handleConfigureMiniChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         configureMini(miniStatus, event.target.value);

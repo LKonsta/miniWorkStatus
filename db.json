@@ -5,8 +5,8 @@
       "id": "78d1"
     },
     {
-      "id": "8ed9",
-      "name": "dsadsa"
+      "id": "bafc",
+      "name": "dsa"
     }
   ],
   "categories": [
@@ -38,31 +38,31 @@
       "id": "bdd3",
       "name": "Hero/Lord",
       "index": 1,
-      "armyId": "8ed9"
+      "armyId": null
     },
     {
       "id": "a906",
       "name": "Core",
       "index": 2,
-      "armyId": "8ed9"
+      "armyId": null
     },
     {
       "id": "d958",
       "name": "Special",
       "index": 3,
-      "armyId": "8ed9"
+      "armyId": null
     },
     {
       "id": "c11f",
       "name": "Rare",
       "index": 4,
-      "armyId": "8ed9"
+      "armyId": null
     },
     {
       "id": "c051",
       "name": "Extra",
       "index": 5,
-      "armyId": "8ed9"
+      "armyId": null
     },
     {
       "id": "5057",
@@ -171,6 +171,96 @@
       "name": "Extra",
       "index": 5,
       "armyId": null
+    },
+    {
+      "id": "d494",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "c8f4",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "eddb",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
+    },
+    {
+      "id": "1b0d",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
+    },
+    {
+      "id": "1ae3",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
+    },
+    {
+      "id": "fc25",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "8dc2",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "51b8",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
+    },
+    {
+      "id": "1064",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
+    },
+    {
+      "id": "ea76",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
+    },
+    {
+      "id": "2006",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": "bafc"
+    },
+    {
+      "id": "7ed0",
+      "name": "Core",
+      "index": 2,
+      "armyId": "bafc"
+    },
+    {
+      "id": "c3ef",
+      "name": "Special",
+      "index": 3,
+      "armyId": "bafc"
+    },
+    {
+      "id": "ba18",
+      "name": "Rare",
+      "index": 4,
+      "armyId": "bafc"
+    },
+    {
+      "id": "6a16",
+      "name": "Extra",
+      "index": 5,
+      "armyId": "bafc"
     }
   ],
   "units": [
@@ -187,7 +277,7 @@
         }
       ],
       "categoryId": "c051",
-      "armyId": "8ed9"
+      "armyId": null
     },
     {
       "id": "148a",
@@ -242,18 +332,18 @@
       "miniStatus": [
         {
           "id": 1,
-          "baseId": "4e24",
-          "statusId": "6224"
+          "baseId": "8e99",
+          "statusId": "175f"
         },
         {
           "id": 2,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 3,
           "baseId": "30ab",
-          "statusId": "6224"
+          "statusId": "175f"
         }
       ],
       "categoryId": "4598",
@@ -408,6 +498,36 @@
       ],
       "categoryId": "e314",
       "armyId": "78d1"
+    },
+    {
+      "id": "acc2",
+      "name": "",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
+    },
+    {
+      "id": "384e",
+      "name": "",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
     }
   ],
   "bases": [
@@ -437,13 +557,6 @@
       "name": "40x60",
       "shape": "square",
       "width": 40,
-      "height": 60
-    },
-    {
-      "id": "4e24",
-      "name": "60x60mm",
-      "shape": "round",
-      "width": 60,
       "height": 60
     },
     {
@@ -485,21 +598,6 @@
       "id": "175f",
       "name": "painting",
       "percentage": 0.25
-    },
-    {
-      "id": "7030",
-      "name": "basing",
-      "percentage": 0.7
-    },
-    {
-      "id": "7891",
-      "name": "varnish",
-      "percentage": 0.85
-    },
-    {
-      "id": "6224",
-      "name": "done",
-      "percentage": 1
     }
   ]
 }
