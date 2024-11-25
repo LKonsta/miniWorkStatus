@@ -10,7 +10,9 @@ import DrawPercentage from './DrawPercentage';
 
 import { FaPlus } from "react-icons/fa";
 import './styles/InputFields.scss';
-import CustomSelect from './CustomSelect';
+import './styles/NewUnit.scss';
+import Select, { SingleValue } from 'react-select';
+
 
 type NewUnitPropsType = {
     armyId: string,
@@ -50,10 +52,13 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, sortedCategories, addUnit
         }));
     };
 
-    const handleUnitCategoryChange = (categoryId: string) => {
+    const handleUnitCategoryChange = (selectedOption: SingleValue<{ value: string, label: string}>) => {
+        selectedOption ? 
         setNewUnit(prevUnit => ({
-            ...prevUnit, categoryId: categoryId
-        }));
+            ...prevUnit, categoryId: selectedOption.value
+        }))
+        :
+        null;
     };
 
     const handleUnitAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -135,6 +140,13 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, sortedCategories, addUnit
         toggleModal();
     }
 
+    // React Select field configurations
+    const categoryOptions = sortedCategories.map(category => ({
+        value: category.id,
+        label: category.name
+    }));
+    const selectedCategory = categoryOptions.find(category => category.value === newUnit.categoryId);
+
     return (
         <Modal
             ModalButton={
@@ -150,12 +162,15 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, sortedCategories, addUnit
                     <div className="inner-container">
                         <div className="inner-container-header">
                             <div>
-                                <CustomSelect
-                                    style="header-select"
-                                    options={sortedCategories}
-                                    selectedValue={newUnit.categoryId}
-                                    onSelect={handleUnitCategoryChange}
-                                />
+                                <div className="category-input-select">
+                                    <Select 
+                                        className={"select"}
+                                        classNamePrefix={"react-select"}
+                                        options={categoryOptions}
+                                        value={selectedCategory || null}
+                                        onChange={handleUnitCategoryChange}
+                                    />
+                                </div>
                             </div>
                         </div>
                         <div className="inner-container-content-column">

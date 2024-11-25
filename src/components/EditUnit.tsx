@@ -8,7 +8,6 @@ import { useBaseContext } from "./context/BaseContext";
 import { useStatusContext } from "./context/StatusContext";
 
 import { IoMdSettings } from "react-icons/io";
-import CustomSelect from "./CustomSelect";
 
 type EditUnitPropsType = {
     unit: UnitType,
@@ -132,12 +131,14 @@ const EditUnit: React.FC<EditUnitPropsType> = ({ unit, modifyUnit, removeUnit, s
             ModalHeader={"Editing (" + unit.name + ")"}
             ModalContent={
                 <form onSubmit={handleSubmit}>
+                    {/* 
                     <CustomSelect
                         style=""
                         options={sortedCategories}
                         selectedValue={unitToEdit.categoryId}
                         onSelect={handleUnitCategoryChange}
                     />
+                    */}
                     <input
                         type="number"
                         value={unitToEdit.miniAmount}

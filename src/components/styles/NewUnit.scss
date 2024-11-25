@@ -1,0 +1,106 @@
+$header-color: rgb(0, 140, 184) ;
+$header-text-color: rgb(255, 255, 255);
+$outer-container-color: rgb(194, 240, 255);
+$inner-container-color: rgb(255, 255, 255);
+$select-indicator: rgb(255,255,255);
+
+.category-input-select {
+
+    .react-select__control {
+        width: 300px;
+        background-color: $header-color;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 10px 10px 0 0;
+        padding: 6px 8px 6px 8px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px;      
+    
+        border: 1px solid $header-color;
+        border-radius: 10px;
+        cursor: pointer;
+
+        &:hover {
+            border-color: $select-indicator;;
+        }
+    
+        &.react-select__control--is-focused {
+        }
+    
+        &.react-select__control--is-disabled {
+        }
+    
+        .react-select__placeholder {
+        }
+
+        .react-select__value-container {   
+        }
+    }
+
+    .react-select__single-value {
+        font-weight: 500;
+        color: $header-text-color;
+        font-size: 1.4em;
+    }
+    
+    .react-select__dropdown-indicator {
+    color: $header-text-color;
+
+    &:hover {
+        color: $select-indicator;
+    }
+
+    .react-select__dropdown-indicator:hover {
+    }
+    }
+
+    .react-select__menu {
+        width: 300px;
+        background-color: $PrimaryColor;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); // Slightly darker shadow
+        overflow-y: auto;
+        z-index: 100;
+        margin-top: 8px; // Add space between dropdown and input
+        border: 1px solid #ddd; // Soft border around the dropdown
+    }
+
+    // Styling individual option items in the dropdown
+    .react-select__option {
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    
+        &:hover {
+            background-color: #f1f1f1;
+            color: #007bff; // Change text color on hover for clarity
+        }
+    
+        &--is-selected {
+            background-color: #007bff;
+            color: white;
+            font-weight: 500;
+        }
+    
+        &--is-focused {
+            background-color: #f1f1f1;
+            color: #007bff; // Change text color when focused
+    }
+    }
+
+    // When the menu is open, apply styles to the menu list
+    .react-select__menu-list {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    // Optionally, style the clear indicator (x) that clears the selection
+    .react-select__clear-indicator {
+        color: #999;
+        &:hover {
+            color: #007bff;
+        }
+    }
+}
+  
