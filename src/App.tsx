@@ -4,9 +4,11 @@ import ArmyList from './components/ArmyList';
 import Header from './components/Header';
 import { BaseProvider } from './components/context/BaseContext';
 import { StatusProvider } from './components/context/StatusContext';
+import { HideProvider } from './components/context/HideContext';
 import { ArmyType } from './components/types/defaultTypes';
 import armyService from './services/army';
 import Loading from './components/Loading';
+
 
 const App: React.FC = () => {
     const [loadingArmies, setLoadingArmies] = useState(true);
@@ -40,27 +42,25 @@ const App: React.FC = () => {
         setAllArmies((prevArmies) => prevArmies.filter((army) => army.id !== id));
     };
 
-    while (loadingArmies) {
-        return (
-            <BaseProvider>
-                <StatusProvider>
-                    <Loading />
-                </StatusProvider>
-            </BaseProvider>
-        );
-    };
-
     return (
         <BaseProvider>
             <StatusProvider>
-                <Header
-                    addArmy={addArmy}
-                />
-                <ArmyList
-                    allArmies={allArmies}
-                    modifyArmy={modifyArmy}
-                    removeArmy={removeArmy}
-                />
+                <HideProvider>
+                    {(loadingArmies) ? (
+                        <Loading />
+                    ) : (
+                        <>
+                            <Header
+                                addArmy={addArmy}
+                            />
+                            <ArmyList
+                                allArmies={allArmies}
+                                modifyArmy={modifyArmy}
+                                removeArmy={removeArmy}
+                            />
+                        </>
+                    )}
+                </HideProvider>
             </StatusProvider>
         </BaseProvider>
     );

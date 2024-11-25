@@ -17,6 +17,7 @@ import { BiSolidHide } from "react-icons/bi";
 import { IoMdSettings } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import Loading from './Loading';
+import { useHideContext } from './context/HideContext';
 
 type ArmyCategoryPropsType = {
     category?: CategoryType,
@@ -86,6 +87,7 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
     // Loading state
     const [loadingCategories, setLoadingCategories] = useState(true);
     const [loadingUnits, setLoadingUnits] = useState(true);
+    const { isHidden } = useHideContext();
 
     // Categories
     const [allCategories, setAllCategories] = useState<CategoryType[]>([]);
@@ -171,6 +173,7 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
                             addUnit={addUnit}        
                         />
                     </div>
+                    {(isHidden) ? (
                     <div className="outer-right-box-button-container">
                         <EditArmy
                             army={army}
@@ -181,9 +184,11 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
                             removeCategory={removeCategory}
                         />
                     </div>
+                    ) : (<></>)}
                     <div className="outer-right-box-item">
                         <DrawPercentage value={CalculatePercentage.calculatePercentage(allUnits)} />
                     </div>
+                    {(isHidden) ? (
                     <div className="outer-right-box-button-container">
                         <MdDelete
                             size={25}
@@ -191,6 +196,7 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
                             onClick={() => removeArmy(army.id)}
                         />
                     </div>
+                    ) : (<></>)}
                 </div>
             </div>
             <div className="outer-container-content-column">

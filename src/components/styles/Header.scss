@@ -4,7 +4,28 @@
     gap: 20px;
     align-items: center;
     height: 50px;
+
     .title {
         margin: 0;
+    }
+
+    .hide-button {
+        color: lightgrey;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: rgba(0,0,0,0.1);
+            color: grey;
+        }
+
+        &-hide {
+            color: grey;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: rgba(0,0,0,0.1);
+                color: black;
+            }
+        }
     }
 }

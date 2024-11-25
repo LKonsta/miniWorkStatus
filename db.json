@@ -528,36 +528,6 @@
       ],
       "categoryId": "e314",
       "armyId": "78d1"
-    },
-    {
-      "id": "acc2",
-      "name": "",
-      "info": "",
-      "miniAmount": 1,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "abcd",
-          "statusId": "74b9"
-        }
-      ],
-      "categoryId": "4598",
-      "armyId": "78d1"
-    },
-    {
-      "id": "384e",
-      "name": "",
-      "info": "",
-      "miniAmount": 1,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "abcd",
-          "statusId": "74b9"
-        }
-      ],
-      "categoryId": "4598",
-      "armyId": "78d1"
     }
   ],
   "bases": [

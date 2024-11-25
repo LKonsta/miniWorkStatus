@@ -11,6 +11,7 @@ import DrawPercentage from './DrawPercentage';
 
 import { IoMdSettings } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
+import { useHideContext } from './context/HideContext';
 
 type UnitMiniStatusPropsType = {
     unit: UnitType,
@@ -75,6 +76,7 @@ type UnitPropsType = {
 
 const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCategories }) => {
     const [open, setOpen] = useState(false);
+    const { isHidden } = useHideContext();
 
     return (
         <>
@@ -91,6 +93,7 @@ const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCat
                     </div>
                 </div>
                 <div className="inner-right-box">
+                    {(isHidden) ? (
                     <div className='inner-right-box-button-container'>
                         <EditUnit
                             unit={unit}
@@ -99,10 +102,12 @@ const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCat
                             sortedCategories={sortedCategories}
                         />
                     </div>
+                    ) : (<></>)}
                     <div className='inner-right-box-item'>
                         <DrawPercentage
                             value={CalculatePercentage.calculatePercentage([unit])} />
                     </div>
+                    {(isHidden) ? (
                     <div className='inner-right-box-button-container'>
                         <MdDelete
                             size={25}
@@ -110,6 +115,7 @@ const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCat
                             onClick={() => removeUnit(unit.id)}
                         />
                     </div>
+                    ) : (<></>) }
                 </div>
             </div>
             {open && (

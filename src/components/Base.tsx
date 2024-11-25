@@ -98,7 +98,7 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
 }
 
 const DrawDummy: React.FC<{width: number, height: number, shape: string}> = ({ width, height, shape }) => {
-    const color = 'g(255, 0, 0)'
+    const color = 'rgb(0, 0, 0)'
     const style = shape === "square" ? {
         width: width * 2,
         height: height * 2,
@@ -111,8 +111,9 @@ const DrawDummy: React.FC<{width: number, height: number, shape: string}> = ({ w
     };
     
     return (
-        <div>
-            <button style = {style}></button>            
+        <div
+            className="dummy-base"
+            style={style}>            
         </div>
     )
 }
