@@ -4,6 +4,7 @@ import { MiniStatusType, BaseType, StatusType } from "./types/defaultTypes";
 import { useStatusContext } from "./context/StatusContext";
 import { useBaseContext } from "./context/BaseContext";
 import "./styles/Base.scss"
+import Select, {SingleValue} from "react-select";
 
 
 interface BasesProps {
@@ -14,9 +15,9 @@ interface BasesProps {
 
 const Bases: React.FC<BasesProps> = ({ miniStatuses, configureMini, configureOptions }) => {
     return (
-        <div className="base-box">
+        <div className="base-field">
             {miniStatuses.map(miniStatus => (
-                <div key={miniStatus.id} className="base-box-border">
+                <div key={miniStatus.id} className="base-container">
                     <DrawBase
                         miniStatus={miniStatus}
                         configureMini={configureMini}
@@ -55,8 +56,12 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
 
     const color = status ? CalculatePercentage.calculatePercentageColor( status.percentage ): 'rgb(255, 255, 255)';
 
-    const handleConfigureMiniChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        configureMini(miniStatus, event.target.value);
+    const handleConfigureMiniChange = (selectedOption: SingleValue<{ value: string, label: string}>) => {
+        selectedOption ? 
+        (configureMini(miniStatus, selectedOption.value)
+        )
+        :
+        null;
         setDropdownOpen(!dropdownOpen);
     }
     const style = base.shape === "square" ? {
@@ -69,29 +74,25 @@ const DrawBase: React.FC<DrawBaseProps> = ({ miniStatus, configureMini, configur
         backgroundColor: color,
         borderRadius: "50%"
     };
+    // react select field configurations
+    const options = configureOptions.map(option => ({
+        value: option.id,
+        label: option.name
+    }));
+    const selectedOption = options.find(option => option.value === (isBaseType ? miniStatus.baseId : miniStatus.statusId)); 
     return (
         <div>
-            <button
+            <div
                 className="base"
                 style={style}
                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                type="button"
             />
             {dropdownOpen && (
-                <div>
-                    <select
-                        name="settings"
-                        id="settings"
-                        onChange={handleConfigureMiniChange}
-                        value={(isBaseType)?(miniStatus.baseId):(miniStatus.statusId)}
-                    >
-                        {configureOptions.map(option => (
-                            <option key={option.id} value={option.id}>
-                                {option.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+                <Select
+                    value={selectedOption}
+                    options={options}
+                    onChange={handleConfigureMiniChange}
+                />
             )}
         </div>
     );

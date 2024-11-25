@@ -12,60 +12,7 @@ import DrawPercentage from './DrawPercentage';
 import { IoMdSettings } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { useHideContext } from './context/HideContext';
-
-type UnitMiniStatusPropsType = {
-    unit: UnitType,
-    modifyUnit: any,
-};
-
-const UnitMiniStatus: React.FC<UnitMiniStatusPropsType> = ({ unit, modifyUnit }) => {
-    const { allStatuses } = useStatusContext();
-
-    const configureStatus = (mini: any, newStatus: string) => {
-        const newMiniStatusList = unit.miniStatus.map((miniStatus) => {
-            if (miniStatus.id === mini.id) {
-                return { ...mini, statusId: newStatus };
-            }
-            return miniStatus;
-        });
-
-        const unitObject = { ...unit, miniStatus: newMiniStatusList };
-
-        modifyUnit(unit.id, unitObject);
-    };
-
-    return (
-        <div>
-            <div className="unit-dropdown">
-                <div className="unit-dropdown-base-box">
-                    {unit.miniStatus ? (
-                        <Bases
-                            miniStatuses={unit.miniStatus}
-                            configureOptions={allStatuses}
-                            configureMini={configureStatus}
-                        />
-                    ) : (
-                        '--none--'
-                    )}
-                </div>
-                <div className="unit-dropdown-status-info">
-                    {allStatuses.map((status) => (
-                        <div className="unit-dropdown-status-info-item">
-                            <div
-                                className="unit-dropdown-status-info-item-color"
-                                style={{ backgroundColor: CalculatePercentage.calculatePercentageColor(status.percentage) }}
-                            >
-                            </div>
-                            <div className="unit-dropdown-status-info-item-name">
-                                { status.name }
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </div>
-    );
-};
+import UnitDropdown from './UnitDropdown';
 
 type UnitPropsType = {
     unit: UnitType,
@@ -119,7 +66,7 @@ const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCat
                 </div>
             </div>
             {open && (
-                <UnitMiniStatus
+                <UnitDropdown
                     unit={unit}
                     modifyUnit={modifyUnit}
                 />

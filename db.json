@@ -313,12 +313,12 @@
       "id": "148a",
       "name": "Dwarf King",
       "info": "on Warbear",
-      "miniAmount": 1,
+      "miniAmount": "1",
       "miniStatus": [
         {
           "id": 1,
           "baseId": "ed92",
-          "statusId": "6224"
+          "statusId": "74b9"
         }
       ],
       "categoryId": "4598",
@@ -363,17 +363,17 @@
         {
           "id": 1,
           "baseId": "8e99",
-          "statusId": "175f"
+          "statusId": "74b9"
         },
         {
           "id": 2,
           "baseId": "abcd",
-          "statusId": "175f"
+          "statusId": "2025"
         },
         {
           "id": 3,
           "baseId": "30ab",
-          "statusId": "74b9"
+          "statusId": "8b7a"
         }
       ],
       "categoryId": "4598",
@@ -388,77 +388,77 @@
         {
           "id": 1,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 2,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 3,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 4,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 5,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 6,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 7,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 8,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 9,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 10,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 11,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 12,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 13,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 14,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         },
         {
           "id": 15,
           "baseId": "abcd",
-          "statusId": "6224"
+          "statusId": "175f"
         }
       ],
       "categoryId": "cec0",
@@ -598,6 +598,21 @@
       "id": "175f",
       "name": "painting",
       "percentage": 0.25
+    },
+    {
+      "id": "2025",
+      "name": "basing",
+      "percentage": 0.7
+    },
+    {
+      "id": "768b",
+      "name": "varnish",
+      "percentage": 0.9
+    },
+    {
+      "id": "8b7a",
+      "name": "complete",
+      "percentage": 1
     }
   ]
 }

@@ -1,5 +1,5 @@
 .modal-backdrop {
-    z-index: 3;
+    z-index: 1;
     position: fixed;
     left: 0;
     top: 0;
@@ -9,11 +9,11 @@
   }
 /* Modal positioning */
 .modal {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 20%;
   transform: translate(-50%, 0);
-  z-index: 4;
+  z-index: 2;
 
 /* Modal itself */
   &-content {    

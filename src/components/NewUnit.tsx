@@ -146,6 +146,7 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, sortedCategories, addUnit
         label: category.name
     }));
     const selectedCategory = categoryOptions.find(category => category.value === newUnit.categoryId);
+    const filteredCategoryOptions = categoryOptions.filter(category => category.value !== (selectedCategory ? selectedCategory.value : null));
 
     return (
         <Modal
@@ -161,16 +162,18 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, sortedCategories, addUnit
                 <form onSubmit={handleSubmit}>
                     <div className="inner-container">
                         <div className="inner-container-header">
-                            <div>
-                                <div className="category-input-select">
-                                    <Select 
-                                        className={"select"}
-                                        classNamePrefix={"react-select"}
-                                        options={categoryOptions}
-                                        value={selectedCategory || null}
-                                        onChange={handleUnitCategoryChange}
-                                    />
-                                </div>
+                            <div className="category-input-select">
+                                <Select 
+                                    className={"select"}
+                                    classNamePrefix={"react-select"}
+                                    menuPortalTarget={document.body}
+                                    styles={{ menuPortal: base => ({...base, zIndex: 9999}) }}
+                                    isSearchable={false}
+
+                                    options={filteredCategoryOptions}
+                                    value={selectedCategory || null}
+                                    onChange={handleUnitCategoryChange}
+                                />
                             </div>
                         </div>
                         <div className="inner-container-content-column">
