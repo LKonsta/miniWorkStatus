@@ -5,8 +5,8 @@
       "id": "78d1"
     },
     {
-      "id": "bafc",
-      "name": "dsa"
+      "id": "0ccc",
+      "name": "Wood elves"
     }
   ],
   "categories": [
@@ -236,31 +236,31 @@
       "id": "2006",
       "name": "Hero/Lord",
       "index": 1,
-      "armyId": "bafc"
+      "armyId": null
     },
     {
       "id": "7ed0",
       "name": "Core",
       "index": 2,
-      "armyId": "bafc"
+      "armyId": null
     },
     {
       "id": "c3ef",
       "name": "Special",
       "index": 3,
-      "armyId": "bafc"
+      "armyId": null
     },
     {
       "id": "ba18",
       "name": "Rare",
       "index": 4,
-      "armyId": "bafc"
+      "armyId": null
     },
     {
       "id": "6a16",
       "name": "Extra",
       "index": 5,
-      "armyId": "bafc"
+      "armyId": null
     },
     {
       "id": "37d3",
@@ -291,6 +291,66 @@
       "name": "Extra",
       "index": 5,
       "armyId": null
+    },
+    {
+      "id": "3d17",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": "0ccc"
+    },
+    {
+      "id": "6a68",
+      "name": "Special",
+      "index": 3,
+      "armyId": "0ccc"
+    },
+    {
+      "id": "0fdf",
+      "name": "Rare",
+      "index": 4,
+      "armyId": "0ccc"
+    },
+    {
+      "id": "98d2",
+      "name": "Core",
+      "index": 2,
+      "armyId": "0ccc"
+    },
+    {
+      "id": "2375",
+      "name": "Extra",
+      "index": 5,
+      "armyId": "0ccc"
+    },
+    {
+      "id": "24fe",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "7cfa",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "d388",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
+    },
+    {
+      "id": "88b0",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
+    },
+    {
+      "id": "6299",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
     }
   ],
   "units": [
@@ -318,61 +378,6 @@
         {
           "id": 1,
           "baseId": "ed92",
-          "statusId": "74b9"
-        }
-      ],
-      "categoryId": "4598",
-      "armyId": "78d1"
-    },
-    {
-      "id": "093a",
-      "name": "Catapult",
-      "info": "",
-      "miniAmount": "4",
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "5168",
-          "statusId": "6224"
-        },
-        {
-          "id": 2,
-          "baseId": "abcd",
-          "statusId": "6224"
-        },
-        {
-          "id": 3,
-          "baseId": "abcd",
-          "statusId": "6224"
-        },
-        {
-          "id": 4,
-          "baseId": "abcd",
-          "statusId": "6224"
-        }
-      ],
-      "categoryId": "e314",
-      "armyId": "78d1"
-    },
-    {
-      "id": "0ff1",
-      "name": "Anvil of Doom",
-      "info": "and Kraggi",
-      "miniAmount": "3",
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "8e99",
-          "statusId": "74b9"
-        },
-        {
-          "id": 2,
-          "baseId": "abcd",
-          "statusId": "2025"
-        },
-        {
-          "id": 3,
-          "baseId": "30ab",
           "statusId": "8b7a"
         }
       ],
@@ -380,9 +385,1394 @@
       "armyId": "78d1"
     },
     {
-      "id": "2233",
-      "name": "Random guy",
+      "id": "aba3",
+      "name": "Thorgrim Grudgebearer",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "ed92",
+          "statusId": "175f"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
+    },
+    {
+      "id": "8c79",
+      "name": "dsadsa",
       "info": "dsadsa",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        }
+      ],
+      "categoryId": "08c9",
+      "armyId": null
+    },
+    {
+      "id": "7be3",
+      "name": "Dwarf King",
+      "info": "on Oathstone",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
+    },
+    {
+      "id": "d049",
+      "name": "Dwarf King",
+      "info": "on Shieldbearers",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "da2e",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
+    },
+    {
+      "id": "538a",
+      "name": "Thane",
+      "info": " BsB",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
+    },
+    {
+      "id": "ec4b",
+      "name": "Dwarf King",
+      "info": "Greatweapon",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
+    },
+    {
+      "id": "008b",
+      "name": "Runesmith",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
+    },
+    {
+      "id": "c8fa",
+      "name": "Ungrim Ironfist",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "2109",
+          "statusId": "74b9"
+        }
+      ],
+      "categoryId": "4598",
+      "armyId": "78d1"
+    },
+    {
+      "id": "230d",
+      "name": "Warriors",
+      "info": "shields",
+      "miniAmount": "31",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 16,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 17,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 18,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 19,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 20,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 21,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 22,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 23,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 24,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 25,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 26,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 27,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 28,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 29,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 30,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 31,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "cec0",
+      "armyId": "78d1"
+    },
+    {
+      "id": "eaa6",
+      "name": "Warriors",
+      "info": "",
+      "miniAmount": "31",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 16,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 17,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 18,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 19,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 20,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 21,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 22,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 23,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 24,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 25,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 26,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 27,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 28,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 29,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 30,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 31,
+          "baseId": "abcd",
+          "statusId": "175f"
+        }
+      ],
+      "categoryId": "cec0",
+      "armyId": "78d1"
+    },
+    {
+      "id": "0aaa",
+      "name": "Warriors",
+      "info": "Greatweapon",
+      "miniAmount": "20",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 16,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 17,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 18,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 19,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 20,
+          "baseId": "abcd",
+          "statusId": "175f"
+        }
+      ],
+      "categoryId": "cec0",
+      "armyId": "78d1"
+    },
+    {
+      "id": "dac0",
+      "name": "Thunderers",
+      "info": "",
+      "miniAmount": "20",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 16,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 17,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 18,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 19,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 20,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "cec0",
+      "armyId": "78d1"
+    },
+    {
+      "id": "1f98",
+      "name": "Thunderers",
+      "info": "",
+      "miniAmount": "20",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 16,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 17,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 18,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 19,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 20,
+          "baseId": "abcd",
+          "statusId": "175f"
+        }
+      ],
+      "categoryId": "cec0",
+      "armyId": "78d1"
+    },
+    {
+      "id": "28c9",
+      "name": "Longbeards",
+      "info": "Shields",
+      "miniAmount": "21",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 16,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 17,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 18,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 19,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 20,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 21,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "4084",
+      "armyId": "78d1"
+    },
+    {
+      "id": "3e8e",
+      "name": "Longbeards",
+      "info": "Greatweapons",
+      "miniAmount": "15",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        }
+      ],
+      "categoryId": "4084",
+      "armyId": "78d1"
+    },
+    {
+      "id": "3d7d",
+      "name": "Ironbreakers",
+      "info": "",
+      "miniAmount": "30",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 16,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 17,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 18,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 19,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 20,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 21,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 22,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 23,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 24,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 25,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 26,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 27,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 28,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 29,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 30,
+          "baseId": "abcd",
+          "statusId": "768b"
+        }
+      ],
+      "categoryId": "4084",
+      "armyId": "78d1"
+    },
+    {
+      "id": "98bd",
+      "name": "Hammereres",
+      "info": "",
+      "miniAmount": "30",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 16,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 17,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 18,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 19,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 20,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 21,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 22,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 23,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 24,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 25,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 26,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 27,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 28,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 29,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 30,
+          "baseId": "abcd",
+          "statusId": "768b"
+        }
+      ],
+      "categoryId": "4084",
+      "armyId": "78d1"
+    },
+    {
+      "id": "26a9",
+      "name": "Miners",
+      "info": "",
+      "miniAmount": "15",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "4084",
+      "armyId": "78d1"
+    },
+    {
+      "id": "129e",
+      "name": "Irondrakes",
+      "info": "",
       "miniAmount": "15",
       "miniStatus": [
         {
@@ -461,48 +1851,138 @@
           "statusId": "175f"
         }
       ],
-      "categoryId": "cec0",
+      "categoryId": "4084",
       "armyId": "78d1"
     },
     {
-      "id": "aba3",
-      "name": "Thorgrim Grudgebearer",
+      "id": "c9b4",
+      "name": "Doomseekers",
       "info": "",
-      "miniAmount": 1,
+      "miniAmount": "4",
       "miniStatus": [
         {
           "id": 1,
-          "baseId": "ed92",
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
           "statusId": "175f"
         }
       ],
-      "categoryId": "4598",
+      "categoryId": "4084",
       "armyId": "78d1"
     },
     {
-      "id": "8c79",
-      "name": "dsadsa",
-      "info": "dsadsa",
-      "miniAmount": 1,
+      "id": "e9c5",
+      "name": "Cannon",
+      "info": "",
+      "miniAmount": "4",
       "miniStatus": [
         {
           "id": 1,
+          "baseId": "8999",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
           "baseId": "abcd",
-          "statusId": "74b9"
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
         }
       ],
-      "categoryId": "08c9",
-      "armyId": null
+      "categoryId": "e314",
+      "armyId": "78d1"
     },
     {
-      "id": "3b4b",
-      "name": "fdsfsd",
-      "info": "312321",
-      "miniAmount": "5",
+      "id": "8f6a",
+      "name": "Cannon",
+      "info": "",
+      "miniAmount": "4",
       "miniStatus": [
         {
           "id": 1,
+          "baseId": "8999",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
           "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "35d5",
+      "name": "Grudge Thrower",
+      "info": "",
+      "miniAmount": "4",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "5168",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "1ae5",
+      "name": "Grudge Thrower",
+      "info": "",
+      "miniAmount": "4",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "5168",
           "statusId": "74b9"
         },
         {
@@ -519,15 +1999,415 @@
           "id": 4,
           "baseId": "abcd",
           "statusId": "74b9"
+        }
+      ],
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "3368",
+      "name": "Bolt Thrower",
+      "info": "",
+      "miniAmount": "4",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "8999",
+          "statusId": "8b7a"
         },
         {
-          "id": 5,
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "6428",
+      "name": "Bolt Thrower",
+      "info": "",
+      "miniAmount": "4",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "8999",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "f24b",
+      "name": "Organ Gun",
+      "info": "",
+      "miniAmount": "4",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "8999",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "8b7a"
+        }
+      ],
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "d5f1",
+      "name": "Organ Gun",
+      "info": "",
+      "miniAmount": "4",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "8999",
+          "statusId": "74b9"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 4,
           "baseId": "abcd",
           "statusId": "74b9"
         }
       ],
       "categoryId": "e314",
       "armyId": "78d1"
+    },
+    {
+      "id": "47ac",
+      "name": "Flame Cannon",
+      "info": "",
+      "miniAmount": "4",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "5168",
+          "statusId": "768b"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "175f"
+        }
+      ],
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "22f8",
+      "name": "Combat marker",
+      "info": "",
+      "miniAmount": "2",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "8e99",
+          "statusId": "175f"
+        },
+        {
+          "id": 2,
+          "baseId": "8e99",
+          "statusId": "175f"
+        }
+      ],
+      "categoryId": "5057",
+      "armyId": "78d1"
+    },
+    {
+      "id": "ed49",
+      "name": "Gyrocopter",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "30ab",
+          "statusId": "2025"
+        }
+      ],
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "ea1c",
+      "name": "Gyrocopter",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "30ab",
+          "statusId": "175f"
+        }
+      ],
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "e7ba",
+      "name": "Bugmans Cart",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "5168",
+          "statusId": "74b9"
+        }
+      ],
+      "categoryId": "e314",
+      "armyId": "78d1"
+    },
+    {
+      "id": "d15a",
+      "name": "King",
+      "info": "on Great stag",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "30ab",
+          "statusId": "175f"
+        }
+      ],
+      "categoryId": "3d17",
+      "armyId": "0ccc"
+    },
+    {
+      "id": "79c4",
+      "name": "Treeman",
+      "info": "",
+      "miniAmount": 1,
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "6861",
+          "statusId": "74b9"
+        }
+      ],
+      "categoryId": "0fdf",
+      "armyId": "0ccc"
+    },
+    {
+      "id": "8fae",
+      "name": "Archers",
+      "info": "",
+      "miniAmount": "30",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "768b"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "2025"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "2025"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "2025"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "2025"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 16,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 17,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 18,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 19,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 20,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 21,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 22,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 23,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 24,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 25,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 26,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 27,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 28,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 29,
+          "baseId": "abcd",
+          "statusId": "175f"
+        },
+        {
+          "id": 30,
+          "baseId": "abcd",
+          "statusId": "175f"
+        }
+      ],
+      "categoryId": "98d2",
+      "armyId": "0ccc"
     }
   ],
   "bases": [
@@ -586,6 +2466,20 @@
       "shape": "round",
       "width": 32,
       "height": 32
+    },
+    {
+      "id": "13e3",
+      "name": "60x60mm",
+      "shape": "round",
+      "width": 60,
+      "height": 60
+    },
+    {
+      "id": "6861",
+      "name": "60x100",
+      "shape": "square",
+      "width": 60,
+      "height": 100
     }
   ],
   "status": [
