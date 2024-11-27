@@ -29,6 +29,19 @@ General look of the project.
 
 ![](images/miniWorkStatus_GeneralLook.png)
 
-Adding a newUnit customization popup.
+Adding a new unit customization popup.
 
 ![](images/miniWorkStatus_NewUnit.png)
+
+## To Do
+### Short term
+
+- apply better css trough out the project
+- reformat css to have universal constants and appearances
+- add cascading removal of categories and units based on if an army is removed
+- add functionality to drag and drop category and unit order and possibility to order units by either alphabetically or by done percentage.
+
+### Long term
+
+- create a server side functionality
+- add users and authentication
