@@ -25,6 +25,10 @@ The data is stored in the following data format:
 
 ## Showcase
 
+General look of the project.
+
 ![](images/miniWorkStatus_GeneralLook.png)
+
+Adding a newUnit customization popup.
 
 ![](images/miniWorkStatus_NewUnit.png)
