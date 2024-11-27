@@ -23,7 +23,6 @@ const Modal: React.FC<ModalProps> = ({ ModalButton, ModalHeader, ModalContent, o
     }
 
     const portal = ReactDOM.createPortal(
-        
             <div>
                 <div className="modal-backdrop" onClick={() => setOpen(false)} />
                 <div className="modal">

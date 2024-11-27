@@ -18,8 +18,11 @@ import { IoMdSettings } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import Loading from './Loading';
 import { useHideContext } from './context/HideContext';
+import totalAmount from './TotalAmount';
 
 type ArmyCategoryPropsType = {
+    army: ArmyType,
+    addUnit?: any,
     category?: CategoryType,
     sortedCategories: CategoryType[],
     units: UnitType[],
@@ -27,14 +30,31 @@ type ArmyCategoryPropsType = {
     modifyUnit: any,
 };
 
-const ArmyCategory: React.FC<ArmyCategoryPropsType> = ({ category, sortedCategories,  units, removeUnit, modifyUnit }) => {
-
+const ArmyCategory: React.FC<ArmyCategoryPropsType> = ({ army, addUnit, category, sortedCategories,  units, removeUnit, modifyUnit }) => {
+    const [hideCategory, setHideCategory] = useState<boolean>(false);
+    const toggleHideCategory = () => { setHideCategory(!hideCategory) };
     const Header = (
         <>
-            <p className="inner-container-header-title">
-                {category ? category.name : "uncategorized"}
-            </p>
+            <div
+                className="inner-container-header-title"
+                onClick={() => toggleHideCategory()}
+            >
+                <div>
+                    {category ? category.name : "uncategorized"}
+                </div>
+                <div className="header-amount">
+                    ({totalAmount(units)})
+                </div>
+            </div>
             <div className="inner-right-box">
+                <div className="inner-right-box-button-container">
+                    <NewUnit
+                        armyId={army.id}
+                        sortedCategories={sortedCategories}
+                        currentCategory={category}
+                        addUnit={addUnit}
+                    />
+                </div>
                 <div className="inner-right-box-item">
                     <DrawPercentage value={CalculatePercentage.calculatePercentage(units)} />
                 </div>
@@ -44,7 +64,7 @@ const ArmyCategory: React.FC<ArmyCategoryPropsType> = ({ category, sortedCategor
 
     const Units = (
         <>
-            {(units.length != 0) ?
+            {(units.length != 0) && (!hideCategory) ?
                 (units.map((unit) => (
                     <div key={unit.id}>
                         <Unit
@@ -162,9 +182,14 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
     return (
         <div className="outer-container">
             <div className="outer-container-header">
-                <p className="outer-container-header-title">
-                    {army.name}
-                </p>
+                <div className="outer-container-header-title">
+                    <div>
+                        {army.name}
+                    </div>
+                    <div className="header-amount">
+                        ({totalAmount(allUnits)})
+                    </div>
+                </div>
                 <div className="outer-right-box">
                     <div className="outer-right-box-button-container">
                         <NewUnit
@@ -203,6 +228,8 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
                 {sortedCategories.map((category) => (
                     <div key={category.id}>
                         <ArmyCategory
+                            army={army}
+                            addUnit={addUnit}
                             category={category}
                             units={getUnitsByCategory(category.id)}
                             removeUnit={removeUnit}
@@ -214,6 +241,7 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
                 {uncategorizedUnits.length > 0
                     ? <div>
                         <ArmyCategory
+                            army={army}
                             units={uncategorizedUnits}
                             removeUnit={removeUnit}
                             modifyUnit={modifyUnit}

@@ -30,6 +30,9 @@ $inner-container-color: rgb(255, 255, 255);
                 margin: 0px;
                 color: $header-text-color;
                 font-size: 1.8em;
+                display: flex;
+                gap: 5px;
+                align-items: center;
             }
         }
 
@@ -106,24 +109,24 @@ $inner-container-color: rgb(255, 255, 255);
             z-index: 0;
 
             &-title {
+                display: flex;
                 flex: 1;
                 margin: 0px;
                 color: $header-text-color;
                 font-size: 1.4em;
+                gap: 5px;
             }
         }
 
         &-content {
-            gap: 5px;
             display: flex;
-            padding: 5px;
+            
             flex-direction: row;
         }
 
         &-content-column {
-            gap: 5px;
             display: flex;
-            padding: 5px;
+            
             flex-direction: column;
         }
     }

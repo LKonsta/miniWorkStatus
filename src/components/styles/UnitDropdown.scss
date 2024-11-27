@@ -6,12 +6,13 @@
     border-radius: 0 0 6px 6px;
     box-shadow: inset 0px 12px 5px -5px rgba(0, 0, 0, 0.1); 
     min-height: 125px;
+    width: 100%;
+
     .base-field-container {
         flex: 1;
         width: 75%;
         min-height: 125px;
     }
-    
     
     .status-info {
         width: 25%;

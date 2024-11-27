@@ -22,8 +22,23 @@ type UnitPropsType = {
 };
 
 const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCategories }) => {
+    const { allStatuses } = useStatusContext();
+
     const [open, setOpen] = useState(false);
     const { isHidden } = useHideContext();
+
+    const configureStatus = (mini: any, newStatus: string) => {
+        const newMiniStatusList = unit.miniStatus.map((miniStatus) => {
+            if (miniStatus.id === mini.id) {
+                return { ...mini, statusId: newStatus };
+            }
+            return miniStatus;
+        });
+
+        const unitObject = { ...unit, miniStatus: newMiniStatusList };
+
+        modifyUnit(unit.id, unitObject);
+    };
 
     return (
         <>
@@ -68,7 +83,8 @@ const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCat
             {open && (
                 <UnitDropdown
                     unit={unit}
-                    modifyUnit={modifyUnit}
+                    configureOptions={allStatuses}
+                    configureMini={configureStatus}
                 />
             )}
         </>

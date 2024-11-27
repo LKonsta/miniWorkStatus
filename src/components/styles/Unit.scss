@@ -25,29 +25,31 @@
     }
 }
 
-.edit-unit {
-    width: 500px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 2px;
-    padding: 3px;
-
-    &-amount {
-        min-width: 6%;
-        max-width: 8%;
+.edit {
+    &-unit {
+        width: 500px;
         display: flex;
+        flex-direction: row;
         align-items: center;
-        justify-content: center;
-    }
+        gap: 2px;
+        padding: 3px;
 
-    &-name {
-        flex-grow: 1;
-        background-color: rbga(0.0.0.0);
+        &-amount {
+            min-width: 6%;
+            max-width: 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-        &-info {
-            font-size: 0.8em;
-            color: #666;
+        &-name {
+            flex-grow: 1;
+            background-color: rbga(0.0.0.0);
+
+            &-info {
+                font-size: 0.8em;
+                color: #666;
+            }
         }
     }
 
@@ -57,5 +59,24 @@
         gap: 5px;
         margin-top: 1px;
         padding: 3px;
+    }
+
+    .config {
+        display: flex;
+        padding: 4px;
+        gap: 5px;
+
+        &-select {
+            flex: 1;
+        }
+    }
+
+    .end-field {
+        display: flex;
+        padding: 6px;
+        justify-content: flex-end;
+
+        .add-button {
+        }
     }
 }
