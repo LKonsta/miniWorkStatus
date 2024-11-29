@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useArmyContext } from './context/ArmyContext';
 import Modal from "./Modal";
 import { CategoryType, ArmyType } from "./types/defaultTypes";
 
 import CategoryService from "../services/category";
 import './styles/Container.scss'
+import './styles/CustomComponents.scss';
 
 import { FaMinus, FaPlus } from "react-icons/fa";
 
@@ -99,7 +99,12 @@ const NewArmy: React.FC<NewArmyPropsType> = ({ addArmy }) => {
     return (
         <div>
             <Modal 
-                ModalButton={<button onClick={openModal}>New Army</button>}
+                ModalButton={
+                    <button
+                        className="default-btn"
+                        onClick={openModal}
+                    >New Army</button>
+                }
                 ModalHeader={"New army"}
                 ModalContent={
                     <>

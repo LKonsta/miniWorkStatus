@@ -36,7 +36,7 @@ const ArmyCategory: React.FC<ArmyCategoryPropsType> = ({ army, addUnit, category
     const Header = (
         <>
             <div
-                className="inner-container-header-title"
+                className="inner-header-title"
                 onClick={() => toggleHideCategory()}
             >
                 <div>
@@ -46,8 +46,8 @@ const ArmyCategory: React.FC<ArmyCategoryPropsType> = ({ army, addUnit, category
                     ({totalAmount(units)})
                 </div>
             </div>
-            <div className="inner-right-box">
-                <div className="inner-right-box-button-container">
+            <div className="right-box-header">
+                <div className="button-container">
                     <NewUnit
                         armyId={army.id}
                         sortedCategories={sortedCategories}
@@ -55,7 +55,7 @@ const ArmyCategory: React.FC<ArmyCategoryPropsType> = ({ army, addUnit, category
                         addUnit={addUnit}
                     />
                 </div>
-                <div className="inner-right-box-item">
+                <div className="item">
                     <DrawPercentage value={CalculatePercentage.calculatePercentage(units)} />
                 </div>
             </div>
@@ -63,33 +63,30 @@ const ArmyCategory: React.FC<ArmyCategoryPropsType> = ({ army, addUnit, category
     );
 
     const Units = (
-        <>
-            {(units.length != 0) && (!hideCategory) ?
-                (units.map((unit) => (
+        <div className={!hideCategory ? "dropdown-show" : "dropdown-hide"}>
+            {(units.length != 0)  ?
+                (units.map((unit, i, {length}) => (
                     <div key={unit.id}>
                         <Unit
+                            last={length - 1 === i}
                             unit={unit}
                             removeUnit={removeUnit}
                             modifyUnit={modifyUnit}
                             sortedCategories={sortedCategories} />
-                        <div className="army-content-category-units-seperator" />
                     </div>
                 ))) :
-                (<></>)
+                (<div className="empty"></div>)
             }
-            <div className="army-content-category-units-empty">
-
-            </div>
-        </>
+        </div>
     );
 
     return (
         <div>
             <div className="inner-container">
-                <div className="inner-container-header">
+                <div className="inner-header">
                     {Header}
                 </div>
-                <div className="inner-container-content-column">
+                <div className="content-wrapper">
                     {Units}
                 </div>
             </div>
@@ -111,9 +108,8 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
 
     // Categories
     const [allCategories, setAllCategories] = useState<CategoryType[]>([]);
-    const sortedCategories = allCategories.length > 0
-        ? allCategories.sort((a, b) => a.index - b.index)
-        : [];
+    const sortedCategories = allCategories.sort((a, b) => a.index - b.index);
+
     useEffect(() => {
         const fetchCategories = async () => {
             setLoadingCategories(true);
@@ -141,8 +137,14 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
 
     // Units
     const [allUnits, setAllUnits] = useState<UnitType[]>([]);
+    const sortedUnits = allUnits.sort((a, b) => {
+        if (a.name < b.name) return 1;
+        if (a.name > b.name) return -1;
+        if (a.info < b.info) return 1;
+        if (a.info > b.info) return -1;
+    });
     const validCategoryIds = allCategories.map(category => category.id);
-    const uncategorizedUnits = allUnits.filter(unit => 
+    const uncategorizedUnits = sortedUnits.filter(unit => 
         unit.categoryId === null || !validCategoryIds.includes(unit.categoryId!)
     );
     useEffect(() => {
@@ -155,7 +157,7 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
         fetchUnits();
     }, []);
     const getUnitsByCategory = (categoryId: string): UnitType[] => {
-        const unitList: UnitType[] = allUnits.filter(unit => unit.categoryId === categoryId);
+        const unitList: UnitType[] = sortedUnits.filter(unit => unit.categoryId === categoryId);
         return unitList;
     };
     const addUnit = async (newUnit: UnitType) => {
@@ -181,8 +183,8 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
         
     return (
         <div className="outer-container">
-            <div className="outer-container-header">
-                <div className="outer-container-header-title">
+            <div className="header">
+                <div className="header-title">
                     <div>
                         {army.name}
                     </div>
@@ -190,8 +192,8 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
                         ({totalAmount(allUnits)})
                     </div>
                 </div>
-                <div className="outer-right-box">
-                    <div className="outer-right-box-button-container">
+                <div className="right-box-header">
+                    <div className="button-container">
                         <NewUnit
                             armyId={army.id}
                             sortedCategories={sortedCategories}
@@ -199,7 +201,7 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
                         />
                     </div>
                     {(isHidden) ? (
-                    <div className="outer-right-box-button-container">
+                    <div className="button-container">
                         <EditArmy
                             army={army}
                             modifyArmy={modifyArmy}
@@ -210,21 +212,21 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
                         />
                     </div>
                     ) : (<></>)}
-                    <div className="outer-right-box-item">
+                    <div className="item">
                         <DrawPercentage value={CalculatePercentage.calculatePercentage(allUnits)} />
                     </div>
                     {(isHidden) ? (
-                    <div className="outer-right-box-button-container">
+                    <div className="button-container">
                         <MdDelete
                             size={25}
-                            className="outer-right-box-button"
+                            className="button"
                             onClick={() => removeArmy(army.id)}
                         />
                     </div>
                     ) : (<></>)}
                 </div>
             </div>
-            <div className="outer-container-content-column">
+            <div className="content-wrapper">
                 {sortedCategories.map((category) => (
                     <div key={category.id}>
                         <ArmyCategory

@@ -1,5 +1,67 @@
-$header-color: rgb(0, 140, 184) ;
-$header-text-color: rgb(255, 255, 255);
-$outer-container-color: rgb(194, 240, 255);
-$inner-container-color: rgb(255, 255, 255);
-$select-indicator: rgb(255,255,255);
+// Root
+$armyWidth: 500px;
+
+// Colors
+$PrimaryColor: rgb(0, 140, 184);
+$lightPrimaryColor: rgb(194, 240, 255);
+$SecondaryColor: rgb(0, 0, 0);
+$lightLightColor: rgb(255, 255, 255);
+
+$acceptColor: rgb(42, 185, 157);
+$warningColor: rgb(227, 95, 83);
+
+$PrimaryTextColor: rgb(255, 255, 255);
+$NormalTextColor: rgb(0, 0, 0);
+$infoTextColor: rgba(0, 0, 0, 0.4);
+
+$darkenColor: rgba(0, 0, 0, 0.2);
+$lightenColor: rgba(255, 255, 255, 0.2);
+
+// Box shadows
+$overShadow: inset 0px 8px 3px -5px rgba(0, 0, 0, 0.2);
+$underShadow: rgba(0, 0, 0, 0.5) 0px 3px 5px;
+$insetBorderShadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+$smallInsetBorderShadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+$containerShadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+
+$normalNegative: -4px;
+$normalPositive: 2px;
+$baseLikeShadowNormal: 
+    inset $normalNegative 0px rgba(0, 0, 0, 0.2), 
+    inset 0px $normalNegative rgba(0, 0, 0, 0.4), 
+    inset $normalPositive 0px rgba(255, 255, 255, 0.4), 
+    inset 0px $normalPositive rgba(255, 255, 255, 0.6);
+
+$smallNegative: -3px;
+$smallPositive: 2px;
+$baseLikeShadowSmall: 
+    inset $smallNegative 0px rgba(0, 0, 0, 0.2), 
+    inset 0px $smallNegative rgba(0, 0, 0, 0.4), 
+    inset $smallPositive 0px rgba(255, 255, 255, 0.4), 
+    inset 0px $smallPositive rgba(255, 255, 255, 0.6);
+
+// Shapes
+$borderRadius: 10px;
+$buttonBorderRadius: 5px;
+$bigGap: 6px;
+$gap: 5px;
+$smallGap: 2px;
+$bigPadding: 4px;
+$padding: 4px;
+$innerPadding: 2px;
+$headerPadding: 6px 8px 6px 8px;
+$containerBottomPadding: 3px 0px 0px 0px;
+
+$unitSidePadding: 0px 4px 0px 4px;
+$unitMinHeight: 40px;
+
+$basePadding: 8px;
+
+$textInputPadding: 3px;
+$textInputBorderRadius: 3px;
+
+// Font sizes
+$bigFont: 30px;
+$mediumFont: 23px;
+$normalFont: 18px;
+$infoFontSize: 14px;

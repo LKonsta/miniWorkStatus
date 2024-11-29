@@ -1,15 +1,17 @@
+@import './Constants.scss';
+
 .ArmyList {
     //border: 1px solid black;
     display: flex;
     overflow-x: scroll;
-    gap: 5px;
-    background-color: lightgray;
+    gap: $bigGap;
+    background-color: $darkenColor;
     flex-grow: 1;
-    padding: 5px;
+    padding: $bigPadding;
 
     .wrapper {
         height: 100%;
-        width: 500px;
-        min-width: 500px;
+        width: $armyWidth;
+        min-width: $armyWidth;
     }
 }

@@ -1,163 +1,153 @@
-$header-color: rgb(0, 140, 184) ;
-$header-text-color: rgb(255, 255, 255);
-$outer-container-color: rgb(194, 240, 255);
-$inner-container-color: rgb(255, 255, 255);
+@import './Constants.scss';
 
+.outer-container {
+    display: flex;
+    max-height: 100%;
+    flex-direction: column;
+    border-radius: $borderRadius;
+    background-color: $lightPrimaryColor;
 
-.outer {
-    &-container {
-        max-height: 100%;
+    .header {
         display: flex;
-        flex-direction: column;
-        border-radius: 10px;
-        max-height: 100%;
-        background-color: $outer-container-color;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        padding: $headerPadding;
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
+        background-color: $PrimaryColor;
+        box-shadow: $underShadow;
 
-        &-header {
+        &-title {
+            flex: 1;
             display: flex;
-            flex-direction: row;
+            margin: 0px;
             align-items: center;
-            justify-content: center;
-            border-radius: 10px 10px 0 0;
-            background-color: $header-color;
-            padding: 6px 8px 6px 12px;
-            box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 5px;
-            z-index: 1;
-            
-
-            &-title {
-                flex: 1;
-                margin: 0px;
-                color: $header-text-color;
-                font-size: 1.8em;
-                display: flex;
-                gap: 5px;
-                align-items: center;
-            }
-        }
-
-        &-content {
-            display: flex;
-            flex-direction: row;
-            gap: 5px;
-            padding: 5px;
-            overflow: auto;
-            height: 100%;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        &-content-column {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            padding: 5px;
-            overflow: auto;
-            height: 100%;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+            color: $PrimaryTextColor;
+            font-size: $bigFont;
+            gap: $gap;
         }
     }
 
-    &-right-box {
+    .content-wrapper {
         display: flex;
-        gap: 5px;
-        align-items: center;
-        justify-content: center;
-
-        &-button-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &-button {
-            align-content: center;
-            justify-content: center;
-            color: $header-text-color;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-
-            &:hover {
-                background-color: rgba(255, 255, 255, 0.2);
-            }
-        }
-
-        &-item {
-            color: white;
-        }
+        flex-direction: column;
+        overflow: auto;
+        height: 100%;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        gap: $gap;
+        padding: $padding;
     }
 }
 
-.inner {
-    &-container {
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    border-radius: $borderRadius;
+    background-color: $lightLightColor;
+    box-shadow: $containerShadow;
+
+    .inner-header {
         display: flex;
-        flex-direction: column;
-        border-radius: 10px;
-        max-height: 100%;
-        background-color: $inner-container-color;
+        flex-direction: row;
+        align-items: center;
+        z-index: 0;
+        padding: $headerPadding;
+        box-shadow: $underShadow;
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius: $borderRadius;
+        background-color: $PrimaryColor;
 
-        &-header {
+        &-title {
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            border-radius: 10px 10px 0 0;
-            background-color: $header-color;
-            padding: 6px 8px 6px 8px;
-            box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 5px;
-            z-index: 0;
-
-            &-title {
-                display: flex;
-                flex: 1;
-                margin: 0px;
-                color: $header-text-color;
-                font-size: 1.4em;
-                gap: 5px;
-            }
-        }
-
-        &-content {
-            display: flex;
-            
-            flex-direction: row;
-        }
-
-        &-content-column {
-            display: flex;
-            
-            flex-direction: column;
+            flex: 1;
+            margin: 0px;
+            color: $PrimaryTextColor;
+            font-size: $mediumFont;
+            gap: $gap;
         }
     }
 
-    &-right-box {
+    .content-wrapper {
         display: flex;
-        gap: 5px;
-        align-items: center;
-        justify-content: center;
-
-        &-button-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &-button {
-            align-content: center;
-            justify-content: center;
-            color: black;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        &-button:hover {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        &-item {
-        }
+        flex-direction: column;
+        gap: $gap;
+        padding: $containerBottomPadding;
+    }
+    .empty {
+        padding: $padding;
     }
 }
 
+.right-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button {
+        align-content: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        color: $PrimaryTextColor;
+        border-radius: $buttonBorderRadius;
+
+        &:hover {
+            background-color: $lightenColor;
+        }
+    }
+
+    .item {
+    }
+}
+
+.right-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button {
+        align-content: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        color: $NormalTextColor;
+        border-radius: $buttonBorderRadius;
+
+        &:hover {
+            background-color: $darkenColor;
+        }
+    }
+
+    .item {
+        color: $lightLightColor;
+    }
+}
+
+.dropdown-show {
+    transform: scaleY(1);
+    transition: transform 0.26s ease;
+}
+
+.dropdown-hide {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.26s ease;
+}

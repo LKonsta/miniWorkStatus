@@ -124,7 +124,7 @@ const EditUnit: React.FC<EditUnitPropsType> = ({ unit, modifyUnit, removeUnit, s
             ModalButton={
                 <IoMdSettings
                     size={25}
-                    className="inner-right-box-button"
+                    className="button"
                     onClick={openModal}
                 />
             }

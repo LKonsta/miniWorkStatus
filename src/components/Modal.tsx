@@ -23,36 +23,36 @@ const Modal: React.FC<ModalProps> = ({ ModalButton, ModalHeader, ModalContent, o
     }
 
     const portal = ReactDOM.createPortal(
-            <div>
+            <>
                 <div className="modal-backdrop" onClick={() => setOpen(false)} />
                 <div className="modal">
                     <div className="outer-container">
-                        <div className="outer-container-header">
-                            <div className="outer-container-header-title">
+                        <div className="header">
+                            <div className="header-title">
                                 {ModalHeader}
                             </div>
-                            <div className="outer-right-box">
+                            <div className="right-box-header">
                                 <IoClose
                                     size={30}
-                                    className="outer-right-box-button"
+                                    className="button"
                                     onClick={() => setOpen(false)}
                                     type="button"    
                                 />
                             </div>
                         </div>
-                        <div className="outer-container-content">
+                        <div className="content-wrapper">
                             {ModalContent}
                         </div>
                     </div>
                 </div>
-            </div>
+            </>
     ,
     document.body)
 
-    return <div> 
+    return <> 
         {ModalButton}
         {portal}
-    </div>;
+    </>;
 };
 
 export default Modal;

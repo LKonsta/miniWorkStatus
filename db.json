@@ -492,7 +492,7 @@
     {
       "id": "c8fa",
       "name": "Ungrim Ironfist",
-      "info": "",
+      "info": "dsaaaa aaaaaaaaa aaaaa aaaaaaaaaa aaaaaaaaa aaaaaaaaaaa aaaaa aaaaaaaaa aaaaaa aaa",
       "miniAmount": 1,
       "miniStatus": [
         {
@@ -664,171 +664,6 @@
           "id": 31,
           "baseId": "abcd",
           "statusId": "8b7a"
-        }
-      ],
-      "categoryId": "cec0",
-      "armyId": "78d1"
-    },
-    {
-      "id": "eaa6",
-      "name": "Warriors",
-      "info": "",
-      "miniAmount": "31",
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "abcd",
-          "statusId": "8b7a"
-        },
-        {
-          "id": 2,
-          "baseId": "abcd",
-          "statusId": "8b7a"
-        },
-        {
-          "id": 3,
-          "baseId": "abcd",
-          "statusId": "8b7a"
-        },
-        {
-          "id": 4,
-          "baseId": "abcd",
-          "statusId": "8b7a"
-        },
-        {
-          "id": 5,
-          "baseId": "abcd",
-          "statusId": "8b7a"
-        },
-        {
-          "id": 6,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 7,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 8,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 9,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 10,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 11,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 12,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 13,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 14,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 15,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 16,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 17,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 18,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 19,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 20,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 21,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 22,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 23,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 24,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 25,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 26,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 27,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 28,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 29,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 30,
-          "baseId": "abcd",
-          "statusId": "175f"
-        },
-        {
-          "id": 31,
-          "baseId": "abcd",
-          "statusId": "175f"
         }
       ],
       "categoryId": "cec0",
@@ -2408,6 +2243,171 @@
       ],
       "categoryId": "98d2",
       "armyId": "0ccc"
+    },
+    {
+      "id": "24ca",
+      "name": "Warriors",
+      "info": "Shields",
+      "miniAmount": "31",
+      "miniStatus": [
+        {
+          "id": 1,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 2,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 3,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 4,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 5,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 6,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 7,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 8,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 9,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 10,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 11,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 12,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 13,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 14,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 15,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 16,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 17,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 18,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 19,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 20,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 21,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 22,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 23,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 24,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 25,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 26,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 27,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 28,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 29,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 30,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        },
+        {
+          "id": 31,
+          "baseId": "abcd",
+          "statusId": "74b9"
+        }
+      ],
+      "categoryId": "cec0",
+      "armyId": "78d1"
     }
   ],
   "bases": [

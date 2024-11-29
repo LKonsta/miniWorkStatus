@@ -1,82 +1,51 @@
+@import './Container.scss';
+@import './Constants.scss';
+
 .unit {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 2px;
-    padding: 3px;
+    gap: $gap;
+    padding: $unitSidePadding;
+    min-height: $unitMinHeight;
+    transition: background-color 0.2s ease-out;
+
     &:hover {
-        background-color: lightgray;
+        background-color: $darkenColor;
         transition: background-color 0.1s ease-in;
     }
-    &-amount {
+
+    .amount {
         min-width: 6%;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    &-name {
+    .name {
         flex-grow: 1;
+        font-size: $normalFont;
 
-        &-info {
-            font-size: 0.8em;
-            color: #666;
+        .info {
+            position: relative;
+            font-size: $infoFontSize;
+            max-width: 340px;
+            color: $infoTextColor;
+            left: 10px;
+        }
+
+        .info-collapsed {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: 1.2em;
+            line-height: 1.2em;
+            position: relative;
+            font-size: $infoFontSize;
+            max-width: 200px;
+            color: $infoTextColor;
+            left: 10px;
         }
     }
 }
 
-.edit {
-    &-unit {
-        width: 500px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2px;
-        padding: 3px;
-
-        &-amount {
-            min-width: 6%;
-            max-width: 8%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &-name {
-            flex-grow: 1;
-            background-color: rbga(0.0.0.0);
-
-            &-info {
-                font-size: 0.8em;
-                color: #666;
-            }
-        }
-    }
-
-    &-dropdown {
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
-        margin-top: 1px;
-        padding: 3px;
-    }
-
-    .config {
-        display: flex;
-        padding: 4px;
-        gap: 5px;
-
-        &-select {
-            flex: 1;
-        }
-    }
-
-    .end-field {
-        display: flex;
-        padding: 6px;
-        justify-content: flex-end;
-
-        .add-button {
-        }
-    }
-}

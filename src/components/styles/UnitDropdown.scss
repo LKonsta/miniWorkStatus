@@ -1,40 +1,43 @@
+@import './Constants';
+
 .unit-dropdown {
     display: flex;
     flex-direction: row;
-    padding: 3px;
-    gap: 10px;
-    border-radius: 0 0 6px 6px;
-    box-shadow: inset 0px 12px 5px -5px rgba(0, 0, 0, 0.1); 
-    min-height: 125px;
-    width: 100%;
+    padding: $padding;
+    gap: $gap;
+    box-shadow: $overShadow;
+    min-height: 100px;
 
     .base-field-container {
         flex: 1;
         width: 75%;
-        min-height: 125px;
+        min-height: 10px;
     }
-    
-    .status-info {
+
+    .status-info-container {
         width: 25%;
         display: flex;
         flex-direction: column;
-        gap: 2px;
+        gap: $smallGap;
 
-        &-item {
+        .status {
             display: flex;
             flex-direction: row;
-            gap: 4px;
+            align-items: center;
+            gap: $gap;
 
             &-color {
-                width: 18px;
-                height: 18px;
+                width: 20px;
+                height: 20px;
+                box-shadow: $baseLikeShadowSmall;
             }
 
             &-name {
                 flex: 1;
+                font-size: $normalFont;
             }
-            &-percentage {
 
+            &-percentage {
             }
         }
     }

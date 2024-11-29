@@ -93,7 +93,7 @@ const EditArmy: React.FC<EditArmyPropsType> = ({ army, modifyArmy, sortedCategor
             ModalButton={
                 <IoMdSettings
                     size={25}
-                    className="outer-right-box-button"
+                    className="button"
                     onClick={openModal}
                 />
             }

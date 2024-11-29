@@ -15,13 +15,14 @@ import { useHideContext } from './context/HideContext';
 import UnitDropdown from './UnitDropdown';
 
 type UnitPropsType = {
+    last: boolean,
     unit: UnitType,
     removeUnit: any,
     modifyUnit: any,
     sortedCategories: CategoryType[]
 };
 
-const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCategories }) => {
+const Unit: React.FC<UnitPropsType> = ({ last, unit, removeUnit, modifyUnit, sortedCategories }) => {
     const { allStatuses } = useStatusContext();
 
     const [open, setOpen] = useState(false);
@@ -42,21 +43,33 @@ const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCat
 
     return (
         <>
-            <div className="unit">
-                <div className='unit-amount'>
+            <div
+                className="unit"
+                style={(last && !open) ? ({ borderRadius: "0px 0px 10px 10px"}) : ({})}
+            >
+                <div className='amount'>
                     {unit.miniAmount}
                 </div>
-                <div className='unit-name' onClick={() => setOpen(!open)}>
+                <div className='name' onClick={() => setOpen(!open)}>
                     <div>
                         {unit.name}
-                        <div className="unit-name-info">
-                            {(unit.info) ? (<>- {unit.info}</>) : (<></>)}
-                        </div>
+                        {(unit.info) ? (
+                            (open
+                            ) ? (
+                                <div className="info">
+                                    {<>{unit.info}</>}
+                                </div>
+                            ) : (
+                                <div className="info-collapsed">
+                                    {<>{unit.info}</>}
+                                </div>
+                            )
+                        ) : (<></>)}
                     </div>
                 </div>
-                <div className="inner-right-box">
+                <div className="right-box">
                     {(isHidden) ? (
-                    <div className='inner-right-box-button-container'>
+                    <div className='button-container'>
                         <EditUnit
                             unit={unit}
                             modifyUnit={modifyUnit}
@@ -65,15 +78,15 @@ const Unit: React.FC<UnitPropsType> = ({ unit, removeUnit, modifyUnit, sortedCat
                         />
                     </div>
                     ) : (<></>)}
-                    <div className='inner-right-box-item'>
+                    <div className='item'>
                         <DrawPercentage
                             value={CalculatePercentage.calculatePercentage([unit])} />
                     </div>
                     {(isHidden) ? (
-                    <div className='inner-right-box-button-container'>
+                    <div className='button-container'>
                         <MdDelete
                             size={25}
-                            className="inner-right-box-button"
+                            className="button"
                             onClick={() => removeUnit(unit.id)}
                         />
                     </div>

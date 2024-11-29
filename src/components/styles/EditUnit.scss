@@ -1,0 +1,91 @@
+@import './constants.scss';
+.edit-unit-container {
+    display: flex;
+    border-radius: $borderRadius;
+    background-color: $lightLightColor;
+    padding: $padding;
+    gap: $gap;
+
+    .edit-config {
+        display: flex;
+        padding: $padding;
+        gap: $gap;
+        flex-direction: column;
+        height: 100%;
+
+        .config-fields {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: $gap;
+
+            .description {
+                font-size: $normalFont;
+            }
+        }
+
+        .config-end {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+.edit {
+    width: $armyWidth;
+
+    &-unit {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: $gap;
+        padding: $unitSidePadding;
+        min-height: $unitMinHeight;
+
+        .amount {
+            max-width: 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .name {
+            flex-grow: 1;
+            font-size: $normalFont;
+
+            .info {
+                position: relative;
+                font-size: $infoFontSize;
+                max-width: 340px;
+                color: $infoTextColor;
+                left: 10px;
+            }
+        }
+    }
+
+    &-dropdown {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-top: 1px;
+        padding: 3px;
+    }
+
+    .config {
+        display: flex;
+        padding: 4px;
+        gap: 5px;
+
+        &-select {
+            flex: 1;
+        }
+    }
+
+    .end-field {
+        display: flex;
+        padding: 6px;
+        justify-content: flex-end;
+
+        .add-button {
+        }
+    }
+}

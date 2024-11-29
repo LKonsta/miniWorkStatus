@@ -1,3 +1,5 @@
+@import './Constants.scss';
+
 .modal-backdrop {
     z-index: 1;
     position: fixed;
@@ -5,8 +7,8 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4);
-  }
+    background-color: $darkenColor;
+}
 /* Modal positioning */
 .modal {
   position: absolute;
@@ -14,41 +16,6 @@
   top: 20%;
   transform: translate(-50%, 0);
   z-index: 2;
-
-/* Modal itself */
-  &-content {    
-    margin: auto;
-    background-color: darkcyan;
-    color: white;
-    position: relative;
-    padding: 0;
-    outline: 0;
-    min-width: 300px;
-    border-radius: 10px;
-
-    &-header {
-      padding: 10px;
-      display: flex;
-      gap: 10px;
-      align-content: center;
-      
-      &-title {
-        flex: 1;
-        font-size: 30px;  
-      }
-      &-exit {
-        
-      }
-    }
-    
-    /* Modal contents */
-    &-form {
-      padding: 20px;
-      background-color: lightcyan;
-      color: black;
-      border-radius: 0 0 10px 10px;
-    }
-  }
 }
 
   

@@ -9,8 +9,10 @@ import CalculatePercentage from './CalculatePercentage';
 import DrawPercentage from './DrawPercentage';
 
 import { FaPlus } from "react-icons/fa";
-import './styles/InputFields.scss';
-import './styles/NewUnit.scss';
+import './styles/EditUnit.scss';
+import './styles/Container.scss';
+import './styles/Unit.scss';
+import './styles/CustomComponents.scss';
 import Select, { SingleValue } from 'react-select';
 import UnitDropdown from "./UnitDropdown";
 
@@ -70,17 +72,21 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, currentCategory, sortedCa
         refreshStatusList({ miniAmount });
     };
 
-    const handleMiniStatusChange = (field: keyof MiniStatusType, event: React.ChangeEvent<HTMLSelectElement>) => {
-        if (field === "baseId") {
-            const baseId = event.target.value;
+    const handleMiniStatusBaseChange = (selectedOption: SingleValue<{ value: string, label: string }>) => {
+        if (selectedOption) {
+            const baseId = selectedOption.value;
             setNewUnitDefaultBaseId(baseId)
             refreshStatusList({ baseId })
-        } else {
-            const statusId = event.target.value;
+        };
+    };
+
+    const handleMiniStatusStatusChange = (selectedOption: SingleValue<{ value: string, label: string }>) => {
+        if (selectedOption) {
+            const statusId = selectedOption.value;
             setNewUnitDefaultStatusId(statusId)
             refreshStatusList({ statusId })
         };
-    }
+    };
 
     const refreshStatusList = (props?: { miniAmount?: number; baseId?: string; statusId?: string }) => {
         const mAmount = (props?.miniAmount) ? props?.miniAmount : newUnit.miniAmount;
@@ -145,6 +151,7 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, currentCategory, sortedCa
     }
 
     // React Select field configurations
+    // Header|Category select field 
     const categoryOptions = sortedCategories.map(category => ({
         value: category.id,
         label: category.name
@@ -154,20 +161,41 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, currentCategory, sortedCa
         : (categoryOptions.find(category => category.value === newUnit.categoryId));
     const filteredCategoryOptions = categoryOptions.filter(category => category.value !== (selectedCategory ? selectedCategory.value : null));
 
+    // Base select field
+    const baseOptions = allBases.map(base => ({
+        value: base.id,
+        label: (base.name + " " + base.shape)
+    }));
+    const selectedBase = (newUnit.miniStatus.length > 0)
+        ? (baseOptions.find(base => base.value === newUnit.miniStatus[0].baseId))
+        : (baseOptions.find(base => base.value === allBases[0].id));
+
+    // Status select field
+    const statusOptions = allStatuses.map(status => ({
+        value: status.id,
+        label: status.name
+    }));
+    const selectedStatus = (newUnit.miniStatus.length > 0)
+        ? (statusOptions.find(status => status.value === newUnit.miniStatus[0].statusId))
+        : (statusOptions.find(status => status.value === allStatuses[0].id));
+
     return (
         <Modal
             ModalButton={
                 <FaPlus
                     size={25}
-                    className="outer-right-box-button"
+                    className="button"
                     onClick={openModal}
                 />
             }
             ModalHeader={"New unit"}
             ModalContent={
-                <form onSubmit={handleSubmit}>
+                <form
+                    className="edit-unit-container"
+                    onSubmit={handleSubmit}
+                >
                     <div className="inner-container">
-                        <div className="inner-container-header">
+                        <div className="inner-header">
                             <div className="category-input-select">
                                 <Select 
                                     className={"select"}
@@ -175,31 +203,37 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, currentCategory, sortedCa
                                     menuPortalTarget={document.body}
                                     styles={{ menuPortal: base => ({...base, zIndex: 9999}) }}
                                     isSearchable={false}
-
                                     options={filteredCategoryOptions}
                                     value={selectedCategory || null}
                                     onChange={handleUnitCategoryChange}
                                 />
                             </div>
                         </div>
-                        <div className="inner-container-content-column">
+                        <div className="content-wrapper">
                             <div className="edit">
                                 <div className="edit-unit">
-                                    <input className="edit-unit-amount"
-                                        type="number"
-                                        value={newUnit.miniAmount}
-                                        onChange={handleUnitAmountChange}
-                                    />
-                                    <div className="edit-unit-name">
+                                    <div className="amount">
                                         <input
+                                            className="amount-input"
+                                            type="number"
+                                            
+                                            value={newUnit.miniAmount}
+                                            onChange={handleUnitAmountChange}
+                                        />
+                                    </div>
+                                    <div className="name">
+                                        <input
+                                            className="string-input"
                                             type="text"
+                                            placeholder="name"
                                             value={newUnit.name}
                                             onChange={(e) => handleUnitChange("name", e)}
                                         />
-                                        <div className="edit-unit-name-info">
-                                            -
+                                        <div className="info">
                                             <input 
+                                                className="info-input"
                                                 type="text"
+                                                placeholder="info"
                                                 value={newUnit.info}
                                                 onChange={(e) => handleUnitChange("info", e)}
                                             />
@@ -221,45 +255,57 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, currentCategory, sortedCa
                                                     configureMini={configureBase}
                                                 />
                                             </div>
-                                            <div className="config">
-                                                <select
-                                                    className="config-select"
-                                                    name="bases"
-                                                    id="bases"
-                                                    onChange={(e) => handleMiniStatusChange("baseId", e)}
-                                                >
-                                                    {allBases.map(base => (
-                                                        <option
-                                                            key={base.id}
-                                                            value={base.id}>
-                                                            {base.name} {base.shape}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                                <select
-                                                    className="config-select"
-                                                    name="status"
-                                                    id="status"
-                                                    onChange={(e) => handleMiniStatusChange("statusId", e)}
-                                                >
-                                                    {allStatuses.map(status => (
-                                                        <option key={status.id} value={status.id}>
-                                                            {status.name}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                            </div>
                                         </>
                                     ) : (
                                         <div>
                                         </div>
                                     )}
-                                    <div className="end-field">
-                                        <div className="add-button">
-                                            <button type="submit">add</button>
-                                        </div>
-                                    </div>
+                                    
                                 </>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="inner-container">
+                        <div className="content-wrapper">
+                            <div className="edit-config">
+                                <div className="config-fields">
+                                    <div className="description">
+                                        default base size:
+                                    </div>
+                                    <div className="default-input-select">
+                                        <Select
+                                            className={"select"}
+                                            classNamePrefix={"react-select"}
+                                            menuPortalTarget={document.body}
+                                            styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}
+                                            isSearchable={true}
+                                            options={baseOptions}
+                                            value={selectedBase || null}
+                                            onChange={handleMiniStatusBaseChange}
+                                        />
+                                    </div>
+                                    <div className="description">
+                                        default status:
+                                    </div>
+                                    <div className="default-input-select">
+                                        <Select
+                                            className={"select"}
+                                            classNamePrefix={"react-select"}
+                                            menuPortalTarget={document.body}
+                                            styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}
+                                            isSearchable={true}
+                                            options={statusOptions}
+                                            value={selectedStatus || null}
+                                            onChange={handleMiniStatusStatusChange}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="config-end">
+                                    <button
+                                        className="accept-btn"
+                                        type="submit"
+                                    >Add</button>
+                                </div>
                             </div>
                         </div>
                     </div>

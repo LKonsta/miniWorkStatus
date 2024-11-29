@@ -8,6 +8,7 @@ import { useStatusContext } from './context/StatusContext';
 import { DrawDummy } from './Base';
 import './styles/Settings.scss'
 import './styles/Container.scss'
+import './styles/CustomComponents.scss';
 
 const Settings: React.FC = () => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -67,7 +68,12 @@ const Settings: React.FC = () => {
     return (
         <div>
             <Modal
-                ModalButton={<button onClick={toggleModal}>Settings</button>}
+                ModalButton={
+                    <button
+                        onClick={toggleModal}
+                        className="default-btn"
+                    >Settings</button>
+                }
                 ModalHeader={"Base and Status settings"}
                 ModalContent={
                     <>
