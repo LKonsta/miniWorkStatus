@@ -49,12 +49,30 @@ const calculatePercentage = ( units : UnitType[]): number => {
 
 const calculatePercentageColor = (value: number): string => {
 
+    interface colorType {r: number, g: number, b: number,};
+    const color1: colorType = {
+        r: 153,
+        g: 26,
+        b: 36
+    };
+    const color2: colorType = {
+        r: 56,
+        g: 224,
+        b: 44
+    };
+
     const greater = (Math.pow(value, 1.2) / 1);
     const clampedValue = Math.min(1, Math.max(0, greater));
 
-    const r = Math.round(255 * (1 - clampedValue));
-    const g = Math.round(255 * clampedValue);
-    const b = 0;
+    const r = Math.round(
+        color1.r + ((color2.r - color1.r) * clampedValue)
+    );
+    const g = Math.round(
+        color1.g + ((color2.g - color1.g) * clampedValue)
+    );
+    const b = Math.round(
+        color1.b + ((color2.b - color1.b) * clampedValue)
+    );
 
     return `rgb(${r}, ${g}, ${b})`;
 };
