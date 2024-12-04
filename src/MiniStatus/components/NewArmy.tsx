@@ -5,9 +5,10 @@ import { CategoryType, ArmyType } from "./types/defaultTypes";
 import CategoryService from "../services/category";
 import './styles/Container.scss'
 import './styles/CustomComponents.scss';
+import './styles/EditArmy.scss';
 
 import { FaMinus, FaPlus } from "react-icons/fa";
-
+import { MdDelete } from "react-icons/md";
 
 type NewArmyPropsType = {
     addArmy: any,
@@ -54,9 +55,16 @@ const NewArmy: React.FC<NewArmyPropsType> = ({ addArmy }) => {
             newArmyCategoryObject
         ]);
     };
-    const removeArmyCategory = () => {
+    const removeArmyCategory = ( index:number ) => {
         setNewArmyCategories(preCategories => {
-            return preCategories.slice(0, preCategories.length - 1);
+            const removedCategoryList = preCategories.filter(category => category.index !== index);
+        
+            const resettedIndexes = removedCategoryList.map((category, i) => ({
+                ...category,
+                index: i+1,
+            }));
+                
+            return resettedIndexes;
         });
     };
 
@@ -108,45 +116,74 @@ const NewArmy: React.FC<NewArmyPropsType> = ({ addArmy }) => {
                 ModalHeader={"New army"}
                 ModalContent={
                     <>
-                        <form onSubmit={handleSubmit} className="inner-container">
-                            <div className="inner-container-header">
-                                <div className="inner-container-header-title">Army name</div>
-                            </div>
-                            <div className="inner-container-content-column">
-                                <input
-                                    className="new-army-form-inputs-name-field"
-                                    value={newArmyName}
-                                    onChange={handleArmyNameChange}
-                                />
-                                <button type="submit">Add</button>
-                            </div>
-                        </form>
-                        <div className="inner-container">
-                            <div className="inner-container-header">
-                                <div className="inner-container-header-title">Categories</div>
-                                <div className="outer-right-box">
-                                    <div className="outer-right-box-button-container">
-                                        <FaMinus
-                                            className="outer-right-box-button"
-                                            onClick={removeArmyCategory} />
+                        <form 
+                            onSubmit={handleSubmit} 
+                            className="edit-army-container"
+                        >
+                            <div className="outer-container">
+                                <div className="header">
+                                    <div className="input-container">
+                                        <input
+                                            className="army-name-input"
+                                            value={newArmyName}
+                                            onChange={handleArmyNameChange}
+                                            placeholder="Army name"
+                                        />
                                     </div>
-                                    <div className="outer-right-box-item">{newArmyCategories.length}</div>
-                                    <div className="outer-right-box-button-container">
-                                        <FaPlus
-                                            className="outer-right-box-button"
-                                            onClick={addArmyCategory} />
+                                    <div className="right-box-header">
+                                        <div className="item-container">
+                                            <button 
+                                                className="accept-btn"
+                                                type="submit"
+                                            >Add</button>
+                                        </div>
                                     </div>
                                 </div>
+                                <div className="content-wrapper">
+                                    {newArmyCategories.map(category => (
+                                        <div 
+                                            key={category.index}
+                                            className="inner-container"
+                                        >    
+                                            <div className="inner-header">
+                                                <div className="input-container">
+                                                    <input 
+                                                        className="category-name-input"
+                                                        placeholder="Category name"
+                                                        value={category.name} 
+                                                        onChange={handleArmyCategoryNameChange(category.index)} 
+                                                    />
+                                                </div>
+                                                <div className="right-box-header">
+                                                    <div className="button-container">
+                                                        <MdDelete 
+                                                            size={25}
+                                                            className="button"
+                                                            onClick={() => removeArmyCategory(category.index)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="empty" />
+                                        </div>
+                                    ))}
+                                    <div 
+                                        onClick={addArmyCategory} 
+                                        className="ghost-category"
+                                    >
+                                        <FaPlus 
+                                            size={25}
+                                            className="ghost-plus"
+                                        />
+                                    </div> 
+                                </div>
                             </div>
-                            <div className="inner-container-content-column">
-                                {newArmyCategories.map(category => (
-                                    <div key={category.index}>
-                                        {category.index}
-                                        <input value={category.name} onChange={handleArmyCategoryNameChange(category.index)} />
-                                    </div>
-                                ))}
+                            <div>
+                                <div className="config-end">
+                                    
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </>
                 }
                 open={modalOpen}

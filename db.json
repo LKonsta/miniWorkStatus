@@ -351,6 +351,36 @@
       "name": "Core",
       "index": 2,
       "armyId": null
+    },
+    {
+      "id": "7778",
+      "name": "dsadsadsa",
+      "index": 1,
+      "armyId": null
+    },
+    {
+      "id": "0d31",
+      "name": "Special",
+      "index": 3,
+      "armyId": null
+    },
+    {
+      "id": "9060",
+      "name": "Core",
+      "index": 2,
+      "armyId": null
+    },
+    {
+      "id": "a0e2",
+      "name": "Extra",
+      "index": 5,
+      "armyId": null
+    },
+    {
+      "id": "a82a",
+      "name": "Rare",
+      "index": 4,
+      "armyId": null
     }
   ],
   "units": [
