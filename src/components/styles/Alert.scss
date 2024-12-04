@@ -1,0 +1,66 @@
+@import './Constants.scss';
+
+$alertPadding: 10px 40px 10px 40px; 
+$alertGap: 5px;
+
+@keyframes animate-visible {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes animate-fade-out {
+    0% {
+        opacity: 1;    
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.alert-container {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%, 0);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: $alertGap;
+}
+
+.alert {
+    padding: $alertPadding;
+    border-radius: $borderRadius;
+    justify-content: center;
+    align-content: center;
+
+    &.visible {
+        animation-duration: 0.5s;
+        animation-name: animate-visible;
+    }
+
+    &.fade-out {
+        animation-duration: 1s;
+        animation-name: animate-fade-out;
+        animation-fill-mode: backwards;
+    }
+    // diffrent kind of alerts
+    &.success {
+        background-color: green;
+    }
+    &.error {
+        background-color: red;
+    }
+    &.warning {
+        background-color: darkred;
+    }
+    &.info {
+        background-color: $PrimaryColor;
+    }
+}

@@ -1,7 +1,4 @@
 import React from "react";
-import { useState, useEffect } from 'react';
-
-import armyService from '../services/army';
 
 import Army from "./Army"
 

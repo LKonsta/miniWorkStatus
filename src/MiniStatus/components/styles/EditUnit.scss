@@ -1,4 +1,4 @@
-@import './constants.scss';
+@import './../../../components/styles/Constants.scss';
 .edit-unit-container {
     display: flex;
     border-radius: $borderRadius;
@@ -26,6 +26,7 @@
 
         .config-end {
             display: flex;
+            gap: $gap;
             justify-content: flex-end;
         }
     }
@@ -55,9 +56,13 @@
             .info {
                 position: relative;
                 font-size: $infoFontSize;
-                max-width: 340px;
+                width: 340px;
+                max-height: 200px;
                 color: $infoTextColor;
                 left: 10px;
+                &.input {
+
+                }
             }
         }
     }

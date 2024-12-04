@@ -12,7 +12,6 @@ export const HideProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     const toggleHide = () => {
         setIsHidden(!isHidden);
-        console.log(isHidden)
     };
 
     return (
@@ -25,7 +24,7 @@ export const HideProvider: React.FC<{ children: React.ReactNode }> = ({ children
 export const useHideContext = (): HideContextType => {
     const context = useContext(HideContext);
     if (!context) {
-        throw new Error('useBaseContext must be used within a HideProvider');
+        throw new Error('useHideContext must be used within a HideProvider');
     }
     return context;
 };

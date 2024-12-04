@@ -1,4 +1,4 @@
-@import './Constants.scss';
+@import './../../../components/styles/Constants.scss';
 
 // Custom Button
 
@@ -45,8 +45,6 @@ $buttonFontSize: 15px;
 // Custom Input fields
 
 .string-input {
-    width: 100%;
-    min-width: 40px;
     max-width: 100%;
     border: none;
     border-radius: $textInputBorderRadius;
@@ -66,9 +64,9 @@ $buttonFontSize: 15px;
     max-width: 100%;
     border: none;
     border-radius: $textInputBorderRadius;
-    outline: none;
     font-size: $infoFontSize;
     color: $infoTextColor;
+    outline: none;
     transition: box-shadow 0.3s ease;
 
     &::placeholder {
@@ -79,7 +77,6 @@ $buttonFontSize: 15px;
         box-shadow: $smallInsetBorderShadow;
     }
 }
-
 .amount-input {
     text-align: center;
     max-width: 100%;

@@ -39,3 +39,13 @@ export interface UnitType {
     categoryId: string;
     armyId: string;
 }
+
+export interface AlertType {
+    message: string;
+    type: 'success' | 'error' | 'warning' | 'info';
+}
+
+export interface ErrorType {
+    message: string;
+    serverError?: string;
+}

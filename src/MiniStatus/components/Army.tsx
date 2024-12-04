@@ -1,24 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-import unitService from '../services/unit';
-import categoryService from '../services/category';
+import categoryService from './../services/category';
+import unitService from './../services/unit';
 
-import EditArmy from "./EditArmy";
-import Unit from "./Unit";
-import NewUnit from "./NewUnit";
-import DrawPercentage from './DrawPercentage';
 import CalculatePercentage from "./CalculatePercentage";
+import DrawPercentage from './DrawPercentage';
+import EditArmy from "./EditArmy";
+import NewUnit from "./NewUnit";
+import Unit from "./Unit";
 
-import { ArmyType, CategoryType, UnitType } from './types/defaultTypes'
+import { ArmyType, CategoryType, UnitType } from './types/defaultTypes';
 
-import "./styles/Army.scss"
-import "./styles/Container.scss"
-import { BiSolidHide } from "react-icons/bi";
-import { IoMdSettings } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
-import Loading from './Loading';
-import { useHideContext } from './context/HideContext';
+import Loading from './../../components/Loading';
 import totalAmount from './TotalAmount';
+import { useHideContext } from './context/HideContext';
+import "./styles/Army.scss";
+import "./styles/Container.scss";
 
 type ArmyCategoryPropsType = {
     army: ArmyType,
