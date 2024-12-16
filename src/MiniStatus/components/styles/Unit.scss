@@ -15,36 +15,41 @@
         transition: background-color 0.1s ease-in;
     }
 
-    .amount {
-        min-width: 6%;
+    .unit-info {
         display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        flex: 1;
 
-    .name {
-        flex-grow: 1;
-        font-size: $normalFont;
-
-        .info {
-            position: relative;
-            font-size: $infoFontSize;
-            max-width: 340px;
-            color: $infoTextColor;
-            left: 10px;
+        .amount {
+            min-width: 6%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .info-collapsed {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 1.2em;
-            line-height: 1.2em;
-            position: relative;
-            font-size: $infoFontSize;
-            max-width: 200px;
-            color: $infoTextColor;
-            left: 10px;
+        .name {
+            flex-grow: 1;
+            font-size: $normalFont;
+
+            .info {
+                position: relative;
+                font-size: $infoFontSize;
+                max-width: 340px;
+                color: $infoTextColor;
+                left: 10px;
+            }
+
+            .info-collapsed {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 1.2em;
+                line-height: 1.2em;
+                position: relative;
+                font-size: $infoFontSize;
+                max-width: 200px;
+                color: $infoTextColor;
+                left: 10px;
+            }
         }
     }
 }

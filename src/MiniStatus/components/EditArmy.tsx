@@ -5,10 +5,14 @@ import { CategoryType, ArmyType } from "./types/defaultTypes"
 
 import { IoMdSettings } from "react-icons/io";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+
+import { DndContext, useDndMonitor } from '@dnd-kit/core';
 
 type EditArmyPropsType = {
     army: ArmyType,
     modifyArmy: any,
+    removeArmy: any,
     sortedCategories: CategoryType[],
     modifyCategory: any,
     addCategory: any,
@@ -16,9 +20,9 @@ type EditArmyPropsType = {
 }
 
 
-const EditArmy: React.FC<EditArmyPropsType> = ({ army, modifyArmy, sortedCategories, modifyCategory, addCategory, removeCategory }) => {
+const EditArmy: React.FC<EditArmyPropsType> = ({ army, modifyArmy, removeArmy, sortedCategories, modifyCategory, addCategory, removeCategory }) => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
-    const toggleModal = () => { setModalOpen(true); };
+    const toggleModal = () => { setModalOpen(!modalOpen); };
 
     const [editArmyName, setEditArmyName] = useState<string>(army.name);
     const [editArmyCategories, setEditArmyCategories] = useState<CategoryType[]>(
@@ -38,19 +42,26 @@ const EditArmy: React.FC<EditArmyPropsType> = ({ army, modifyArmy, sortedCategor
     };
 
     const addArmyCategory = () => {
-        const newArmyCategoryObject = {
+        const editArmyCategoryObject = {
             name: "",
             index: (editArmyCategories.length + 1),
             armyId: army.id
         };
         setEditArmyCategories(preCategories => [
             ...preCategories,
-            newArmyCategoryObject
+            editArmyCategoryObject
         ]);
     };
-    const removeArmyCategory = () => {
+    const removeArmyCategory = (index: number) => {
         setEditArmyCategories(preCategories => {
-            return preCategories.slice(0, preCategories.length - 1);
+            const removedCategoryList = preCategories.filter(category => category.index !== index);
+
+            const resettedIndexes = removedCategoryList.map((category, i) => ({
+                ...category,
+                index: i + 1,
+            }));
+
+            return resettedIndexes;
         });
     };
 
@@ -72,6 +83,11 @@ const EditArmy: React.FC<EditArmyPropsType> = ({ army, modifyArmy, sortedCategor
         });
     };
 
+    const deleteArmy = async () => {
+        await removeArmy(army.id);
+        toggleModal();
+    }
+
     const openModal = () => {
         setEditArmyCategories(sortedCategories);
         toggleModal();
@@ -88,6 +104,8 @@ const EditArmy: React.FC<EditArmyPropsType> = ({ army, modifyArmy, sortedCategor
         toggleModal();
     };
 
+
+
     return (
         <Modal
             ModalButton={
@@ -97,48 +115,86 @@ const EditArmy: React.FC<EditArmyPropsType> = ({ army, modifyArmy, sortedCategor
                     onClick={openModal}
                 />
             }
-            ModalHeader={"[" + army.name + "] settings"}
+            ModalHeader={"Editing (" + army.name + ")"}
             ModalContent={
                 <>
-                    <form onSubmit={handleSubmit} className="inner-container">
-                        <div className="inner-container-header">
-                            <div className="inner-container-header-title">Army name</div>
-                        </div>
-                        <div className="inner-container-content-column">
-                            <input
-                                className="new-army-form-inputs-name-field"
-                                value={editArmyName}
-                                onChange={handleArmyNameChange}
-                            />
-                            <button type="submit">apply</button>
-                        </div>
-                    </form>
-                    <div className="inner-container">
-                        <div className="inner-container-header">
-                            <div className="inner-container-header-title">Categories</div>
-                            <div className="outer-right-box">
-                                <div className="outer-right-box-button-container">
-                                    <FaMinus
-                                        className="outer-right-box-button"
-                                        onClick={removeArmyCategory} />
+                    <form
+                        onSubmit={handleSubmit}
+                        className="edit-army-container"
+                    >
+                        <div className="outer-container">
+                            <div className="header">
+                                <div className="input-container">
+                                    <input
+                                        className="army-name-input"
+                                        value={editArmyName}
+                                        onChange={handleArmyNameChange}
+                                        placeholder="Army name"
+                                    />
                                 </div>
-                                <div className="outer-right-box-item">{editArmyCategories.length}</div>
-                                <div className="outer-right-box-button-container">
+                            </div>
+                            <div className="content-wrapper">
+                                <DndContext>
+                                    {editArmyCategories.map(category => (
+                                        <div
+                                            key={category.index}
+                                            className="inner-container"
+                                        >
+                                            <div className="inner-header">
+                                                <div className="input-container">
+                                                    <input
+                                                        className="category-name-input"
+                                                        placeholder="Category name"
+                                                        value={category.name}
+                                                        onChange={handleArmyCategoryNameChange(category.index)}
+                                                    />
+                                                </div>
+                                                <div className="right-box-header">
+                                                    <div className="button-container">
+                                                        <MdDelete
+                                                            size={25}
+                                                            className="button"
+                                                            onClick={() => removeArmyCategory(category.index)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="empty" />
+                                        </div>
+                                    ))}
+                                </DndContext>
+                                <div
+                                    onClick={addArmyCategory}
+                                    className="ghost-category"
+                                >
                                     <FaPlus
-                                        className="outer-right-box-button"
-                                        onClick={addArmyCategory} />
+                                        size={25}
+                                        className="ghost-plus"
+                                    />
                                 </div>
                             </div>
                         </div>
-                        <div className="inner-container-content-column">
-                            {editArmyCategories.map(category => (
-                                <div key={category.index}>
-                                    {category.index}
-                                    <input value={category.name} onChange={handleArmyCategoryNameChange(category.index)} />
+                        <div className="inner-container">
+                            <div className="edit-config">
+                                <div className="config-fields">
+                                    <div className="config-end">
+                                        <div className="item-container">
+                                            <button
+                                                className="warning-btn"
+                                                onClick={() => deleteArmy()}
+                                            >Remove</button>
+                                        </div>
+                                        <div className="item-container">
+                                            <button
+                                                className="accept-btn"
+                                                type="submit"
+                                            >Apply</button>
+                                        </div>
+                                    </div>
                                 </div>
-                            ))}
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </>
             }
             open={modalOpen}
@@ -146,5 +202,7 @@ const EditArmy: React.FC<EditArmyPropsType> = ({ army, modifyArmy, sortedCategor
         />
     );
 }
+
+
 
 export default EditArmy;

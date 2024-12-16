@@ -10,7 +10,7 @@ import './styles/Settings.scss'
 import './styles/Container.scss'
 import './styles/CustomComponents.scss';
 
-const Settings: React.FC = () => {
+const BasesAndStatuses: React.FC = () => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const toggleModal = () => { setModalOpen(!modalOpen); };
     const { allBases, addBase, removeBase } = useBaseContext();
@@ -72,7 +72,7 @@ const Settings: React.FC = () => {
                     <button
                         onClick={toggleModal}
                         className="default-btn"
-                    >Settings</button>
+                    >Bases & Statuses</button>
                 }
                 ModalHeader={"Base and Status settings"}
                 ModalContent={
@@ -186,4 +186,4 @@ const Settings: React.FC = () => {
     );
 };
 
-export default Settings;
+export default BasesAndStatuses;

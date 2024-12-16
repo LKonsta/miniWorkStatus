@@ -5,6 +5,7 @@
     background-color: $lightLightColor;
     padding: $padding;
     gap: $gap;
+    flex-direction: column;
 
     .edit-config {
         display: flex;
@@ -55,13 +56,20 @@
     .army-name-input, .category-name-input {
         background-color: $PrimaryColor;
         color: $lightLightColor;
-        width: 400px;
+        max-width: 400px;
         border: none;
         flex: 1;
+        outline: none;
+
+        &:focus {
+            box-shadow: $smallInsetBorderShadow;
+        }
     }
+
     .army-name-input {
         font-size: $mediumFont;
     }
+
     .category-name-input {
         font-size: $normalFont;
     }

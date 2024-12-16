@@ -33,6 +33,11 @@ const EditUnit: React.FC<EditUnitPropsType> = ({ unit, modifyUnit, removeUnit, s
 
     const [unitToEdit, setUnitToEdit] = useState<UnitType>(unit);
 
+    const maxLength = {
+        name: 35,
+        info: 100,
+    }
+
     const initialBaseId = (unit.miniStatus.length > 0)
         ? (unit.miniStatus[0].baseId)
         : (allBases[0].id);
@@ -44,7 +49,6 @@ const EditUnit: React.FC<EditUnitPropsType> = ({ unit, modifyUnit, removeUnit, s
 
     const handleUnitChange = (field: keyof UnitType, event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const maxFieldLength = maxLength[field];
-
         if (event.target.value.length < maxFieldLength) {
             setUnitToEdit(prevUnit => ({
                 ...prevUnit, [field]: event.target.value
@@ -52,7 +56,7 @@ const EditUnit: React.FC<EditUnitPropsType> = ({ unit, modifyUnit, removeUnit, s
         } else {
             Alert({
                 message: field + " is too long (max " + maxFieldLength + " characters)",
-                type: "info"
+                type: "warning"
             })
         }
 
@@ -68,8 +72,18 @@ const EditUnit: React.FC<EditUnitPropsType> = ({ unit, modifyUnit, removeUnit, s
     };
 
     const handleUnitAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const miniAmount = event.target.value;
-        refreshStatusList({ miniAmount });
+        const maxMiniAmount = 50;
+        const miniAmount = parseInt(event.target.value);
+        if (!(miniAmount > maxMiniAmount)) {
+            refreshStatusList({ miniAmount });
+        } else {
+            Alert({
+                message: "over max unitsize (" + maxMiniAmount + ")",
+                type: "warning"
+            })
+        }
+        
+        
     };
 
     const handleMiniStatusBaseChange = (selectedOption: SingleValue<{ value: string, label: string }>) => {

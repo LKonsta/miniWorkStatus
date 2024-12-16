@@ -29,6 +29,7 @@
     flex-direction: column;
     border-radius: $borderRadius;
     background-color: $lightPrimaryColor;
+    box-shadow: $containerShadow;
 
     .header {
         display: flex;

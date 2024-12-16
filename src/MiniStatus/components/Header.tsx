@@ -1,15 +1,17 @@
 import NewArmy from './NewArmy';
-import Settings from './Settings';
+import BasesAndStatuses from './BasesAndStatuses';
 import { useHideContext } from './context/HideContext';
 import "./styles/Header.scss";
 
 import { TbEyeCog } from "react-icons/tb";
+import { ArmyType } from './types/defaultTypes';
 
 type HeaderPropsType = {
+    allArmies: ArmyType[],
     addArmy: any,
 }
 
-const Header: React.FC<HeaderPropsType> = ({ addArmy }) => {
+const Header: React.FC<HeaderPropsType> = ({ allArmies, addArmy }) => {
     
 
     const HideButton: React.FC = () => {
@@ -26,8 +28,8 @@ const Header: React.FC<HeaderPropsType> = ({ addArmy }) => {
     return (
         <div className="site-header">
             <h1 className="site-title">Mini Status</h1>
-            <Settings />
-            <NewArmy addArmy={addArmy} />
+            <BasesAndStatuses />
+            <NewArmy allArmies={allArmies} addArmy={addArmy} />
             <HideButton />      
         </div>
     );

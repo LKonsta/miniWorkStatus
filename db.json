@@ -2,296 +2,14 @@
   "armies": [
     {
       "name": "Dwarfs",
-      "id": "78d1"
+      "id": "63a0"
     },
     {
-      "id": "0ccc",
-      "name": "Wood elves"
+      "name": "Wood elves",
+      "id": "0ccc"
     }
   ],
   "categories": [
-    {
-      "id": "4598",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": "78d1"
-    },
-    {
-      "id": "cec0",
-      "name": "Core",
-      "index": 2,
-      "armyId": "78d1"
-    },
-    {
-      "id": "4084",
-      "name": "Special/Rare",
-      "index": 3,
-      "armyId": "78d1"
-    },
-    {
-      "id": "e314",
-      "name": "Warmachines",
-      "index": 4,
-      "armyId": "78d1"
-    },
-    {
-      "id": "bdd3",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "a906",
-      "name": "Core",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "d958",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "c11f",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "c051",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
-    {
-      "id": "5057",
-      "name": "Extra",
-      "index": 5,
-      "armyId": "78d1"
-    },
-    {
-      "id": "b842",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "ef98",
-      "name": "Core",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "005e",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "9502",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "2515",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
-    {
-      "id": "34ac",
-      "name": "dsadsa",
-      "index": 7,
-      "armyId": null
-    },
-    {
-      "id": "0d6b",
-      "name": "dsadsa",
-      "index": 6,
-      "armyId": null
-    },
-    {
-      "id": "595f",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "4f2c",
-      "name": "Core",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "cbe1",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "d33b",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "1a98",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
-    {
-      "id": "c2b8",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "08c9",
-      "name": "Core",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "d992",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "509f",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "812f",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
-    {
-      "id": "d494",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "c8f4",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "eddb",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "1b0d",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
-    {
-      "id": "1ae3",
-      "name": "Core",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "fc25",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "8dc2",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "51b8",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
-    {
-      "id": "1064",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "ea76",
-      "name": "Core",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "2006",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "7ed0",
-      "name": "Core",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "c3ef",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "ba18",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "6a16",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
-    {
-      "id": "37d3",
-      "name": "Hero/Lord",
-      "index": 1,
-      "armyId": null
-    },
-    {
-      "id": "3b93",
-      "name": "Core",
-      "index": 2,
-      "armyId": null
-    },
-    {
-      "id": "6aeb",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "8b67",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "437c",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
     {
       "id": "3d17",
       "name": "Hero/Lord",
@@ -299,106 +17,229 @@
       "armyId": "0ccc"
     },
     {
-      "id": "6a68",
-      "name": "Special",
-      "index": 3,
-      "armyId": "0ccc"
-    },
-    {
       "id": "0fdf",
       "name": "Rare",
-      "index": 4,
-      "armyId": "0ccc"
-    },
-    {
-      "id": "98d2",
-      "name": "Core",
       "index": 2,
       "armyId": "0ccc"
     },
     {
       "id": "2375",
       "name": "Extra",
-      "index": 5,
+      "index": 3,
       "armyId": "0ccc"
     },
     {
-      "id": "24fe",
+      "id": "ac3c",
       "name": "Hero/Lord",
       "index": 1,
-      "armyId": null
+      "armyId": "0e1c"
     },
     {
-      "id": "7cfa",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "d388",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
-    },
-    {
-      "id": "88b0",
-      "name": "Rare",
-      "index": 4,
-      "armyId": null
-    },
-    {
-      "id": "6299",
+      "id": "d68d",
       "name": "Core",
       "index": 2,
-      "armyId": null
+      "armyId": "0e1c"
     },
     {
-      "id": "7778",
-      "name": "dsadsadsa",
+      "id": "56be",
+      "name": "Special",
+      "index": 3,
+      "armyId": "0e1c"
+    },
+    {
+      "id": "5d75",
+      "name": "Rare",
+      "index": 4,
+      "armyId": "0e1c"
+    },
+    {
+      "id": "baaa",
+      "name": "Extra",
+      "index": 5,
+      "armyId": "0e1c"
+    },
+    {
+      "id": "6dd5",
+      "name": "dsadsadas",
+      "index": 7,
+      "armyId": "0e1c"
+    },
+    {
+      "id": "2ca7",
+      "name": "dasdsadsa",
+      "index": 6,
+      "armyId": "0e1c"
+    },
+    {
+      "id": "8e18",
+      "name": "Hero/Lord",
       "index": 1,
-      "armyId": null
+      "armyId": "d436"
     },
     {
-      "id": "0d31",
-      "name": "Special",
-      "index": 3,
-      "armyId": null
-    },
-    {
-      "id": "9060",
+      "id": "5098",
       "name": "Core",
       "index": 2,
-      "armyId": null
+      "armyId": "d436"
     },
     {
-      "id": "a0e2",
-      "name": "Extra",
-      "index": 5,
-      "armyId": null
+      "id": "67d1",
+      "name": "Special",
+      "index": 3,
+      "armyId": "d436"
     },
     {
-      "id": "a82a",
+      "id": "3481",
       "name": "Rare",
       "index": 4,
-      "armyId": null
+      "armyId": "d436"
+    },
+    {
+      "id": "ff98",
+      "name": "Extra",
+      "index": 5,
+      "armyId": "d436"
+    },
+    {
+      "id": "8507",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": "ff2b"
+    },
+    {
+      "id": "15d2",
+      "name": "Core",
+      "index": 2,
+      "armyId": "ff2b"
+    },
+    {
+      "id": "bb1a",
+      "name": "Special",
+      "index": 3,
+      "armyId": "ff2b"
+    },
+    {
+      "id": "91f8",
+      "name": "Rare",
+      "index": 4,
+      "armyId": "ff2b"
+    },
+    {
+      "id": "3d77",
+      "name": "Extra",
+      "index": 5,
+      "armyId": "ff2b"
+    },
+    {
+      "id": "a50d",
+      "name": "dsadsa",
+      "index": 6,
+      "armyId": "ff2b"
+    },
+    {
+      "id": "68f5",
+      "name": "Hero/Lord",
+      "index": 1,
+      "armyId": "50b8"
+    },
+    {
+      "id": "42c0",
+      "name": "Core",
+      "index": 2,
+      "armyId": "50b8"
+    },
+    {
+      "id": "3920",
+      "name": "Special",
+      "index": 3,
+      "armyId": "50b8"
+    },
+    {
+      "id": "32f5",
+      "name": "Rare",
+      "index": 4,
+      "armyId": "50b8"
+    },
+    {
+      "id": "e886",
+      "name": "Extra",
+      "index": 5,
+      "armyId": "50b8"
+    },
+    {
+      "id": "6e98",
+      "name": "dsadsadsa",
+      "index": 6,
+      "armyId": "50b8"
+    },
+    {
+      "id": "9cbe",
+      "name": "Lord/Hero",
+      "index": 1,
+      "armyId": "b903"
+    },
+    {
+      "id": "1edc",
+      "name": "Core",
+      "index": 2,
+      "armyId": "b903"
+    },
+    {
+      "id": "ee12",
+      "name": "Special/Rare",
+      "index": 3,
+      "armyId": "b903"
+    },
+    {
+      "id": "b904",
+      "name": "Warmachine",
+      "index": 4,
+      "armyId": "b903"
+    },
+    {
+      "id": "70cd",
+      "name": "Extra",
+      "index": 5,
+      "armyId": "b903"
+    },
+    {
+      "id": "2411",
+      "name": "Lord/Hero",
+      "index": 1,
+      "armyId": "63a0"
+    },
+    {
+      "id": "30d1",
+      "name": "Core",
+      "index": 2,
+      "armyId": "63a0"
+    },
+    {
+      "id": "2841",
+      "name": "Special/Rare",
+      "index": 3,
+      "armyId": "63a0"
+    },
+    {
+      "id": "b381",
+      "name": "Extra",
+      "index": 4,
+      "armyId": "63a0"
+    },
+    {
+      "id": "0ff7",
+      "name": "dsadsadsadsa",
+      "index": 5,
+      "armyId": "63a0"
+    },
+    {
+      "id": "f802",
+      "name": "csd",
+      "index": 6,
+      "armyId": "63a0"
     }
   ],
   "units": [
-    {
-      "id": "9367",
-      "name": "dsadsa",
-      "info": "dsadsadsa",
-      "miniAmount": 1,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "4e24",
-          "statusId": "7891"
-        }
-      ],
-      "categoryId": "c051",
-      "armyId": null
-    },
     {
       "id": "148a",
       "name": "Dwarf King",
@@ -411,8 +252,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "4598",
-      "armyId": "78d1"
+      "categoryId": "2411",
+      "armyId": "63a0"
     },
     {
       "id": "aba3",
@@ -426,23 +267,8 @@
           "statusId": "175f"
         }
       ],
-      "categoryId": "4598",
-      "armyId": "78d1"
-    },
-    {
-      "id": "8c79",
-      "name": "dsadsa",
-      "info": "dsadsa",
-      "miniAmount": 1,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "abcd",
-          "statusId": "74b9"
-        }
-      ],
-      "categoryId": "08c9",
-      "armyId": null
+      "categoryId": "2411",
+      "armyId": "63a0"
     },
     {
       "id": "7be3",
@@ -456,8 +282,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "4598",
-      "armyId": "78d1"
+      "categoryId": "2411",
+      "armyId": "63a0"
     },
     {
       "id": "d049",
@@ -471,8 +297,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "4598",
-      "armyId": "78d1"
+      "categoryId": "2411",
+      "armyId": "63a0"
     },
     {
       "id": "538a",
@@ -486,8 +312,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "4598",
-      "armyId": "78d1"
+      "categoryId": "2411",
+      "armyId": "63a0"
     },
     {
       "id": "ec4b",
@@ -501,8 +327,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "4598",
-      "armyId": "78d1"
+      "categoryId": "2411",
+      "armyId": "63a0"
     },
     {
       "id": "008b",
@@ -516,23 +342,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "4598",
-      "armyId": "78d1"
-    },
-    {
-      "id": "c8fa",
-      "name": "Ungrim Ironfist",
-      "info": "",
-      "miniAmount": 1,
-      "miniStatus": [
-        {
-          "id": 1,
-          "baseId": "2109",
-          "statusId": "74b9"
-        }
-      ],
-      "categoryId": "4598",
-      "armyId": "78d1"
+      "categoryId": "2411",
+      "armyId": "63a0"
     },
     {
       "id": "230d",
@@ -696,8 +507,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "cec0",
-      "armyId": "78d1"
+      "categoryId": "30d1",
+      "armyId": "63a0"
     },
     {
       "id": "0aaa",
@@ -806,8 +617,8 @@
           "statusId": "175f"
         }
       ],
-      "categoryId": "cec0",
-      "armyId": "78d1"
+      "categoryId": "30d1",
+      "armyId": "63a0"
     },
     {
       "id": "dac0",
@@ -916,8 +727,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "cec0",
-      "armyId": "78d1"
+      "categoryId": "30d1",
+      "armyId": "63a0"
     },
     {
       "id": "1f98",
@@ -1026,8 +837,8 @@
           "statusId": "175f"
         }
       ],
-      "categoryId": "cec0",
-      "armyId": "78d1"
+      "categoryId": "30d1",
+      "armyId": "63a0"
     },
     {
       "id": "28c9",
@@ -1141,8 +952,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "4084",
-      "armyId": "78d1"
+      "categoryId": "2841",
+      "armyId": "63a0"
     },
     {
       "id": "3e8e",
@@ -1226,8 +1037,8 @@
           "statusId": "74b9"
         }
       ],
-      "categoryId": "4084",
-      "armyId": "78d1"
+      "categoryId": "2841",
+      "armyId": "63a0"
     },
     {
       "id": "3d7d",
@@ -1386,8 +1197,8 @@
           "statusId": "768b"
         }
       ],
-      "categoryId": "4084",
-      "armyId": "78d1"
+      "categoryId": "2841",
+      "armyId": "63a0"
     },
     {
       "id": "98bd",
@@ -1546,8 +1357,8 @@
           "statusId": "768b"
         }
       ],
-      "categoryId": "4084",
-      "armyId": "78d1"
+      "categoryId": "2841",
+      "armyId": "63a0"
     },
     {
       "id": "26a9",
@@ -1631,8 +1442,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "4084",
-      "armyId": "78d1"
+      "categoryId": "2841",
+      "armyId": "63a0"
     },
     {
       "id": "129e",
@@ -1716,8 +1527,8 @@
           "statusId": "175f"
         }
       ],
-      "categoryId": "4084",
-      "armyId": "78d1"
+      "categoryId": "2841",
+      "armyId": "63a0"
     },
     {
       "id": "c9b4",
@@ -1746,8 +1557,8 @@
           "statusId": "175f"
         }
       ],
-      "categoryId": "4084",
-      "armyId": "78d1"
+      "categoryId": "2841",
+      "armyId": "63a0"
     },
     {
       "id": "e9c5",
@@ -1776,8 +1587,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "8f6a",
@@ -1806,8 +1617,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "35d5",
@@ -1836,8 +1647,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "1ae5",
@@ -1866,8 +1677,8 @@
           "statusId": "74b9"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "3368",
@@ -1896,8 +1707,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "6428",
@@ -1926,8 +1737,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "f24b",
@@ -1956,8 +1767,8 @@
           "statusId": "8b7a"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "d5f1",
@@ -1986,8 +1797,8 @@
           "statusId": "74b9"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "47ac",
@@ -2016,8 +1827,8 @@
           "statusId": "175f"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "22f8",
@@ -2036,8 +1847,8 @@
           "statusId": "175f"
         }
       ],
-      "categoryId": "5057",
-      "armyId": "78d1"
+      "categoryId": "b381",
+      "armyId": "63a0"
     },
     {
       "id": "ed49",
@@ -2051,8 +1862,8 @@
           "statusId": "2025"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "ea1c",
@@ -2066,8 +1877,8 @@
           "statusId": "175f"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": null,
+      "armyId": "63a0"
     },
     {
       "id": "e7ba",
@@ -2081,8 +1892,8 @@
           "statusId": "74b9"
         }
       ],
-      "categoryId": "e314",
-      "armyId": "78d1"
+      "categoryId": "2841",
+      "armyId": "63a0"
     },
     {
       "id": "d15a",
@@ -2271,7 +2082,7 @@
           "statusId": "175f"
         }
       ],
-      "categoryId": "98d2",
+      "categoryId": null,
       "armyId": "0ccc"
     },
     {
@@ -2436,8 +2247,8 @@
           "statusId": "74b9"
         }
       ],
-      "categoryId": "cec0",
-      "armyId": "78d1"
+      "categoryId": "30d1",
+      "armyId": "63a0"
     }
   ],
   "bases": [

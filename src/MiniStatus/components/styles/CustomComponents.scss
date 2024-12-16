@@ -44,12 +44,11 @@ $buttonFontSize: 15px;
 
 // Custom Input fields
 
-.string-input {
+.string-input, .info-input, .amount-input, .header-input {
     max-width: 100%;
     border: none;
-    border-radius: $textInputBorderRadius;
-    font-size: $normalFont;
     outline: none;
+    border-radius: $textInputBorderRadius;
     transition: box-shadow 0.3s ease;
 
     &::placeholder {
@@ -60,35 +59,21 @@ $buttonFontSize: 15px;
         box-shadow: $smallInsetBorderShadow;
     }
 }
+
+.string-input {
+    font-size: $normalFont;
+}
 .info-input {
-    max-width: 100%;
-    border: none;
-    border-radius: $textInputBorderRadius;
     font-size: $infoFontSize;
     color: $infoTextColor;
-    outline: none;
-    transition: box-shadow 0.3s ease;
-
-    &::placeholder {
-        color: $darkenColor;
-    }
-
-    &:focus {
-        box-shadow: $smallInsetBorderShadow;
-    }
 }
 .amount-input {
     text-align: center;
-    max-width: 100%;
-    border: none;
-    border-radius: $textInputBorderRadius;
     font-size: $normalFont;
-    outline: none;
-    transition: box-shadow 0.3s ease;
+}
+.header-input {
+    color: $lightLightColor;
 
-    &:focus {
-        box-shadow: $smallInsetBorderShadow;
-    }
 }
 
 // Custom React-select fields

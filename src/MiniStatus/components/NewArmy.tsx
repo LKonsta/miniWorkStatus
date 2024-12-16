@@ -9,8 +9,10 @@ import './styles/EditArmy.scss';
 
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { useAlertContext } from "../../components/context/AlertContext";
 
 type NewArmyPropsType = {
+    allArmies: ArmyType[],
     addArmy: any,
 }
 
@@ -21,6 +23,8 @@ const NewArmy: React.FC<NewArmyPropsType> = ({ addArmy }) => {
     }
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const toggleModal = () => { setModalOpen(!modalOpen); };
+
+    const { Alert } = useAlertContext();
 
     const [newArmyName, setNewArmyName] = useState<string>('');
     const [newArmyCategories, setNewArmyCategories] = useState<NewCategoryType[]>(
@@ -83,17 +87,26 @@ const NewArmy: React.FC<NewArmyPropsType> = ({ addArmy }) => {
         const armyObject = {
             name: newArmyName
         };
-        const returnedArmy: ArmyType = await addArmy(armyObject);
-        newArmyCategories.forEach(async (category) => {
-            const categoryObject = {
-                name: category.name,
-                index: category.index,
-                armyId: returnedArmy.id
-            };
-            await CategoryService.create(categoryObject);
-        });
-        resetSettings();
+        try {
+            const returnedArmy: ArmyType = await addArmy(armyObject);
+
+            await Promise.all(newArmyCategories.map(async (category) => {
+                console.log("taala1", returnedArmy)
+                const categoryObject = {
+                    name: category.name,
+                    index: category.index,
+                    armyId: returnedArmy.id
+                };
+                console.log("taala2")
+                await CategoryService.create(categoryObject);
+            }));
+            resetSettings();
+        } catch (error) {
+            Alert({message: "Error while creating army or categories", type: "error"})
+        };
+        
     };
+
     const openModal = () => {
         resetSettings();
         toggleModal();
@@ -129,14 +142,6 @@ const NewArmy: React.FC<NewArmyPropsType> = ({ addArmy }) => {
                                             onChange={handleArmyNameChange}
                                             placeholder="Army name"
                                         />
-                                    </div>
-                                    <div className="right-box-header">
-                                        <div className="item-container">
-                                            <button 
-                                                className="accept-btn"
-                                                type="submit"
-                                            >Add</button>
-                                        </div>
                                     </div>
                                 </div>
                                 <div className="content-wrapper">
@@ -178,9 +183,18 @@ const NewArmy: React.FC<NewArmyPropsType> = ({ addArmy }) => {
                                     </div> 
                                 </div>
                             </div>
-                            <div>
-                                <div className="config-end">
-                                    
+                            <div className="inner-container">
+                            <div className="edit-config">
+                                <div className="config-fields">
+                                    <div className="config-end">
+                                        <div className="item-container">
+                                            <button
+                                                className="accept-btn"
+                                                type="submit"
+                                            >Add</button>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </form>

@@ -5,7 +5,7 @@ const Loading: React.FC = () => {
     const { Alert } = useAlertContext();
 
     return (
-        <div className="loading" onClick={() => Alert({ message: "clicked", type: "error" })}>
+        <div className="loading">
             <div className="loading-spinner" />
         </div>
     )

@@ -51,16 +51,15 @@ const calculatePercentageColor = (value: number): string => {
 
     interface colorType {r: number, g: number, b: number,};
     const color1: colorType = {
-        r: 153,
-        g: 26,
-        b: 36
+        r: 209,
+        g: 33,
+        b: 33
     };
     const color2: colorType = {
-        r: 56,
-        g: 224,
-        b: 44
+        r: 82,
+        g: 239,
+        b: 64
     };
-
     const greater = (Math.pow(value, 1.2) / 1);
     const clampedValue = Math.min(1, Math.max(0, greater));
 

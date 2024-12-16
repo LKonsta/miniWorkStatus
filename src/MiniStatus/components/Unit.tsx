@@ -45,28 +45,31 @@ const Unit: React.FC<UnitPropsType> = ({ last, unit, removeUnit, modifyUnit, sor
         <>
             <div
                 className="unit"
-                style={(last && !open) ? ({ borderRadius: "0px 0px 10px 10px"}) : ({})}
+                style={(last && !open) ? ({ borderRadius: "0px 0px 10px 10px", paddingBottom: "3px" }) : ({})}
             >
-                <div className='amount'>
-                    {unit.miniAmount}
-                </div>
-                <div className='name' onClick={() => setOpen(!open)}>
-                    <div>
-                        {unit.name}
-                        {(unit.info) ? (
-                            (open
-                            ) ? (
-                                <div className="info">
-                                    {<>{unit.info}</>}
-                                </div>
-                            ) : (
-                                <div className="info-collapsed">
-                                    {<>{unit.info}</>}
-                                </div>
-                            )
-                        ) : (<></>)}
+                <div className="unit-info" onClick={() => setOpen(!open)}>
+                    <div className='amount'>
+                        {unit.miniAmount}
+                    </div>
+                    <div className='name'>
+                        <div>
+                            {unit.name}
+                            {(unit.info) ? (
+                                (open
+                                ) ? (
+                                    <div className="info">
+                                        {<>{unit.info}</>}
+                                    </div>
+                                ) : (
+                                    <div className="info-collapsed">
+                                        {<>{unit.info}</>}
+                                    </div>
+                                )
+                            ) : (<></>)}
+                        </div>
                     </div>
                 </div>
+
                 <div className="right-box">
                     {(isHidden) ? (
                     <div className='button-container'>
@@ -94,11 +97,13 @@ const Unit: React.FC<UnitPropsType> = ({ last, unit, removeUnit, modifyUnit, sor
                 </div>
             </div>
             {open && (
-                <UnitDropdown
-                    unit={unit}
-                    configureOptions={allStatuses}
-                    configureMini={configureStatus}
-                />
+                <div>
+                    <UnitDropdown
+                        unit={unit}
+                        configureOptions={allStatuses}
+                        configureMini={configureStatus}
+                    />
+                </div>
             )}
         </>
     );

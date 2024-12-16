@@ -18,22 +18,22 @@ const MiniStatus: React.FC = () => {
     useEffect(() => {
         const fetchArmies = async () => {
             setLoadingArmies(true);
-            const initialArmies = await armyService.getAll();
-            if ('serverError' in initialArmies) {
-                console.log("here")
-                Alert({ message: (initialArmies.message + " (" + initialArmies.serverError + ")"), type: "error" })
-            } else {
-                setAllArmies(initialArmies);
-            }
+            await armyService.getAll()
+                .then(result => setAllArmies(result))
+                .catch(error => Alert({ message: error.message, type: "error" }));
             setLoadingArmies(false);
         };
         fetchArmies();
     }, []);
 
     const addArmy = async (newArmy: ArmyType) => {
-        const returnedArmy = await armyService.create(newArmy);
-        setAllArmies((prevArmies) => [...prevArmies, returnedArmy]);
-        return returnedArmy;
+        try {
+            const result = await armyService.create(newArmy); 
+            setAllArmies((prevArmies) => [...prevArmies, result]); 
+            return result; 
+        } catch (error) {
+            Alert({ message: error, type: "error" }); 
+        };
     };
 
     const modifyArmy = async (id: string, updatedArmy: ArmyType) => {
@@ -57,6 +57,7 @@ const MiniStatus: React.FC = () => {
                         ) : (
                             <>
                                 <Header
+                                    allArmies={allArmies}
                                     addArmy={addArmy}
                                 />
                                 <ArmyList

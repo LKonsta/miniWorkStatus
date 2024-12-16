@@ -70,7 +70,7 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, currentCategory, sortedCa
         } else {
             Alert({
                 message: field + " is too long (max " + maxFieldLength + " characters)",
-                type: "info"
+                type: "warning"
             })
         }
         
@@ -86,8 +86,16 @@ const NewUnit: React.FC<NewUnitPropsType> = ({ armyId, currentCategory, sortedCa
     };
 
     const handleUnitAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const miniAmount = event.target.value;
-        refreshStatusList({ miniAmount });
+        const maxMiniAmount = 50;
+        const miniAmount = parseInt(event.target.value);
+        if (!(miniAmount > maxMiniAmount)) {
+            refreshStatusList({ miniAmount });
+        } else {
+            Alert({
+                message: "over max unit size (" + maxMiniAmount + ")",
+                type: "warning"
+            })
+        };
     };
 
     const handleMiniStatusBaseChange = (selectedOption: SingleValue<{ value: string, label: string }>) => {

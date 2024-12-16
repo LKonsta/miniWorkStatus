@@ -31,6 +31,7 @@ type ArmyCategoryPropsType = {
 const ArmyCategory: React.FC<ArmyCategoryPropsType> = ({ army, addUnit, category, sortedCategories,  units, removeUnit, modifyUnit }) => {
     const [hideCategory, setHideCategory] = useState<boolean>(false);
     const toggleHideCategory = () => { setHideCategory(!hideCategory) };
+
     const Header = (
         <>
             <div
@@ -173,7 +174,7 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
         setAllUnits((prevUnits) => prevUnits.filter((unit) => unit.id !== id));
     };
 
-    if (loadingCategories!=false && loadingUnits!=false) { 
+    if (loadingCategories && loadingUnits) { 
         return (
             <Loading />
         )
@@ -203,6 +204,7 @@ const Army: React.FC<ArmyPropsType> = ({ army, removeArmy, modifyArmy }) => {
                         <EditArmy
                             army={army}
                             modifyArmy={modifyArmy}
+                            removeArmy={removeArmy}
                             sortedCategories={sortedCategories}
                             modifyCategory={modifyCategory}
                             addCategory={addCategory}

@@ -29,7 +29,7 @@ const UnitDropdown: React.FC<UnitMiniStatusPropsType> = ({ unit, configureOption
                 </div>
                 <div className="status-info-container">
                     {allStatuses.map((status) => (
-                        <div className="status">
+                        <div className="status" key={status.id}>
                             <div
                                 className="status-color"
                                 style={{ backgroundColor: CalculatePercentage.calculatePercentageColor(status.percentage) }}
